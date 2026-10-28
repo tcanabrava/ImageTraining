@@ -17,6 +17,10 @@ def main() -> None:
     preview = commands.add_parser("preview", help="Export base/equipment/composite contact sheets and GIFs")
     preview.add_argument("manifest", type=Path)
     preview.add_argument("--output", type=Path, required=True)
+    fetch = commands.add_parser("fetch-lpc", help="Download a pinned, explicitly selected LPC subset")
+    fetch.add_argument("--selection", type=Path, required=True)
+    fetch.add_argument("--output", type=Path, required=True)
+    fetch.add_argument("--cache", type=Path, default=Path("data/cache/lpc"))
     args = parser.parse_args()
     try:
         if args.command == "fixture":
@@ -26,5 +30,8 @@ def main() -> None:
         elif args.command == "preview":
             preview_dataset(args.manifest, args.output)
             print(args.output)
+        elif args.command == "fetch-lpc":
+            from .lpc import import_lpc
+            print(import_lpc(args.selection, args.output, args.cache))
     except (ValueError, OSError, KeyError) as error:
         parser.exit(1, f"Error: {error}\n")

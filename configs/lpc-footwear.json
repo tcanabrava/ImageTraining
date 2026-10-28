@@ -1,0 +1,19 @@
+{
+  "revision": "86160e7507d6841259cff624a51a63c1d4847ee3",
+  "description": "Small footwear pilot on one male south-facing walk. Validation holds out two design families, not bodies or styles. Shared upstream ancestry still requires review.",
+  "category": "footwear",
+  "animation": "walk",
+  "view": "south",
+  "frame_size": [64, 64],
+  "duration_ms": 100,
+  "reference_frame": 0,
+  "source_frames": [[64, 128], [128, 128], [192, 128], [256, 128], [320, 128], [384, 128], [448, 128], [512, 128]],
+  "base_layers": ["spritesheets/body/bodies/male/walk.png", "spritesheets/head/heads/human/male/walk.png"],
+  "equipment": [
+    {"id": "basic-boots", "design_id": "lpc-basic-boots", "split": "train", "path": "spritesheets/feet/boots/basic/male/walk.png"},
+    {"id": "fold-boots", "design_id": "lpc-fold-boots", "split": "train", "path": "spritesheets/feet/boots/fold/male/walk.png"},
+    {"id": "basic-shoes", "design_id": "lpc-basic-shoes", "split": "train", "path": "spritesheets/feet/shoes/basic/male/walk.png"},
+    {"id": "plate-boots", "design_id": "lpc-plate-boots", "split": "val", "path": "spritesheets/feet/armour/plate/male/walk.png"},
+    {"id": "ghillies", "design_id": "lpc-ghillies", "split": "val", "path": "spritesheets/feet/shoes/ghillies/male/walk.png"}
+  ]
+}

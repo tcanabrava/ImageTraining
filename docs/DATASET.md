@@ -48,3 +48,27 @@ python -m equipment_fitter validate data/fixture/dataset.json
 python -m equipment_fitter preview data/fixture/dataset.json --output runs/fixture-preview
 python -m pytest
 ```
+
+## Real-asset pilots
+
+Download on a network-enabled preparation machine, then transfer the prepared
+directory to the HPC. Imports pin an upstream revision and retain per-asset credits,
+source URLs, and hashes. Existing output directories are never overwritten.
+
+```sh
+python -m equipment_fitter fetch-lpc --selection configs/lpc-glove.json --output data/lpc-glove
+python -m equipment_fitter preview data/lpc-glove/dataset.json --output runs/lpc-glove-preview
+python -m equipment_fitter fetch-lpc --selection configs/lpc-footwear.json --output data/lpc-footwear
+python -m equipment_fitter preview data/lpc-footwear/dataset.json --output runs/lpc-footwear-preview
+```
+
+The glove pilot has one design and **no validation split**: use it only to diagnose
+whether the model can learn the training set. The footwear pilot has three training
+designs and two held-out designs, on the same body and south-facing walk. These are
+small engineering benchmarks; neither establishes arbitrary-equipment capability.
+The eight walking frames use source columns 1–8, excluding the idle column.
+
+Source artwork uses mixed licenses; retain the generated `CREDITS.csv` and review
+the listed terms before distributing source or modified artwork. The importer does
+not relicense assets or decide licensing questions about trained models. It preserves
+source alpha and does not automatically repair occlusion. Visually review targets.
