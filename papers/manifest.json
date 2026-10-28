@@ -1,0 +1,76 @@
+{
+  "retrieved_on": "2026-10-28",
+  "papers": [
+    {
+      "file": "2023-animate-anyone.pdf",
+      "source_url": "https://arxiv.org/pdf/2311.17117",
+      "resolved_url": "https://arxiv.org/pdf/2311.17117",
+      "bytes": 8156187,
+      "sha256": "b9ce967a4192265100f2773314fdd2f05e9c902cbc542f71702abb0bbf22be0c"
+    },
+    {
+      "file": "2023-controlnet.pdf",
+      "source_url": "https://arxiv.org/pdf/2302.05543",
+      "resolved_url": "https://arxiv.org/pdf/2302.05543",
+      "bytes": 16345157,
+      "sha256": "1539c841018cea52b7f0d4a108e6e698d2a5ba2a26c0a665df81d5da79f88170"
+    },
+    {
+      "file": "2023-ip-adapter.pdf",
+      "source_url": "https://arxiv.org/pdf/2308.06721",
+      "resolved_url": "https://arxiv.org/pdf/2308.06721",
+      "bytes": 36662766,
+      "sha256": "00fd877e8d1c28d7f050f2a71c00b4dfe5f9d385c94b8144ad040d66e2abf727"
+    },
+    {
+      "file": "2023-text2layer.pdf",
+      "source_url": "https://arxiv.org/pdf/2307.09781",
+      "resolved_url": "https://arxiv.org/pdf/2307.09781",
+      "bytes": 15993100,
+      "sha256": "5996fe0b701bb8c030345ab9843e03cbf207236b216c29f3b3c338062f086fcd"
+    },
+    {
+      "file": "2024-layerdiff.pdf",
+      "source_url": "https://arxiv.org/pdf/2403.11929",
+      "resolved_url": "https://arxiv.org/pdf/2403.11929",
+      "bytes": 12360532,
+      "sha256": "2a272be4b68a9774bd65130330aac1a75627f43b41c859761cabd21ceb5ab5cd"
+    },
+    {
+      "file": "2024-layerdiffuse.pdf",
+      "source_url": "https://arxiv.org/pdf/2402.17113",
+      "resolved_url": "https://arxiv.org/pdf/2402.17113",
+      "bytes": 28640069,
+      "sha256": "a8f0f9cf00306677b13bd804958e9a8a29eb1e3c9b25f5240f6055adf4f212b9"
+    },
+    {
+      "file": "2024-sprite-sheet-diffusion.pdf",
+      "source_url": "https://arxiv.org/pdf/2412.03685",
+      "resolved_url": "https://arxiv.org/pdf/2412.03685",
+      "bytes": 34308439,
+      "sha256": "ef2910ba1df6ba68a05b3d49168bd7e9a4cc628bc0a0234e40d33597b4b71158"
+    },
+    {
+      "file": "2025-qwen-image-layered.pdf",
+      "source_url": "https://arxiv.org/pdf/2512.15603",
+      "resolved_url": "https://arxiv.org/pdf/2512.15603",
+      "bytes": 40077422,
+      "sha256": "af8994674db763027ce9ed86262f96c1ecff253e6c583bd70167c8643070ca28"
+    },
+    {
+      "file": "2025-sprite-sheet-generation.pdf",
+      "source_url": "https://marcovolino.github.io/docs/papers/2025-wong-cvmp.pdf",
+      "resolved_url": "https://marcovolino.github.io/docs/papers/2025-wong-cvmp.pdf",
+      "bytes": 1922330,
+      "sha256": "6cab32c5060ed4b9f5efa6a1b4aaefb2aaea6b578b599654400421bad23cd7ea"
+    },
+    {
+      "file": "2026-lade.pdf",
+      "source_url": "https://arxiv.org/pdf/2603.17965",
+      "resolved_url": "https://arxiv.org/pdf/2603.17965",
+      "bytes": 43397362,
+      "sha256": "9eda1b14088ef1af9d8cbd0183863fca41e92a76f788688eaacab8f8ad972a70"
+    }
+  ],
+  "failures": []
+}
