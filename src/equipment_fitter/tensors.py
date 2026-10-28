@@ -1,0 +1,51 @@
+from pathlib import Path
+
+import numpy as np
+import torch
+from PIL import Image
+from torch.utils.data import Dataset
+
+from .data import asset_path, frame, load_dataset, rgba
+
+
+def image_tensor(image: Image.Image) -> torch.Tensor:
+    return torch.from_numpy(np.array(image, dtype=np.float32).transpose(2, 0, 1).copy()) / 255.0
+
+
+def conditioning(base: torch.Tensor, reference_base: torch.Tensor, reference: torch.Tensor) -> torch.Tensor:
+    def premultiply(image):
+        return torch.cat((image[:3] * image[3:4], image[3:4]), dim=0)
+    height, width = base.shape[-2:]
+    y, x = torch.meshgrid(torch.linspace(-1, 1, height), torch.linspace(-1, 1, width), indexing="ij")
+    return torch.cat((premultiply(base), premultiply(reference_base), premultiply(reference), x[None], y[None]))
+
+
+class FrameDataset(Dataset):
+    """In-memory tiny-pilot dataset. Reference frames never become target examples."""
+
+    def __init__(self, manifest: Path, split: str):
+        document, self.report = load_dataset(manifest)
+        self.size = tuple(document["frame_size"])
+        if min(self.size) < 8:
+            raise ValueError("Training frame dimensions must be at least 8 pixels")
+        self.items = []
+        for sample in document["samples"]:
+            if sample["split"] != split:
+                continue
+            base = rgba(asset_path(manifest.parent, sample["base"]))
+            equipment = rgba(asset_path(manifest.parent, sample["equipment"]))
+            ref_index = sample["reference_frame"]
+            ref_base = image_tensor(frame(base, sample, ref_index, self.size))
+            reference = image_tensor(frame(equipment, sample, ref_index, self.size))
+            for i in range(len(sample["frames"])):
+                if i == ref_index:
+                    continue
+                target_base = image_tensor(frame(base, sample, i, self.size))
+                target = image_tensor(frame(equipment, sample, i, self.size))
+                self.items.append((conditioning(target_base, ref_base, reference), target, reference.clone()))
+
+    def __len__(self):
+        return len(self.items)
+
+    def __getitem__(self, index):
+        return self.items[index]

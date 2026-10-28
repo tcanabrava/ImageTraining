@@ -10,9 +10,18 @@ support data preparation. The final product will expose design generation and
 equipment fitting through a website.
 
 See [the project plan](docs/PLAN.md) and [research notes](papers/README.md).
+The [literature review](docs/LITERATURE_REVIEW.md) records reading coverage, limitations,
+and the experiments required before selecting the research architecture.
 Research PDFs remain in `papers/` locally; Git tracks their index and download
 manifest rather than the large binary files. Datasets and model checkpoints also
 remain outside Git.
+
+## First runnable experiment
+
+The data importer, validator, preview tool, and PyTorch baseline are implemented.
+See [dataset preparation](docs/DATASET.md) and [training/inference](docs/TRAINING.md).
+The initial reference is an aligned equipment frame from a known animation.
+Independent generated equipment illustrations are a later research milestone.
 
 ## Scope
 

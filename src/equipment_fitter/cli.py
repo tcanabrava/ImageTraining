@@ -21,6 +21,22 @@ def main() -> None:
     fetch.add_argument("--selection", type=Path, required=True)
     fetch.add_argument("--output", type=Path, required=True)
     fetch.add_argument("--cache", type=Path, default=Path("data/cache/lpc"))
+    train = commands.add_parser("train", help="Train the compact supervised fitting baseline")
+    train.add_argument("--manifest", type=Path, required=True)
+    train.add_argument("--config", type=Path, required=True)
+    train.add_argument("--output", type=Path, required=True)
+    train.add_argument("--device", choices=["auto", "cpu", "cuda"], default="auto")
+    train.add_argument("--resume", type=Path)
+    export = commands.add_parser("export-input", help="Extract a standalone inference input from a benchmark")
+    export.add_argument("--manifest", type=Path, required=True)
+    export.add_argument("--sample", required=True)
+    export.add_argument("--output", type=Path, required=True)
+    infer = commands.add_parser("infer", help="Fit equipment from a base sheet and one aligned reference frame")
+    for name in ("checkpoint", "base", "reference", "reference-base", "layout", "output"):
+        infer.add_argument("--" + name, type=Path, required=True)
+    infer.add_argument("--device", choices=["auto", "cpu", "cuda"], default="auto")
+    infer.add_argument("--threads", type=int, default=4)
+    infer.add_argument("--alpha-mode", choices=["binary", "soft"], default="binary")
     args = parser.parse_args()
     try:
         if args.command == "fixture":
@@ -33,5 +49,17 @@ def main() -> None:
         elif args.command == "fetch-lpc":
             from .lpc import import_lpc
             print(import_lpc(args.selection, args.output, args.cache))
+        elif args.command == "train":
+            from .training import train
+            train(args.manifest, args.config, args.output, args.device, args.resume)
+        elif args.command == "export-input":
+            from .inference import export_input
+            export_input(args.manifest, args.sample, args.output)
+            print(args.output)
+        elif args.command == "infer":
+            from .inference import infer
+            report = infer(args.checkpoint, args.base, args.reference, args.reference_base,
+                           args.layout, args.output, args.device, args.threads, args.alpha_mode)
+            print(json.dumps(report, indent=2))
     except (ValueError, OSError, KeyError) as error:
         parser.exit(1, f"Error: {error}\n")
