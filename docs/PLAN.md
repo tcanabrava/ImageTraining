@@ -14,6 +14,12 @@ different models. Pose or attachment information may be supplied or estimated.
 
 ## Milestones and acceptance criteria
 
+Research prerequisite: use [the literature review](LITERATURE_REVIEW.md) to separate
+published evidence from project hypotheses. The initial U-Net is an engineering
+baseline. Before milestone 6, benchmark RGBA reconstruction, verify compatible
+pretrained components, and define independent-reference supervision. The review was
+written after initial implementation began; it does not retroactively validate it.
+
 | Step | Deliverable | Acceptance criterion |
 | --- | --- | --- |
 | 1 | Scope, plan, and research baseline | Versioned project notes and this plan. |
@@ -21,7 +27,7 @@ different models. Pose or attachment information may be supplied or estimated.
 | 3 | Reproducible real-asset pilot | Pinned upstream revision, explicit asset selection and licenses, grouped train/validation split, and visual inspection of paired frames. |
 | 4 | PyTorch fitting baseline and HPC smoke job | CPU forward/backward and inference pass locally; Iris entry point records environment, loss, validation metrics, checkpoint, and predictions without downloading during the job. |
 | 5 | HPC benchmark and data audit | User runs the smoke job; record GPU memory, throughput, loss curve, and visual failures. Demonstrate tiny-set overfitting before interpreting held-out results. |
-| 6 | Stronger fitting model | Compare a pretrained image model with reference/spatial conditioning against the baseline, then add sequence conditioning. Select based on held-out equipment quality and serving cost. |
+| 6 | Stronger fitting model | First validate RGBA reconstruction and component compatibility, then compare reference/spatial conditioning against the baseline. Ablate temporal conditioning for detail loss. Select based on equipment-specific held-out quality and serving cost. |
 | 7 | Generalization | Test independent reference illustrations, unseen body templates, animation families, styles, and equipment categories. Audit occlusion and flexible-item behavior separately. |
 | 8 | Serving pipeline | Versioned standalone inference, queued jobs, output caching, asset storage, and a measured single-GPU serving configuration. |
 | 9 | Website | Design approval, spritesheet upload/layout, fitting job status, layered animation preview, and downloads. |
