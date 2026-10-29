@@ -88,3 +88,32 @@ arbitrary generated glove illustration is **not yet a supported input contract**
 The next research stage must address reference normalization and appearance
 conditioning, and train/evaluate with independent illustrations. This baseline
 does not automatically infer frame layout or animation timing from a PNG.
+
+## Reference appearance diagnostic
+
+Run an existing checkpoint through the same benchmark without further training:
+
+```sh
+PYTHONPATH=src python -m equipment_fitter.appearance \
+  --checkpoint runs/iris-6257117/last.pt \
+  --manifest data/lpc-footwear/dataset.json \
+  --output runs/appearance-check --device cpu
+```
+
+On Iris, submit `sbatch hpc/appearance.sbatch CHECKPOINT MANIFEST` from the project
+root. This uses the shared module/venv setup and saves `runs/appearance-JOBID/`.
+
+The diagnostic excludes reference frames and reports per-design and pooled split
+scores after the same binary-alpha threshold and 8-bit quantization as PNG export.
+Target-foreground composite MAE penalizes missing equipment pixels, unlike RGB
+error that ignores predicted visibility. Comparisons include unchanged model
+output, copy-reference, and nearest visible-reference-palette projection in sRGB.
+Projection preserves predicted alpha and cannot repair missing geometry.
+
+A separate **palette oracle** projects target colors onto the reference palette,
+using true target geometry. It measures a representation bound; it is not a valid
+prediction and must not be presented as model performance. Reference-color
+inversion probes output sensitivity while holding bodies and alpha fixed. Because
+inverted references are outside this tiny training distribution, weak response is
+evidence of limited color control, not proof the entire reference is ignored.
+These are project diagnostic hypotheses, not reproduced paper methods.
