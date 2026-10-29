@@ -1,0 +1,1318 @@
+{
+  "protocol_sha256": "779e4d4197d3bcf2e1bcdbc70e66009816c9048aff787d8d86fb894c6351a2b3",
+  "dataset": {
+    "samples": 8,
+    "designs": 2,
+    "target_frames": {
+      "train": 0,
+      "val": 0,
+      "test": 56
+    },
+    "fingerprint": "e811e0089e65b5db46fb7f8ee3fb68091357a3383779eabbcc003a37634e63f4"
+  },
+  "results": [
+    {
+      "name": "unet-42",
+      "architecture": "unet",
+      "seed": 42,
+      "step": 1600,
+      "path": "runs/compare-6257841/unet-42/last.pt",
+      "sha256": "5959872e125884f74d24856c6643bd88393a3f83373bb6ac062d01b6598af6a3",
+      "designs": {
+        "slippers-north": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.2842535787321063,
+            "alpha_recall": 0.594017094017094,
+            "premultiplied_mae": 0.005349301733076572,
+            "target_foreground_composite_mae": 0.13532763532763534
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.3485714285714286,
+            "alpha_recall": 0.5213675213675214,
+            "premultiplied_mae": 0.0018750730669125915,
+            "target_foreground_composite_mae": 0.11628401449263266
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.0017528885509818792,
+            "target_foreground_composite_mae": 0.21478128025674412
+          }
+        },
+        "tabi-socks-north": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8156288156288156,
+            "alpha_recall": 0.8477157360406091,
+            "premultiplied_mae": 0.004520180635154247,
+            "target_foreground_composite_mae": 0.15759265725382693
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.7091319052987599,
+            "alpha_recall": 0.7982233502538071,
+            "premultiplied_mae": 0.002254893071949482,
+            "target_foreground_composite_mae": 0.06450184468690515
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005520496051758528,
+            "target_foreground_composite_mae": 0.2008675899602435
+          }
+        },
+        "slippers-west": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.5044883303411131,
+            "alpha_recall": 0.7205128205128205,
+            "premultiplied_mae": 0.005868265405297279,
+            "target_foreground_composite_mae": 0.2449103461371528
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.1623108665749656,
+            "alpha_recall": 0.30256410256410254,
+            "premultiplied_mae": 0.009078110568225384,
+            "target_foreground_composite_mae": 0.3682788816272703
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005497745703905821,
+            "target_foreground_composite_mae": 0.40418299487513354
+          }
+        },
+        "tabi-socks-west": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8476190476190476,
+            "alpha_recall": 0.9035532994923858,
+            "premultiplied_mae": 0.0036773369647562504,
+            "target_foreground_composite_mae": 0.16377250555203046
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.2478134110787172,
+            "alpha_recall": 0.43147208121827413,
+            "premultiplied_mae": 0.006587192416191101,
+            "target_foreground_composite_mae": 0.1701956553709285
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.004383315797895193,
+            "target_foreground_composite_mae": 0.21265386849288812
+          }
+        },
+        "slippers-south": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.4871060171919771,
+            "alpha_recall": 0.7053941908713693,
+            "premultiplied_mae": 0.007404915057122707,
+            "target_foreground_composite_mae": 0.23963605318821318
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.6363636363636364,
+            "alpha_recall": 0.7842323651452282,
+            "premultiplied_mae": 0.004868770483881235,
+            "target_foreground_composite_mae": 0.2369267422793482
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.007344461046159267,
+            "target_foreground_composite_mae": 0.43688876203481586
+          }
+        },
+        "tabi-socks-south": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.9313850063532402,
+            "alpha_recall": 0.9409499358151476,
+            "premultiplied_mae": 0.004428086336702108,
+            "target_foreground_composite_mae": 0.16066686118521342
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.6972972972972973,
+            "alpha_recall": 0.82798459563543,
+            "premultiplied_mae": 0.0032112584449350834,
+            "target_foreground_composite_mae": 0.08876639591816098
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005738376174122095,
+            "target_foreground_composite_mae": 0.2112076008069908
+          }
+        },
+        "slippers-east": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.4592720970537262,
+            "alpha_recall": 0.6794871794871795,
+            "premultiplied_mae": 0.006148970685899258,
+            "target_foreground_composite_mae": 0.24855033678886218
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.1623108665749656,
+            "alpha_recall": 0.30256410256410254,
+            "premultiplied_mae": 0.009078110568225384,
+            "target_foreground_composite_mae": 0.3682788816272703
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005497746169567108,
+            "target_foreground_composite_mae": 0.40418302095853365
+          }
+        },
+        "tabi-socks-east": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.863275039745628,
+            "alpha_recall": 0.9187817258883249,
+            "premultiplied_mae": 0.0037564376834779978,
+            "target_foreground_composite_mae": 0.1690322350998484
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.2478134110787172,
+            "alpha_recall": 0.43147208121827413,
+            "premultiplied_mae": 0.006587193347513676,
+            "target_foreground_composite_mae": 0.1701956381585325
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.004383315797895193,
+            "target_foreground_composite_mae": 0.21265386849288812
+          }
+        }
+      },
+      "metrics": {
+        "model": {
+          "frames": 56,
+          "alpha_iou": 0.675472425761666,
+          "alpha_recall": 0.825206124852768,
+          "premultiplied_mae": 0.005144186317920685,
+          "target_foreground_composite_mae": 0.185076806046329
+        },
+        "copy_reference": {
+          "frames": 56,
+          "alpha_iou": 0.4020421186981493,
+          "alpha_recall": 0.5936395759717314,
+          "premultiplied_mae": 0.005442575551569462,
+          "target_foreground_composite_mae": 0.1766347165476541
+        },
+        "empty": {
+          "frames": 56,
+          "alpha_iou": 0.0,
+          "alpha_recall": 0.0,
+          "premultiplied_mae": 0.005014793481677771,
+          "target_foreground_composite_mae": 0.27097132502699256
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-42",
+      "architecture": "reference_transfer",
+      "seed": 42,
+      "step": 1600,
+      "path": "runs/compare-6257841/reference_transfer-42/last.pt",
+      "sha256": "61028584d9945b855436c7d7bfb2f391da550799efbea92fb6f8f8ba7b298bed",
+      "designs": {
+        "slippers-north": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.33762886597938147,
+            "alpha_recall": 0.5598290598290598,
+            "premultiplied_mae": 0.0020200072322040796,
+            "target_foreground_composite_mae": 0.14037205622746393
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.3485714285714286,
+            "alpha_recall": 0.5213675213675214,
+            "premultiplied_mae": 0.0018750730669125915,
+            "target_foreground_composite_mae": 0.11628401449263266
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.0017528885509818792,
+            "target_foreground_composite_mae": 0.21478128025674412
+          }
+        },
+        "tabi-socks-north": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8458692971639951,
+            "alpha_recall": 0.8705583756345178,
+            "premultiplied_mae": 0.0015469079371541739,
+            "target_foreground_composite_mae": 0.05240038566782995
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.7091319052987599,
+            "alpha_recall": 0.7982233502538071,
+            "premultiplied_mae": 0.002254893071949482,
+            "target_foreground_composite_mae": 0.06450184468690515
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005520496051758528,
+            "target_foreground_composite_mae": 0.2008675899602435
+          }
+        },
+        "slippers-west": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.5186567164179104,
+            "alpha_recall": 0.7128205128205128,
+            "premultiplied_mae": 0.005079720634967089,
+            "target_foreground_composite_mae": 0.2415652804904514
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.1623108665749656,
+            "alpha_recall": 0.30256410256410254,
+            "premultiplied_mae": 0.009078110568225384,
+            "target_foreground_composite_mae": 0.3682788816272703
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005497745703905821,
+            "target_foreground_composite_mae": 0.40418299487513354
+          }
+        },
+        "tabi-socks-west": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8573643410852713,
+            "alpha_recall": 0.9357021996615905,
+            "premultiplied_mae": 0.0017294548451900482,
+            "target_foreground_composite_mae": 0.0699755587419143
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.2478134110787172,
+            "alpha_recall": 0.43147208121827413,
+            "premultiplied_mae": 0.006587192416191101,
+            "target_foreground_composite_mae": 0.1701956553709285
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.004383315797895193,
+            "target_foreground_composite_mae": 0.21265386849288812
+          }
+        },
+        "slippers-south": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.6504201680672269,
+            "alpha_recall": 0.8029045643153527,
+            "premultiplied_mae": 0.004311236087232828,
+            "target_foreground_composite_mae": 0.18600603159037862
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.6363636363636364,
+            "alpha_recall": 0.7842323651452282,
+            "premultiplied_mae": 0.004868770483881235,
+            "target_foreground_composite_mae": 0.2369267422793482
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.007344461046159267,
+            "target_foreground_composite_mae": 0.43688876203481586
+          }
+        },
+        "tabi-socks-south": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.9428208386277002,
+            "alpha_recall": 0.9525032092426188,
+            "premultiplied_mae": 0.0013119310606271029,
+            "target_foreground_composite_mae": 0.04672657122303902
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.6972972972972973,
+            "alpha_recall": 0.82798459563543,
+            "premultiplied_mae": 0.0032112584449350834,
+            "target_foreground_composite_mae": 0.08876639591816098
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005738376174122095,
+            "target_foreground_composite_mae": 0.2112076008069908
+          }
+        },
+        "slippers-east": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.47889908256880737,
+            "alpha_recall": 0.6692307692307692,
+            "premultiplied_mae": 0.0051468308083713055,
+            "target_foreground_composite_mae": 0.25504275590945513
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.1623108665749656,
+            "alpha_recall": 0.30256410256410254,
+            "premultiplied_mae": 0.009078110568225384,
+            "target_foreground_composite_mae": 0.3682788816272703
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005497746169567108,
+            "target_foreground_composite_mae": 0.40418302095853365
+          }
+        },
+        "tabi-socks-east": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8633540372670807,
+            "alpha_recall": 0.9407783417935702,
+            "premultiplied_mae": 0.0016029393300414085,
+            "target_foreground_composite_mae": 0.06416288097228831
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.2478134110787172,
+            "alpha_recall": 0.43147208121827413,
+            "premultiplied_mae": 0.006587193347513676,
+            "target_foreground_composite_mae": 0.1701956381585325
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.004383315797895193,
+            "target_foreground_composite_mae": 0.21265386849288812
+          }
+        }
+      },
+      "metrics": {
+        "model": {
+          "frames": 56,
+          "alpha_iou": 0.7259139567764088,
+          "alpha_recall": 0.846643109540636,
+          "premultiplied_mae": 0.002843628404662013,
+          "target_foreground_composite_mae": 0.11145969446284845
+        },
+        "copy_reference": {
+          "frames": 56,
+          "alpha_iou": 0.4020421186981493,
+          "alpha_recall": 0.5936395759717314,
+          "premultiplied_mae": 0.005442575551569462,
+          "target_foreground_composite_mae": 0.1766347165476541
+        },
+        "empty": {
+          "frames": 56,
+          "alpha_iou": 0.0,
+          "alpha_recall": 0.0,
+          "premultiplied_mae": 0.005014793481677771,
+          "target_foreground_composite_mae": 0.27097132502699256
+        }
+      }
+    },
+    {
+      "name": "unet-43",
+      "architecture": "unet",
+      "seed": 43,
+      "step": 1600,
+      "path": "runs/compare-6257841/unet-43/last.pt",
+      "sha256": "2d0dacebf33c6dc7184fec20dafdb22ef1ac8e45b466f1e5ef98f6aba4fa02ed",
+      "designs": {
+        "slippers-north": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.35142118863049093,
+            "alpha_recall": 0.5811965811965812,
+            "premultiplied_mae": 0.003877208335325122,
+            "target_foreground_composite_mae": 0.13605386239510994
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.3485714285714286,
+            "alpha_recall": 0.5213675213675214,
+            "premultiplied_mae": 0.0018750730669125915,
+            "target_foreground_composite_mae": 0.11628401449263266
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.0017528885509818792,
+            "target_foreground_composite_mae": 0.21478128025674412
+          }
+        },
+        "tabi-socks-north": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8392204628501827,
+            "alpha_recall": 0.8743654822335025,
+            "premultiplied_mae": 0.005073702894151211,
+            "target_foreground_composite_mae": 0.17835507981869977
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.7091319052987599,
+            "alpha_recall": 0.7982233502538071,
+            "premultiplied_mae": 0.002254893071949482,
+            "target_foreground_composite_mae": 0.06450184468690515
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005520496051758528,
+            "target_foreground_composite_mae": 0.2008675899602435
+          }
+        },
+        "slippers-west": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.4473684210526316,
+            "alpha_recall": 0.6102564102564103,
+            "premultiplied_mae": 0.00605641957372427,
+            "target_foreground_composite_mae": 0.2604625734508547
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.1623108665749656,
+            "alpha_recall": 0.30256410256410254,
+            "premultiplied_mae": 0.009078110568225384,
+            "target_foreground_composite_mae": 0.3682788816272703
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005497745703905821,
+            "target_foreground_composite_mae": 0.40418299487513354
+          }
+        },
+        "tabi-socks-west": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8626198083067093,
+            "alpha_recall": 0.9137055837563451,
+            "premultiplied_mae": 0.004076624289155006,
+            "target_foreground_composite_mae": 0.18892095214017554
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.2478134110787172,
+            "alpha_recall": 0.43147208121827413,
+            "premultiplied_mae": 0.006587192416191101,
+            "target_foreground_composite_mae": 0.1701956553709285
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.004383315797895193,
+            "target_foreground_composite_mae": 0.21265386849288812
+          }
+        },
+        "slippers-south": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.5205278592375366,
+            "alpha_recall": 0.7365145228215768,
+            "premultiplied_mae": 0.006902911234647036,
+            "target_foreground_composite_mae": 0.2176714589816736
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.6363636363636364,
+            "alpha_recall": 0.7842323651452282,
+            "premultiplied_mae": 0.004868770483881235,
+            "target_foreground_composite_mae": 0.2369267422793482
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.007344461046159267,
+            "target_foreground_composite_mae": 0.43688876203481586
+          }
+        },
+        "tabi-socks-south": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.9306431273644389,
+            "alpha_recall": 0.9473684210526315,
+            "premultiplied_mae": 0.005250231828540564,
+            "target_foreground_composite_mae": 0.1896750532157614
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.6972972972972973,
+            "alpha_recall": 0.82798459563543,
+            "premultiplied_mae": 0.0032112584449350834,
+            "target_foreground_composite_mae": 0.08876639591816098
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005738376174122095,
+            "target_foreground_composite_mae": 0.2112076008069908
+          }
+        },
+        "slippers-east": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.47731397459165154,
+            "alpha_recall": 0.6743589743589744,
+            "premultiplied_mae": 0.005940846633166075,
+            "target_foreground_composite_mae": 0.2382403512286325
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.1623108665749656,
+            "alpha_recall": 0.30256410256410254,
+            "premultiplied_mae": 0.009078110568225384,
+            "target_foreground_composite_mae": 0.3682788816272703
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005497746169567108,
+            "target_foreground_composite_mae": 0.40418302095853365
+          }
+        },
+        "tabi-socks-east": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8606811145510835,
+            "alpha_recall": 0.9407783417935702,
+            "premultiplied_mae": 0.004453845787793398,
+            "target_foreground_composite_mae": 0.19975006224002398
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.2478134110787172,
+            "alpha_recall": 0.43147208121827413,
+            "premultiplied_mae": 0.006587193347513676,
+            "target_foreground_composite_mae": 0.1701956381585325
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.004383315797895193,
+            "target_foreground_composite_mae": 0.21265386849288812
+          }
+        }
+      },
+      "metrics": {
+        "model": {
+          "frames": 56,
+          "alpha_iou": 0.6976974990075426,
+          "alpha_recall": 0.8280329799764429,
+          "premultiplied_mae": 0.005203973967581987,
+          "target_foreground_composite_mae": 0.20005973633195917
+        },
+        "copy_reference": {
+          "frames": 56,
+          "alpha_iou": 0.4020421186981493,
+          "alpha_recall": 0.5936395759717314,
+          "premultiplied_mae": 0.005442575551569462,
+          "target_foreground_composite_mae": 0.1766347165476541
+        },
+        "empty": {
+          "frames": 56,
+          "alpha_iou": 0.0,
+          "alpha_recall": 0.0,
+          "premultiplied_mae": 0.005014793481677771,
+          "target_foreground_composite_mae": 0.27097132502699256
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-43",
+      "architecture": "reference_transfer",
+      "seed": 43,
+      "step": 1600,
+      "path": "runs/compare-6257841/reference_transfer-43/last.pt",
+      "sha256": "3316e1bcb3dd3d4a9b320fe28caf4ba1b3561010cb7c423a5fc9f43397cf3fe9",
+      "designs": {
+        "slippers-north": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.344,
+            "alpha_recall": 0.5512820512820513,
+            "premultiplied_mae": 0.002010296331718564,
+            "target_foreground_composite_mae": 0.12740629147260618
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.3485714285714286,
+            "alpha_recall": 0.5213675213675214,
+            "premultiplied_mae": 0.0018750730669125915,
+            "target_foreground_composite_mae": 0.11628401449263266
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.0017528885509818792,
+            "target_foreground_composite_mae": 0.21478128025674412
+          }
+        },
+        "tabi-socks-north": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8548585485854858,
+            "alpha_recall": 0.881979695431472,
+            "premultiplied_mae": 0.001453400356695056,
+            "target_foreground_composite_mae": 0.04867456245745096
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.7091319052987599,
+            "alpha_recall": 0.7982233502538071,
+            "premultiplied_mae": 0.002254893071949482,
+            "target_foreground_composite_mae": 0.06450184468690515
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005520496051758528,
+            "target_foreground_composite_mae": 0.2008675899602435
+          }
+        },
+        "slippers-west": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.5271028037383177,
+            "alpha_recall": 0.7230769230769231,
+            "premultiplied_mae": 0.00538987759500742,
+            "target_foreground_composite_mae": 0.25008213662693646
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.1623108665749656,
+            "alpha_recall": 0.30256410256410254,
+            "premultiplied_mae": 0.009078110568225384,
+            "target_foreground_composite_mae": 0.3682788816272703
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005497745703905821,
+            "target_foreground_composite_mae": 0.40418299487513354
+          }
+        },
+        "tabi-socks-west": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8533541341653667,
+            "alpha_recall": 0.9255499153976311,
+            "premultiplied_mae": 0.0015505552291870117,
+            "target_foreground_composite_mae": 0.061519749744154945
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.2478134110787172,
+            "alpha_recall": 0.43147208121827413,
+            "premultiplied_mae": 0.006587192416191101,
+            "target_foreground_composite_mae": 0.1701956553709285
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.004383315797895193,
+            "target_foreground_composite_mae": 0.21265386849288812
+          }
+        },
+        "slippers-south": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.6170886075949367,
+            "alpha_recall": 0.8091286307053942,
+            "premultiplied_mae": 0.0048673115670681,
+            "target_foreground_composite_mae": 0.19661812894406985
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.6363636363636364,
+            "alpha_recall": 0.7842323651452282,
+            "premultiplied_mae": 0.004868770483881235,
+            "target_foreground_composite_mae": 0.2369267422793482
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.007344461046159267,
+            "target_foreground_composite_mae": 0.43688876203481586
+          }
+        },
+        "tabi-socks-south": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.9415501905972046,
+            "alpha_recall": 0.9512195121951219,
+            "premultiplied_mae": 0.0015487315831705928,
+            "target_foreground_composite_mae": 0.05539195069299583
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.6972972972972973,
+            "alpha_recall": 0.82798459563543,
+            "premultiplied_mae": 0.0032112584449350834,
+            "target_foreground_composite_mae": 0.08876639591816098
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005738376174122095,
+            "target_foreground_composite_mae": 0.2112076008069908
+          }
+        },
+        "slippers-east": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.5398886827458256,
+            "alpha_recall": 0.7461538461538462,
+            "premultiplied_mae": 0.0049212914891541,
+            "target_foreground_composite_mae": 0.23819003634982638
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.1623108665749656,
+            "alpha_recall": 0.30256410256410254,
+            "premultiplied_mae": 0.009078110568225384,
+            "target_foreground_composite_mae": 0.3682788816272703
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005497746169567108,
+            "target_foreground_composite_mae": 0.40418302095853365
+          }
+        },
+        "tabi-socks-east": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8631415241057543,
+            "alpha_recall": 0.9390862944162437,
+            "premultiplied_mae": 0.0014735972508788109,
+            "target_foreground_composite_mae": 0.05665594403244854
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.2478134110787172,
+            "alpha_recall": 0.43147208121827413,
+            "premultiplied_mae": 0.006587193347513676,
+            "target_foreground_composite_mae": 0.1701956381585325
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.004383315797895193,
+            "target_foreground_composite_mae": 0.21265386849288812
+          }
+        }
+      },
+      "metrics": {
+        "model": {
+          "frames": 56,
+          "alpha_iou": 0.7311178247734139,
+          "alpha_recall": 0.8551236749116607,
+          "premultiplied_mae": 0.0029018826317042112,
+          "target_foreground_composite_mae": 0.10986028101381527
+        },
+        "copy_reference": {
+          "frames": 56,
+          "alpha_iou": 0.4020421186981493,
+          "alpha_recall": 0.5936395759717314,
+          "premultiplied_mae": 0.005442575551569462,
+          "target_foreground_composite_mae": 0.1766347165476541
+        },
+        "empty": {
+          "frames": 56,
+          "alpha_iou": 0.0,
+          "alpha_recall": 0.0,
+          "premultiplied_mae": 0.005014793481677771,
+          "target_foreground_composite_mae": 0.27097132502699256
+        }
+      }
+    },
+    {
+      "name": "unet-44",
+      "architecture": "unet",
+      "seed": 44,
+      "step": 1600,
+      "path": "runs/compare-6257841/unet-44/last.pt",
+      "sha256": "a4b4f581b7538120d03f0e6a7cc293d2a09e964834d67ec39492738ee2488d29",
+      "designs": {
+        "slippers-north": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.3277511961722488,
+            "alpha_recall": 0.5854700854700855,
+            "premultiplied_mae": 0.004116014577448368,
+            "target_foreground_composite_mae": 0.13084744184445113
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.3485714285714286,
+            "alpha_recall": 0.5213675213675214,
+            "premultiplied_mae": 0.0018750730669125915,
+            "target_foreground_composite_mae": 0.11628401449263266
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.0017528885509818792,
+            "target_foreground_composite_mae": 0.21478128025674412
+          }
+        },
+        "tabi-socks-north": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.845873786407767,
+            "alpha_recall": 0.8845177664974619,
+            "premultiplied_mae": 0.003999575041234493,
+            "target_foreground_composite_mae": 0.13807107631728532
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.7091319052987599,
+            "alpha_recall": 0.7982233502538071,
+            "premultiplied_mae": 0.002254893071949482,
+            "target_foreground_composite_mae": 0.06450184468690515
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005520496051758528,
+            "target_foreground_composite_mae": 0.2008675899602435
+          }
+        },
+        "slippers-west": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.5241502683363148,
+            "alpha_recall": 0.7512820512820513,
+            "premultiplied_mae": 0.00562781747430563,
+            "target_foreground_composite_mae": 0.22819842477130076
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.1623108665749656,
+            "alpha_recall": 0.30256410256410254,
+            "premultiplied_mae": 0.009078110568225384,
+            "target_foreground_composite_mae": 0.3682788816272703
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005497745703905821,
+            "target_foreground_composite_mae": 0.40418299487513354
+          }
+        },
+        "tabi-socks-west": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.838258164852255,
+            "alpha_recall": 0.9120135363790186,
+            "premultiplied_mae": 0.0038251890800893307,
+            "target_foreground_composite_mae": 0.16957411575102227
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.2478134110787172,
+            "alpha_recall": 0.43147208121827413,
+            "premultiplied_mae": 0.006587192416191101,
+            "target_foreground_composite_mae": 0.1701956553709285
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.004383315797895193,
+            "target_foreground_composite_mae": 0.21265386849288812
+          }
+        },
+        "slippers-south": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.5266955266955267,
+            "alpha_recall": 0.7572614107883817,
+            "premultiplied_mae": 0.006490173749625683,
+            "target_foreground_composite_mae": 0.21852305980803727
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.6363636363636364,
+            "alpha_recall": 0.7842323651452282,
+            "premultiplied_mae": 0.004868770483881235,
+            "target_foreground_composite_mae": 0.2369267422793482
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.007344461046159267,
+            "target_foreground_composite_mae": 0.43688876203481586
+          }
+        },
+        "tabi-socks-south": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.9509433962264151,
+            "alpha_recall": 0.9704749679075738,
+            "premultiplied_mae": 0.003955397289246321,
+            "target_foreground_composite_mae": 0.14088952485240827
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.6972972972972973,
+            "alpha_recall": 0.82798459563543,
+            "premultiplied_mae": 0.0032112584449350834,
+            "target_foreground_composite_mae": 0.08876639591816098
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005738376174122095,
+            "target_foreground_composite_mae": 0.2112076008069908
+          }
+        },
+        "slippers-east": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.4839319470699433,
+            "alpha_recall": 0.6564102564102564,
+            "premultiplied_mae": 0.005536179523915052,
+            "target_foreground_composite_mae": 0.2509133885049412
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.1623108665749656,
+            "alpha_recall": 0.30256410256410254,
+            "premultiplied_mae": 0.009078110568225384,
+            "target_foreground_composite_mae": 0.3682788816272703
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005497746169567108,
+            "target_foreground_composite_mae": 0.40418302095853365
+          }
+        },
+        "tabi-socks-east": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8555555555555555,
+            "alpha_recall": 0.9120135363790186,
+            "premultiplied_mae": 0.003526658285409212,
+            "target_foreground_composite_mae": 0.15726752800250282
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.2478134110787172,
+            "alpha_recall": 0.43147208121827413,
+            "premultiplied_mae": 0.006587193347513676,
+            "target_foreground_composite_mae": 0.1701956381585325
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.004383315797895193,
+            "target_foreground_composite_mae": 0.21265386849288812
+          }
+        }
+      },
+      "metrics": {
+        "model": {
+          "frames": 56,
+          "alpha_iou": 0.703594578668238,
+          "alpha_recall": 0.8438162544169612,
+          "premultiplied_mae": 0.004634625744074583,
+          "target_foreground_composite_mae": 0.17303096320425992
+        },
+        "copy_reference": {
+          "frames": 56,
+          "alpha_iou": 0.4020421186981493,
+          "alpha_recall": 0.5936395759717314,
+          "premultiplied_mae": 0.005442575551569462,
+          "target_foreground_composite_mae": 0.1766347165476541
+        },
+        "empty": {
+          "frames": 56,
+          "alpha_iou": 0.0,
+          "alpha_recall": 0.0,
+          "premultiplied_mae": 0.005014793481677771,
+          "target_foreground_composite_mae": 0.27097132502699256
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-44",
+      "architecture": "reference_transfer",
+      "seed": 44,
+      "step": 1600,
+      "path": "runs/compare-6257841/reference_transfer-44/last.pt",
+      "sha256": "ed8fbd3c1793fca50961f62472b7190380f8ce6dea54d44a2e156c726b0c2f36",
+      "designs": {
+        "slippers-north": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.42032967032967034,
+            "alpha_recall": 0.6538461538461539,
+            "premultiplied_mae": 0.0017793771112337708,
+            "target_foreground_composite_mae": 0.11651863467659367
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.3485714285714286,
+            "alpha_recall": 0.5213675213675214,
+            "premultiplied_mae": 0.0018750730669125915,
+            "target_foreground_composite_mae": 0.11628401449263266
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.0017528885509818792,
+            "target_foreground_composite_mae": 0.21478128025674412
+          }
+        },
+        "tabi-socks-north": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8617283950617284,
+            "alpha_recall": 0.8857868020304569,
+            "premultiplied_mae": 0.0014945692382752895,
+            "target_foreground_composite_mae": 0.050560694660632136
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.7091319052987599,
+            "alpha_recall": 0.7982233502538071,
+            "premultiplied_mae": 0.002254893071949482,
+            "target_foreground_composite_mae": 0.06450184468690515
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005520496051758528,
+            "target_foreground_composite_mae": 0.2008675899602435
+          }
+        },
+        "slippers-west": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.4155597722960152,
+            "alpha_recall": 0.5615384615384615,
+            "premultiplied_mae": 0.0054951929487288,
+            "target_foreground_composite_mae": 0.2943656986595219
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.1623108665749656,
+            "alpha_recall": 0.30256410256410254,
+            "premultiplied_mae": 0.009078110568225384,
+            "target_foreground_composite_mae": 0.3682788816272703
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005497745703905821,
+            "target_foreground_composite_mae": 0.40418299487513354
+          }
+        },
+        "tabi-socks-west": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8441358024691358,
+            "alpha_recall": 0.9255499153976311,
+            "premultiplied_mae": 0.001924949698150158,
+            "target_foreground_composite_mae": 0.07924975262344455
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.2478134110787172,
+            "alpha_recall": 0.43147208121827413,
+            "premultiplied_mae": 0.006587192416191101,
+            "target_foreground_composite_mae": 0.1701956553709285
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.004383315797895193,
+            "target_foreground_composite_mae": 0.21265386849288812
+          }
+        },
+        "slippers-south": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.6073131955484896,
+            "alpha_recall": 0.7925311203319502,
+            "premultiplied_mae": 0.004801522940397263,
+            "target_foreground_composite_mae": 0.2126162622644364
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.6363636363636364,
+            "alpha_recall": 0.7842323651452282,
+            "premultiplied_mae": 0.004868770483881235,
+            "target_foreground_composite_mae": 0.2369267422793482
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.007344461046159267,
+            "target_foreground_composite_mae": 0.43688876203481586
+          }
+        },
+        "tabi-socks-south": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.94529262086514,
+            "alpha_recall": 0.9537869062901155,
+            "premultiplied_mae": 0.0013494068989530206,
+            "target_foreground_composite_mae": 0.048292180437994756
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.6972972972972973,
+            "alpha_recall": 0.82798459563543,
+            "premultiplied_mae": 0.0032112584449350834,
+            "target_foreground_composite_mae": 0.08876639591816098
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005738376174122095,
+            "target_foreground_composite_mae": 0.2112076008069908
+          }
+        },
+        "slippers-east": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.48333333333333334,
+            "alpha_recall": 0.6692307692307692,
+            "premultiplied_mae": 0.00526463845744729,
+            "target_foreground_composite_mae": 0.2618099375667735
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.1623108665749656,
+            "alpha_recall": 0.30256410256410254,
+            "premultiplied_mae": 0.009078110568225384,
+            "target_foreground_composite_mae": 0.3682788816272703
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.005497746169567108,
+            "target_foreground_composite_mae": 0.40418302095853365
+          }
+        },
+        "tabi-socks-east": {
+          "model": {
+            "frames": 7,
+            "alpha_iou": 0.8611111111111112,
+            "alpha_recall": 0.9441624365482234,
+            "premultiplied_mae": 0.0014846759149804711,
+            "target_foreground_composite_mae": 0.057569423101073394
+          },
+          "copy_reference": {
+            "frames": 7,
+            "alpha_iou": 0.2478134110787172,
+            "alpha_recall": 0.43147208121827413,
+            "premultiplied_mae": 0.006587193347513676,
+            "target_foreground_composite_mae": 0.1701956381585325
+          },
+          "empty": {
+            "frames": 7,
+            "alpha_iou": 0.0,
+            "alpha_recall": 0.0,
+            "premultiplied_mae": 0.004383315797895193,
+            "target_foreground_composite_mae": 0.21265386849288812
+          }
+        }
+      },
+      "metrics": {
+        "model": {
+          "frames": 56,
+          "alpha_iou": 0.7191033925686591,
+          "alpha_recall": 0.83886925795053,
+          "premultiplied_mae": 0.002949291840195656,
+          "target_foreground_composite_mae": 0.11895795566781998
+        },
+        "copy_reference": {
+          "frames": 56,
+          "alpha_iou": 0.4020421186981493,
+          "alpha_recall": 0.5936395759717314,
+          "premultiplied_mae": 0.005442575551569462,
+          "target_foreground_composite_mae": 0.1766347165476541
+        },
+        "empty": {
+          "frames": 56,
+          "alpha_iou": 0.0,
+          "alpha_recall": 0.0,
+          "premultiplied_mae": 0.005014793481677771,
+          "target_foreground_composite_mae": 0.27097132502699256
+        }
+      }
+    }
+  ],
+  "scope": "Frozen checkpoints, reserved designs; aligned reference per view, same body and walk. No training or checkpoint selection."
+}

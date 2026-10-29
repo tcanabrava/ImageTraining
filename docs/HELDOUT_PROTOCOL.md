@@ -29,3 +29,7 @@ inputs; targets enter scoring separately. No optimizer or training function runs
 After evaluation, these designs are no longer an untouched test for future model
 changes. Any changes informed by the result require a new independent evaluation
 set. This test does not authorize or validate production deployment.
+
+Evaluation status: completed as Iris job 6257931. See [results](RESULTS.md).
+The test set is now consumed; the original frozen protocol remains recorded in
+commit `d62dd34` and the saved run protocol/hash.

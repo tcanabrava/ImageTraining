@@ -311,3 +311,68 @@ Next: freeze the two candidate models and the evaluation protocol before scoring
 reserved slippers/tabi designs. Report all three seeds without choosing the best
 one, and include per-design/view failures. Do not tune on that test result; new
 model iterations will require a new untouched evaluation set.
+
+
+## Frozen reserved-design test (Iris job 6257931)
+
+The [protocol](HELDOUT_PROTOCOL.md) and exact checkpoint/dataset hashes were
+committed as `d62dd34` before evaluation. All six final checkpoints from job
+6257841 were scored without retraining, seed selection, palette snapping, or
+threshold changes. Iris completed inference and export in 17 seconds, exit code 0.
+There are 56 scored frames: slippers and tabi socks, four views, with one aligned
+reference per design/view excluded from scoring. Same body and walk as development.
+
+| Seed | U-Net foreground MAE ↓ | Transfer foreground MAE ↓ | U-Net IoU ↑ | Transfer IoU ↑ |
+| --- | ---: | ---: | ---: | ---: |
+| 42 | 0.18508 | 0.11146 | 0.6755 | 0.7259 |
+| 43 | 0.20006 | 0.10986 | 0.6977 | 0.7311 |
+| 44 | 0.17303 | 0.11896 | 0.7036 | 0.7191 |
+| Mean | 0.18606 | 0.11343 | 0.6923 | 0.7254 |
+
+These are actual PNG export scores (binary alpha, 8-bit color). Mean foreground
+composite MAE decreases by 39.0% and IoU improves in every seed. Mean alpha recall
+is 0.8324 versus 0.8469; mean whole-frame premultiplied MAE is 0.004994 versus
+0.002898. Copy-reference scores foreground MAE 0.17663, IoU 0.4020, and
+premultiplied MAE 0.005443: U-Net's mean foreground score is worse than this simple
+baseline, while transfer improves it. Do not substitute whole-frame error for
+small-equipment detail quality.
+
+Per-family means below weight each view and seed equally (not the pooled pixel
+weighting above):
+
+| Family | U-Net foreground MAE | Transfer foreground MAE | U-Net IoU | Transfer IoU |
+| --- | ---: | ---: | ---: | ---: |
+| Slippers | 0.21244 | 0.21005 | 0.4495 | 0.4950 |
+| Tabi socks | 0.16780 | 0.05760 | 0.8701 | 0.8779 |
+
+The appearance gain is overwhelmingly on tabi socks; slippers remain weak.
+Equal-design/seed foreground means by direction are north 0.14604→0.08932,
+west 0.20931→0.16613, south 0.19451→0.12428, east 0.21063→0.15557.
+These are descriptive breakdowns on just two new families, not confidence bounds.
+
+As predeclared, seed 42 previews from both architectures were inspected against
+ground truth: south slippers and west tabi socks. Transfer retains the tabi brown
+color where U-Net drifts to dark gray, but shape/detail mismatches persist. Slippers
+show misplaced or missing pixels and incorrect coverage, despite the aggregate
+improvement. Contact sheets do not establish temporal consistency or production
+quality. No independent drawings, new bodies, new movement families, or broader
+equipment categories have been tested.
+
+All predictions, input exports, previews, reports, and logs are retained on Iris
+and copied locally under `runs/heldout-6257931/` and `logs/heldout-6257931.*`.
+Versioned [evidence](benchmarks/heldout-6257931/) includes the full scores, frozen
+protocol, and per-candidate environment records. The copied protocol hash matches
+the precommitted file, and local source checkpoints still match their frozen hashes.
+Remote user launcher edits remain preserved and recorded as dirty in inference
+metadata. The freeze identifies exact weights independently of working-tree status.
+
+Validation: 32 tests pass, including frozen hash/fingerprint rejection, disjoint
+family validation, reference exclusion, and inference leaving checkpoints unchanged.
+The Slurm script passed ShellCheck; all six GPU evaluations completed.
+
+Decision: explicit reference color transfer is supported as a useful constrained
+mechanism on these two test families, with a serious remaining geometry limitation.
+Keep it experimental. Slippers/tabi are now a consumed test set and must not be
+claimed as untouched evidence for any future changes informed by these results.
+Next define a new benchmark with independently prepared references and broader
+attachment/occlusion cases before tuning or extending the model toward the product.

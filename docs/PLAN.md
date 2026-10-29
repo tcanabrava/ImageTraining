@@ -51,8 +51,10 @@ on experimental evidence; public website deployment is not part of the first ses
   22.1%, with mixed silhouette results and unresolved thin details. The variant
   remains experimental; the final architecture and RGBA representation are not selected.
 - Step 7: expanded four-view development data and reserved slippers/tabi test
-  families are prepared. The three-seed expanded comparison improves foreground
-  error and silhouette overlap, but reserved-test evaluation has not run.
+  families were evaluated under a precommitted hash-frozen protocol. Transfer
+  improves mean test foreground error by 39%, mainly on tabi socks; slippers
+  geometry remains weak. These test families are now consumed for future model
+  development. Independent-reference and broader-category testing remain outstanding.
 - Steps 8–9: not implemented. Representation fidelity, independent references,
   new bodies, and temporal/detail quality remain research gates.
 
