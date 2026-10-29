@@ -106,3 +106,9 @@ eight times its training-frame count. This approximately matches sampling exposu
 not elapsed time. Metrics across different datasets are not directly comparable.
 All four views occur in training and validation: this is not unseen-view testing.
 A reference is supplied for each view; this does not demonstrate cross-view synthesis.
+
+## Separately authored references
+
+Canonical models can now consume an explicit external reference image with reviewed
+provenance. See [the external-reference contract and authoring workflow](EXTERNAL_REFERENCES.md).
+No accepted real paired benchmark exists yet; the first generated candidate was rejected.

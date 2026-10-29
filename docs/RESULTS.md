@@ -502,3 +502,29 @@ retain the region variant as a measured ablation, not a demonstrated quality gai
 Next test shape/scale and independently prepared references under this contract,
 with new evaluation families before making further generalization claims. Do not
 reuse the consumed slippers/tabi test set to validate these new models.
+
+
+## External-reference infrastructure and first authoring trial
+
+The separately authored input path, review dossiers, hash/fingerprint validation,
+and explicit canonical-only handling are implemented in `6cda2f2`. Forty-one tests
+pass, including a complete synthetic-fixture pilot using an external reference,
+absence of a reference-body file, pending-review rejection, modified-image rejection,
+and target-frame-copy detection. These are software tests, not learned quality on
+independent artwork. Legacy frame-derived datasets retain their existing fingerprints.
+
+The unscored lace-cuff authoring trial imports a new credited target asset at the
+existing pinned LPC revision. A separately generated text-only candidate was made
+with built-in image_gen and saved locally. The prompt was informed by target
+inspection; no image was supplied to the generator. Its design is not a sufficient
+match: large ornate scalloped cuffs versus the tiny narrow target bands. Its native
+1536×1024 size also differs from the 64×64 model contract. The candidate was rejected;
+no real pair was accepted, and no HPC training or model evaluation ran on it.
+
+The [exact prompt](REFERENCE_CANDIDATE_PROMPT.txt),
+[review/hash](benchmarks/reference-authoring-trial.json), and
+[workflow](EXTERNAL_REFERENCES.md) record the outcome. Target assets, candidate image,
+and pending dossier are local under `data/reference-authoring-*`; they remain outside
+Git. This failed pairing is evidence that category-matching text generation alone
+cannot supply reliable same-design supervision. Design-first reference/layer authoring
+and fresh family splits remain necessary before claiming an independent-reference benchmark.

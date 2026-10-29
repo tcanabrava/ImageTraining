@@ -1,0 +1,20 @@
+{
+  "status": "rejected",
+  "reference": "data/reference-authoring-candidates/lace-cuffs-v1.png",
+  "sha256": "facabc7832d82ba457956bbcf7ff0f8fdb28e4bc949a656e175fcd6057330421",
+  "method": "text_to_image",
+  "tool": "built-in image_gen",
+  "prompt_file": "docs/REFERENCE_CANDIDATE_PROMPT.txt",
+  "input_images": [],
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "target_selection": "configs/lpc-reference-authoring.json",
+  "reviewer": "Codex",
+  "notes": "Generated cuffs have broad ornate scalloped frills rather than the tiny narrow lace bands in the selected targets. Category match is not sufficient same-design correspondence. Candidate is also not the required 64x64 frame size. No acceptance, training, or benchmark score. Authorship is separate generation from a text description informed by target inspection, not a claim of an independently invented matching design."
+}

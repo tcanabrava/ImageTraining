@@ -1,0 +1,59 @@
+{
+  "revision": "86160e7507d6841259cff624a51a63c1d4847ee3",
+  "description": "Unscored authoring trial: lace wrist cuffs. No independent reference pair accepted yet.",
+  "category": "wrist-cuffs",
+  "animation": "walk",
+  "view": "south",
+  "frame_size": [
+    64,
+    64
+  ],
+  "duration_ms": 100,
+  "reference_frame": 0,
+  "source_frames": [
+    [
+      64,
+      128
+    ],
+    [
+      128,
+      128
+    ],
+    [
+      192,
+      128
+    ],
+    [
+      256,
+      128
+    ],
+    [
+      320,
+      128
+    ],
+    [
+      384,
+      128
+    ],
+    [
+      448,
+      128
+    ],
+    [
+      512,
+      128
+    ]
+  ],
+  "base_layers": [
+    "spritesheets/body/bodies/male/walk.png",
+    "spritesheets/head/heads/human/male/walk.png"
+  ],
+  "equipment": [
+    {
+      "id": "lace-cuffs",
+      "design_id": "lpc-lace-cuffs",
+      "split": "train",
+      "path": "spritesheets/arms/wrists/lace/male/walk.png"
+    }
+  ]
+}

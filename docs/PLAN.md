@@ -61,6 +61,10 @@ on experimental evidence; public website deployment is not part of the first ses
   works without a reference body (~0.76 development IoU); a body-derived foot ROI
   shows no consistent primary-score benefit. Independent art, scale/shape changes,
   broader equipment, and new evaluation families remain outstanding.
+- External-reference data path: separately authored images and provenance are
+  now supported, with pending review dossiers and anti-copy checks. The first
+  text-generated lace-cuff candidate was rejected for a design mismatch. No real
+  independent-reference dataset or model score exists yet; see EXTERNAL_REFERENCES.md.
 - Steps 8–9: not implemented. Representation fidelity, independent references,
   new bodies, and temporal/detail quality remain research gates.
 
