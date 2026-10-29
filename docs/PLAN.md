@@ -55,6 +55,10 @@ on experimental evidence; public website deployment is not part of the first ses
   improves mean test foreground error by 39%, mainly on tabi socks; slippers
   geometry remains weak. These test families are now consumed for future model
   development. Independent-reference and broader-category testing remain outstanding.
+- Reference-domain gate: a frozen development registration stress test now shows
+  severe failure on shifted/centered standalone presentations. Separate reference
+  artifacts and provenance are implemented for this diagnostic; independent art
+  support is not. Canonical-reference/attachment conditioning is the next experiment.
 - Steps 8–9: not implemented. Representation fidelity, independent references,
   new bodies, and temporal/detail quality remain research gates.
 

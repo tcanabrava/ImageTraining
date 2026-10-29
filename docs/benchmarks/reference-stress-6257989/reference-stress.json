@@ -1,0 +1,1858 @@
+{
+  "environment": {
+    "python": "3.11.5",
+    "python_executable": "/mnt/aiongpfs/users/tcanabrava/ImageTraining/.venv-iris/bin/python",
+    "loaded_modules": [
+      "env/release/2023b",
+      "compiler/GCCcore/13.2.0",
+      "lib/zlib/1.2.13-GCCcore-13.2.0",
+      "tools/binutils/2.40-GCCcore-13.2.0",
+      "compiler/GCC/13.2.0",
+      "tools/numactl/2.0.16-GCCcore-13.2.0",
+      "tools/XZ/5.4.4-GCCcore-13.2.0",
+      "lib/libxml2/2.11.5-GCCcore-13.2.0",
+      "system/libpciaccess/0.17-GCCcore-13.2.0",
+      "system/hwloc/2.9.2-GCCcore-13.2.0",
+      "system/OpenSSL/1.1",
+      "lib/libevent/2.1.12-GCCcore-13.2.0",
+      "lib/UCX/1.15.0-GCCcore-13.2.0",
+      "lib/libfabric/1.19.0-GCCcore-13.2.0",
+      "lib/PMIx/4.2.6-GCCcore-13.2.0",
+      "lib/UCC/1.2.0-GCCcore-13.2.0",
+      "mpi/OpenMPI/4.1.6-GCC-13.2.0",
+      "numlib/OpenBLAS/0.3.24-GCC-13.2.0",
+      "lib/FlexiBLAS/3.3.1-GCC-13.2.0",
+      "numlib/FFTW/3.3.10-GCC-13.2.0",
+      "toolchain/gompi/2023b",
+      "numlib/FFTW.MPI/3.3.10-gompi-2023b",
+      "numlib/ScaLAPACK/2.2.0-gompi-2023b-fb",
+      "toolchain/foss/2023b",
+      "system/CUDA/12.6.0",
+      "numlib/cuDNN/9.5.0.50-CUDA-12.6.0",
+      "lib/GDRCopy/2.4-GCCcore-13.2.0",
+      "lib/UCX-CUDA/1.15.0-GCCcore-13.2.0-CUDA-12.6.0",
+      "math/magma/2.7.2-foss-2023b-CUDA-12.6.0",
+      "lib/NCCL/2.20.5-GCCcore-13.2.0-CUDA-12.6.0",
+      "tools/Ninja/1.11.1-GCCcore-13.2.0",
+      "tools/bzip2/1.0.8-GCCcore-13.2.0",
+      "devel/ncurses/6.4-GCCcore-13.2.0",
+      "lib/libreadline/8.2-GCCcore-13.2.0",
+      "lang/Tcl/8.6.13-GCCcore-13.2.0",
+      "devel/SQLite/3.43.1-GCCcore-13.2.0",
+      "lib/libffi/3.4.4-GCCcore-13.2.0",
+      "lang/Python/3.11.5-GCCcore-13.2.0",
+      "tools/cffi/1.15.1-GCCcore-13.2.0",
+      "tools/cryptography/41.0.5-GCCcore-13.2.0",
+      "tools/virtualenv/20.24.6-GCCcore-13.2.0",
+      "lang/Python-bundle-PyPI/2023.10-GCCcore-13.2.0",
+      "lib/Abseil/20240116.1-GCCcore-13.2.0",
+      "devel/protobuf/25.3-GCCcore-13.2.0",
+      "devel/protobuf-python/4.25.3-GCCcore-13.2.0",
+      "lib/pybind11/2.11.1-GCCcore-13.2.0",
+      "toolchain/gfbf/2023b",
+      "lang/SciPy-bundle/2023.11-gfbf-2023b",
+      "lib/libyaml/0.2.5-GCCcore-13.2.0",
+      "lib/PyYAML/6.0.1-GCCcore-13.2.0",
+      "math/GMP/6.3.0-GCCcore-13.2.0",
+      "math/MPFR/4.2.1-GCCcore-13.2.0",
+      "lang/NASM/2.16.01-GCCcore-13.2.0",
+      "vis/x264/20231019-GCCcore-13.2.0",
+      "data/LAME/3.100-GCCcore-13.2.0",
+      "vis/x265/3.5-GCCcore-13.2.0",
+      "tools/expat/2.5.0-GCCcore-13.2.0",
+      "lib/libpng/1.6.40-GCCcore-13.2.0",
+      "lib/Brotli/1.1.0-GCCcore-13.2.0",
+      "vis/freetype/2.13.2-GCCcore-13.2.0",
+      "tools/util-linux/2.39-GCCcore-13.2.0",
+      "vis/fontconfig/2.14.2-GCCcore-13.2.0",
+      "devel/xorg-macros/1.20.0-GCCcore-13.2.0",
+      "vis/X11/20231019-GCCcore-13.2.0",
+      "lang/FriBidi/1.0.13-GCCcore-13.2.0",
+      "lib/SDL2/2.28.5-GCCcore-13.2.0",
+      "vis/FFmpeg/6.0-GCCcore-13.2.0",
+      "lib/libjpeg-turbo/3.0.1-GCCcore-13.2.0",
+      "vis/jbigkit/2.1-GCCcore-13.2.0",
+      "tools/gzip/1.13-GCCcore-13.2.0",
+      "lib/lz4/1.9.4-GCCcore-13.2.0",
+      "lib/zstd/1.5.5-GCCcore-13.2.0",
+      "system/libdeflate/1.19-GCCcore-13.2.0",
+      "lib/LibTIFF/4.6.0-GCCcore-13.2.0",
+      "lib/giflib/5.2.1-GCCcore-13.2.0",
+      "lib/libwebp/1.3.2-GCCcore-13.2.0",
+      "lib/OpenJPEG/2.5.0-GCCcore-13.2.0",
+      "vis/LittleCMS/2.15-GCCcore-13.2.0",
+      "vis/Pillow/10.2.0-GCCcore-13.2.0",
+      "tools/expecttest/0.2.1-GCCcore-13.2.0",
+      "tools/networkx/3.2.1-gfbf-2023b",
+      "math/MPC/1.3.1-GCCcore-13.2.0",
+      "math/gmpy2/2.1.5-GCC-13.2.0",
+      "math/sympy/1.12-gfbf-2023b",
+      "tools/Z3/4.13.0-GCCcore-13.2.0",
+      "ai/PyTorch/2.3.0-foss-2023b-CUDA-12.6.0"
+    ],
+    "torch": "2.3.0",
+    "numpy": "1.26.2",
+    "pillow": "10.2.0",
+    "platform": "Linux-4.18.0-553.170.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "cuda_build": "12.6",
+    "device": "cuda",
+    "git_revision": "fc53f7ad532231a224bff48f35beb3c161ff5e39",
+    "git_dirty": true,
+    "gpu": "Tesla V100-SXM2-16GB",
+    "capability": [
+      7,
+      0
+    ],
+    "supported_architectures": [
+      "sm_70"
+    ]
+  },
+  "dataset": {
+    "samples": 32,
+    "designs": 7,
+    "target_frames": {
+      "train": 168,
+      "val": 56,
+      "test": 0
+    },
+    "fingerprint": "2daacc0965ecb1236368b1cc988a08e73f79ebfc866ef9bfff1336b76aa1f75e"
+  },
+  "protocol_sha256": "779e4d4197d3bcf2e1bcdbc70e66009816c9048aff787d8d86fb894c6351a2b3",
+  "conditions": [
+    "aligned",
+    "pair_shift",
+    "item_shift",
+    "centered_no_body"
+  ],
+  "results": [
+    {
+      "name": "unet-42",
+      "architecture": "unet",
+      "seed": 42,
+      "checkpoint_sha256": "5959872e125884f74d24856c6643bd88393a3f83373bb6ac062d01b6598af6a3",
+      "condition": "aligned",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.7276777067596358,
+        "alpha_recall": 0.8794475655430711,
+        "premultiplied_mae": 0.004895584192126989,
+        "target_foreground_composite_mae": 0.16849711176459115
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.9076923076923077,
+          "alpha_recall": 0.9759398496240601,
+          "premultiplied_mae": 0.003047084901481867,
+          "target_foreground_composite_mae": 0.11628876879699249
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.4672131147540984,
+          "alpha_recall": 0.7054455445544554,
+          "premultiplied_mae": 0.006921558175235987,
+          "target_foreground_composite_mae": 0.21499064731912645
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.8597662771285476,
+          "alpha_recall": 0.9147424511545293,
+          "premultiplied_mae": 0.0033169842790812254,
+          "target_foreground_composite_mae": 0.14938414118006216
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.6011029411764706,
+          "alpha_recall": 0.8134328358208955,
+          "premultiplied_mae": 0.004898815415799618,
+          "target_foreground_composite_mae": 0.18282769805756374
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.8760529482551144,
+          "alpha_recall": 0.8888888888888888,
+          "premultiplied_mae": 0.00429290859028697,
+          "target_foreground_composite_mae": 0.1470883547604739
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.5615050651230101,
+          "alpha_recall": 0.8546255506607929,
+          "premultiplied_mae": 0.007791892625391483,
+          "target_foreground_composite_mae": 0.25414469938796347
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.8527004909983633,
+          "alpha_recall": 0.9253996447602132,
+          "premultiplied_mae": 0.0035620827693492174,
+          "target_foreground_composite_mae": 0.15531875312222468
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.6120996441281139,
+          "alpha_recall": 0.8557213930348259,
+          "premultiplied_mae": 0.005333344452083111,
+          "target_foreground_composite_mae": 0.18592008271225255
+        }
+      }
+    },
+    {
+      "name": "unet-42",
+      "architecture": "unet",
+      "seed": 42,
+      "checkpoint_sha256": "5959872e125884f74d24856c6643bd88393a3f83373bb6ac062d01b6598af6a3",
+      "condition": "pair_shift",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.6943724546464273,
+        "alpha_recall": 0.8780430711610487,
+        "premultiplied_mae": 0.005351427011191845,
+        "target_foreground_composite_mae": 0.17525521229566557
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.8556005398110661,
+          "alpha_recall": 0.9533834586466166,
+          "premultiplied_mae": 0.0038642152212560177,
+          "target_foreground_composite_mae": 0.13426114419349156
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.5232919254658385,
+          "alpha_recall": 0.8341584158415841,
+          "premultiplied_mae": 0.007092616520822048,
+          "target_foreground_composite_mae": 0.19926876911629152
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.8,
+          "alpha_recall": 0.9023090586145648,
+          "premultiplied_mae": 0.003996384330093861,
+          "target_foreground_composite_mae": 0.16398379391929396
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.5932773109243697,
+          "alpha_recall": 0.8781094527363185,
+          "premultiplied_mae": 0.005356595851480961,
+          "target_foreground_composite_mae": 0.17146946541705535
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.8225806451612904,
+          "alpha_recall": 0.8717948717948718,
+          "premultiplied_mae": 0.005324317142367363,
+          "target_foreground_composite_mae": 0.1684806180960966
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.5026954177897575,
+          "alpha_recall": 0.8215859030837004,
+          "premultiplied_mae": 0.00800161249935627,
+          "target_foreground_composite_mae": 0.25010510863361557
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.8022875816993464,
+          "alpha_recall": 0.872113676731794,
+          "premultiplied_mae": 0.003949105739593506,
+          "target_foreground_composite_mae": 0.1616735825389006
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.6035398230088496,
+          "alpha_recall": 0.8482587064676617,
+          "premultiplied_mae": 0.005226569715887308,
+          "target_foreground_composite_mae": 0.1867980450935427
+        }
+      }
+    },
+    {
+      "name": "unet-42",
+      "architecture": "unet",
+      "seed": 42,
+      "checkpoint_sha256": "5959872e125884f74d24856c6643bd88393a3f83373bb6ac062d01b6598af6a3",
+      "condition": "item_shift",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.5432122742280054,
+        "alpha_recall": 0.6547284644194756,
+        "premultiplied_mae": 0.005945075303316116,
+        "target_foreground_composite_mae": 0.22406276364749142
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.5454545454545454,
+          "alpha_recall": 0.5593984962406015,
+          "premultiplied_mae": 0.0048387255519628525,
+          "target_foreground_composite_mae": 0.2035048558897243
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.3539967373572594,
+          "alpha_recall": 0.5371287128712872,
+          "premultiplied_mae": 0.006611447315663099,
+          "target_foreground_composite_mae": 0.22599173064279085
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.6677115987460815,
+          "alpha_recall": 0.7566607460035524,
+          "premultiplied_mae": 0.005761035718023777,
+          "target_foreground_composite_mae": 0.23068763095998002
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.481216457960644,
+          "alpha_recall": 0.6691542288557214,
+          "premultiplied_mae": 0.0063814399763941765,
+          "target_foreground_composite_mae": 0.2292297009014174
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.6037296037296037,
+          "alpha_recall": 0.6324786324786325,
+          "premultiplied_mae": 0.0063862730748951435,
+          "target_foreground_composite_mae": 0.21261222817619302
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.3990228013029316,
+          "alpha_recall": 0.539647577092511,
+          "premultiplied_mae": 0.007272746413946152,
+          "target_foreground_composite_mae": 0.3061155747737128
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.7095238095238096,
+          "alpha_recall": 0.7939609236234458,
+          "premultiplied_mae": 0.004790217150002718,
+          "target_foreground_composite_mae": 0.20046901307633955
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.5459459459459459,
+          "alpha_recall": 0.753731343283582,
+          "premultiplied_mae": 0.005518718156963587,
+          "target_foreground_composite_mae": 0.20539136035723077
+        }
+      }
+    },
+    {
+      "name": "unet-42",
+      "architecture": "unet",
+      "seed": 42,
+      "checkpoint_sha256": "5959872e125884f74d24856c6643bd88393a3f83373bb6ac062d01b6598af6a3",
+      "condition": "centered_no_body",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.14607571560480148,
+        "alpha_recall": 0.5554775280898876,
+        "premultiplied_mae": 0.03362283110618591,
+        "target_foreground_composite_mae": 0.22385742720890878
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.12398373983739837,
+          "alpha_recall": 0.45864661654135336,
+          "premultiplied_mae": 0.041852958500385284,
+          "target_foreground_composite_mae": 0.22866972729675752
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.08087535680304472,
+          "alpha_recall": 0.4207920792079208,
+          "premultiplied_mae": 0.03615898638963699,
+          "target_foreground_composite_mae": 0.24621111174227775
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.2170978627671541,
+          "alpha_recall": 0.6856127886323268,
+          "premultiplied_mae": 0.02776191383600235,
+          "target_foreground_composite_mae": 0.18665183176296996
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.16981132075471697,
+          "alpha_recall": 0.7164179104477612,
+          "premultiplied_mae": 0.028324279934167862,
+          "target_foreground_composite_mae": 0.20113161507728286
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.1303181295515523,
+          "alpha_recall": 0.41514041514041516,
+          "premultiplied_mae": 0.04151006415486336,
+          "target_foreground_composite_mae": 0.22787715304805148
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.08736559139784947,
+          "alpha_recall": 0.42951541850220265,
+          "premultiplied_mae": 0.041594497859478,
+          "target_foreground_composite_mae": 0.3164003346985132
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.2291904218928164,
+          "alpha_recall": 0.7140319715808171,
+          "premultiplied_mae": 0.026216192170977592,
+          "target_foreground_composite_mae": 0.19121653148590143
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.177819083023544,
+          "alpha_recall": 0.7139303482587065,
+          "premultiplied_mae": 0.025563782081007957,
+          "target_foreground_composite_mae": 0.20127468836643606
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-42",
+      "architecture": "reference_transfer",
+      "seed": 42,
+      "checkpoint_sha256": "61028584d9945b855436c7d7bfb2f391da550799efbea92fb6f8f8ba7b298bed",
+      "condition": "aligned",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.7774709015584927,
+        "alpha_recall": 0.9225187265917603,
+        "premultiplied_mae": 0.0033545689657330513,
+        "target_foreground_composite_mae": 0.13357875409644196
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.9372325249643366,
+          "alpha_recall": 0.98796992481203,
+          "premultiplied_mae": 0.0014154231175780296,
+          "target_foreground_composite_mae": 0.05519485664845708
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.6579861111111112,
+          "alpha_recall": 0.9381188118811881,
+          "premultiplied_mae": 0.0030985570047050714,
+          "target_foreground_composite_mae": 0.11302336135713181
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.8545150501672241,
+          "alpha_recall": 0.9076376554174067,
+          "premultiplied_mae": 0.002028897637501359,
+          "target_foreground_composite_mae": 0.08800659721740398
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.6850094876660342,
+          "alpha_recall": 0.8980099502487562,
+          "premultiplied_mae": 0.003756209509447217,
+          "target_foreground_composite_mae": 0.16842585574730515
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.8899408284023669,
+          "alpha_recall": 0.9181929181929182,
+          "premultiplied_mae": 0.005332570057362318,
+          "target_foreground_composite_mae": 0.1787210727640415
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.6158357771260997,
+          "alpha_recall": 0.9251101321585903,
+          "premultiplied_mae": 0.005455209407955408,
+          "target_foreground_composite_mae": 0.22336816997780148
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.8561872909698997,
+          "alpha_recall": 0.9094138543516874,
+          "premultiplied_mae": 0.002279193140566349,
+          "target_foreground_composite_mae": 0.10526474839205428
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.6439114391143912,
+          "alpha_recall": 0.8681592039800995,
+          "premultiplied_mae": 0.0034704897552728653,
+          "target_foreground_composite_mae": 0.15915845678022647
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-42",
+      "architecture": "reference_transfer",
+      "seed": 42,
+      "checkpoint_sha256": "61028584d9945b855436c7d7bfb2f391da550799efbea92fb6f8f8ba7b298bed",
+      "condition": "pair_shift",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.7339920197605928,
+        "alpha_recall": 0.9042602996254682,
+        "premultiplied_mae": 0.003750111674889922,
+        "target_foreground_composite_mae": 0.14027623856409957
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.8812154696132597,
+          "alpha_recall": 0.9593984962406015,
+          "premultiplied_mae": 0.0023600261192768812,
+          "target_foreground_composite_mae": 0.0837014105086936
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.5553772070626003,
+          "alpha_recall": 0.8564356435643564,
+          "premultiplied_mae": 0.0040886602364480495,
+          "target_foreground_composite_mae": 0.13245970974660942
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.7944785276073619,
+          "alpha_recall": 0.9200710479573713,
+          "premultiplied_mae": 0.0024448256008327007,
+          "target_foreground_composite_mae": 0.08907695293708832
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.6241258741258742,
+          "alpha_recall": 0.8880597014925373,
+          "premultiplied_mae": 0.003815797157585621,
+          "target_foreground_composite_mae": 0.1560855947719087
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.8857142857142857,
+          "alpha_recall": 0.9084249084249084,
+          "premultiplied_mae": 0.005558747332543135,
+          "target_foreground_composite_mae": 0.18797833229595926
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.5414908579465542,
+          "alpha_recall": 0.8480176211453745,
+          "premultiplied_mae": 0.0058661228977143764,
+          "target_foreground_composite_mae": 0.22820247252432085
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.8557046979865772,
+          "alpha_recall": 0.9058614564831261,
+          "premultiplied_mae": 0.002354874275624752,
+          "target_foreground_composite_mae": 0.10554105082230147
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.6697247706422018,
+          "alpha_recall": 0.9079601990049752,
+          "premultiplied_mae": 0.0035118411760777235,
+          "target_foreground_composite_mae": 0.14977726216735335
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-42",
+      "architecture": "reference_transfer",
+      "seed": 42,
+      "checkpoint_sha256": "61028584d9945b855436c7d7bfb2f391da550799efbea92fb6f8f8ba7b298bed",
+      "condition": "item_shift",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.3693243243243243,
+        "alpha_recall": 0.639747191011236,
+        "premultiplied_mae": 0.006462757010012865,
+        "target_foreground_composite_mae": 0.21847629428058676
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.3952380952380952,
+          "alpha_recall": 0.6240601503759399,
+          "premultiplied_mae": 0.007091567851603031,
+          "target_foreground_composite_mae": 0.23663473870222432
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.31290743155149936,
+          "alpha_recall": 0.594059405940594,
+          "premultiplied_mae": 0.005056970752775669,
+          "target_foreground_composite_mae": 0.1868989900393848
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.4114583333333333,
+          "alpha_recall": 0.7015985790408525,
+          "premultiplied_mae": 0.0060136099345982075,
+          "target_foreground_composite_mae": 0.20886010033905048
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.30440097799511,
+          "alpha_recall": 0.6194029850746269,
+          "premultiplied_mae": 0.00788553711026907,
+          "target_foreground_composite_mae": 0.2323383185796279
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.37393986121819583,
+          "alpha_recall": 0.5921855921855922,
+          "premultiplied_mae": 0.008723912760615349,
+          "target_foreground_composite_mae": 0.21097943217083842
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.36675461741424803,
+          "alpha_recall": 0.6123348017621145,
+          "premultiplied_mae": 0.00656129652634263,
+          "target_foreground_composite_mae": 0.2929860925884499
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.41875,
+          "alpha_recall": 0.7140319715808171,
+          "premultiplied_mae": 0.005498703569173813,
+          "target_foreground_composite_mae": 0.20161599700728983
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.34050632911392403,
+          "alpha_recall": 0.6691542288557214,
+          "premultiplied_mae": 0.004870457574725151,
+          "target_foreground_composite_mae": 0.17451631410007257
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-42",
+      "architecture": "reference_transfer",
+      "seed": 42,
+      "checkpoint_sha256": "61028584d9945b855436c7d7bfb2f391da550799efbea92fb6f8f8ba7b298bed",
+      "condition": "centered_no_body",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.12088749439713133,
+        "alpha_recall": 0.6313202247191011,
+        "premultiplied_mae": 0.02998916618525982,
+        "target_foreground_composite_mae": 0.23074710383992666
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.14781448114781448,
+          "alpha_recall": 0.6661654135338346,
+          "premultiplied_mae": 0.03267805278301239,
+          "target_foreground_composite_mae": 0.2247540543252663
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.10513833992094862,
+          "alpha_recall": 0.6584158415841584,
+          "premultiplied_mae": 0.02295701578259468,
+          "target_foreground_composite_mae": 0.23045041930950907
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.14112458654906285,
+          "alpha_recall": 0.6820603907637656,
+          "premultiplied_mae": 0.026149170473217964,
+          "target_foreground_composite_mae": 0.1863569369183411
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.1201535508637236,
+          "alpha_recall": 0.7786069651741293,
+          "premultiplied_mae": 0.029507869854569435,
+          "target_foreground_composite_mae": 0.22305791294989893
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.10987996306555864,
+          "alpha_recall": 0.4358974358974359,
+          "premultiplied_mae": 0.03444256633520126,
+          "target_foreground_composite_mae": 0.232036536235755
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.09012392039053699,
+          "alpha_recall": 0.5286343612334802,
+          "premultiplied_mae": 0.03636614978313446,
+          "target_foreground_composite_mae": 0.3597190061504795
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.13979627678257817,
+          "alpha_recall": 0.7069271758436945,
+          "premultiplied_mae": 0.027459507808089256,
+          "target_foreground_composite_mae": 0.19064999586594322
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.10971089696071164,
+          "alpha_recall": 0.736318407960199,
+          "premultiplied_mae": 0.030352994799613953,
+          "target_foreground_composite_mae": 0.21869086270308613
+        }
+      }
+    },
+    {
+      "name": "unet-43",
+      "architecture": "unet",
+      "seed": 43,
+      "checkpoint_sha256": "2d0dacebf33c6dc7184fec20dafdb22ef1ac8e45b466f1e5ef98f6aba4fa02ed",
+      "condition": "aligned",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.739105283455457,
+        "alpha_recall": 0.8972378277153558,
+        "premultiplied_mae": 0.00503512704744935,
+        "target_foreground_composite_mae": 0.17141746492421583
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.9246861924686193,
+          "alpha_recall": 0.9969924812030075,
+          "premultiplied_mae": 0.0029508876614272594,
+          "target_foreground_composite_mae": 0.11427000423421836
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.48870967741935484,
+          "alpha_recall": 0.75,
+          "premultiplied_mae": 0.0072287521325051785,
+          "target_foreground_composite_mae": 0.20858410876182834
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.8530884808013356,
+          "alpha_recall": 0.9076376554174067,
+          "premultiplied_mae": 0.003479699371382594,
+          "target_foreground_composite_mae": 0.16198007731553435
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.5956678700361011,
+          "alpha_recall": 0.8208955223880597,
+          "premultiplied_mae": 0.005213850177824497,
+          "target_foreground_composite_mae": 0.18670048247126994
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.8983253588516746,
+          "alpha_recall": 0.9169719169719169,
+          "premultiplied_mae": 0.00473683001473546,
+          "target_foreground_composite_mae": 0.16144987485929868
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.5906432748538012,
+          "alpha_recall": 0.8898678414096917,
+          "premultiplied_mae": 0.007456342224031687,
+          "target_foreground_composite_mae": 0.2368604573209205
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.8419354838709677,
+          "alpha_recall": 0.9271758436944938,
+          "premultiplied_mae": 0.003896174719557166,
+          "target_foreground_composite_mae": 0.16579020326839106
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.6276978417266187,
+          "alpha_recall": 0.8681592039800995,
+          "premultiplied_mae": 0.00531848194077611,
+          "target_foreground_composite_mae": 0.1808148790552446
+        }
+      }
+    },
+    {
+      "name": "unet-43",
+      "architecture": "unet",
+      "seed": 43,
+      "checkpoint_sha256": "2d0dacebf33c6dc7184fec20dafdb22ef1ac8e45b466f1e5ef98f6aba4fa02ed",
+      "condition": "pair_shift",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.5799217338952438,
+        "alpha_recall": 0.9019194756554307,
+        "premultiplied_mae": 0.00834165420383215,
+        "target_foreground_composite_mae": 0.18322778670826506
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.7248554913294798,
+          "alpha_recall": 0.9428571428571428,
+          "premultiplied_mae": 0.0065426952205598354,
+          "target_foreground_composite_mae": 0.15439777422070802
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.45803698435277385,
+          "alpha_recall": 0.7970297029702971,
+          "premultiplied_mae": 0.008538722060620785,
+          "target_foreground_composite_mae": 0.20369184135210397
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.6259168704156479,
+          "alpha_recall": 0.9094138543516874,
+          "premultiplied_mae": 0.007526735309511423,
+          "target_foreground_composite_mae": 0.1786740236976854
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.480946123521682,
+          "alpha_recall": 0.9104477611940298,
+          "premultiplied_mae": 0.008363241329789162,
+          "target_foreground_composite_mae": 0.16897213557861732
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.7660455486542443,
+          "alpha_recall": 0.9035409035409036,
+          "premultiplied_mae": 0.007519531063735485,
+          "target_foreground_composite_mae": 0.18515009680170813
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.5006553079947575,
+          "alpha_recall": 0.8414096916299559,
+          "premultiplied_mae": 0.008878877386450768,
+          "target_foreground_composite_mae": 0.24719704335306533
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.5786578657865786,
+          "alpha_recall": 0.9342806394316163,
+          "premultiplied_mae": 0.00907063391059637,
+          "target_foreground_composite_mae": 0.1633267354654659
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.440046565774156,
+          "alpha_recall": 0.9402985074626866,
+          "premultiplied_mae": 0.010292795486748219,
+          "target_foreground_composite_mae": 0.18269764408345643
+        }
+      }
+    },
+    {
+      "name": "unet-43",
+      "architecture": "unet",
+      "seed": 43,
+      "checkpoint_sha256": "2d0dacebf33c6dc7184fec20dafdb22ef1ac8e45b466f1e5ef98f6aba4fa02ed",
+      "condition": "item_shift",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.5294680443934175,
+        "alpha_recall": 0.6477059925093633,
+        "premultiplied_mae": 0.0066450247541069984,
+        "target_foreground_composite_mae": 0.25424563899617664
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.4421199442119944,
+          "alpha_recall": 0.4766917293233083,
+          "premultiplied_mae": 0.00648251548409462,
+          "target_foreground_composite_mae": 0.258041190623042
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.3440453686200378,
+          "alpha_recall": 0.4504950495049505,
+          "premultiplied_mae": 0.005441349931061268,
+          "target_foreground_composite_mae": 0.2306769090910556
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.6119828815977175,
+          "alpha_recall": 0.7619893428063943,
+          "premultiplied_mae": 0.007556141819804907,
+          "target_foreground_composite_mae": 0.2740919023946307
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.5087719298245614,
+          "alpha_recall": 0.7213930348258707,
+          "premultiplied_mae": 0.007153161335736513,
+          "target_foreground_composite_mae": 0.26681300933483626
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.5213581599123768,
+          "alpha_recall": 0.5811965811965812,
+          "premultiplied_mae": 0.008250949904322624,
+          "target_foreground_composite_mae": 0.2488847234940985
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.4424920127795527,
+          "alpha_recall": 0.6101321585903083,
+          "premultiplied_mae": 0.007069090846925974,
+          "target_foreground_composite_mae": 0.29023928649274966
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.7635467980295566,
+          "alpha_recall": 0.8259325044404974,
+          "premultiplied_mae": 0.005253104027360678,
+          "target_foreground_composite_mae": 0.2353057409617377
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.5900178253119429,
+          "alpha_recall": 0.8233830845771144,
+          "premultiplied_mae": 0.005953886080533266,
+          "target_foreground_composite_mae": 0.2280883282966677
+        }
+      }
+    },
+    {
+      "name": "unet-43",
+      "architecture": "unet",
+      "seed": 43,
+      "checkpoint_sha256": "2d0dacebf33c6dc7184fec20dafdb22ef1ac8e45b466f1e5ef98f6aba4fa02ed",
+      "condition": "centered_no_body",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.18090393498216686,
+        "alpha_recall": 0.724250936329588,
+        "premultiplied_mae": 0.038162995129823685,
+        "target_foreground_composite_mae": 0.2166624033495728
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.16106194690265488,
+          "alpha_recall": 0.5473684210526316,
+          "premultiplied_mae": 0.042801570147275925,
+          "target_foreground_composite_mae": 0.2296741915824718
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.1310065756196257,
+          "alpha_recall": 0.6410891089108911,
+          "premultiplied_mae": 0.03649521991610527,
+          "target_foreground_composite_mae": 0.23775968142468543
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.22237442922374429,
+          "alpha_recall": 0.8650088809946714,
+          "premultiplied_mae": 0.03688324615359306,
+          "target_foreground_composite_mae": 0.18608529614301178
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.16223524109959442,
+          "alpha_recall": 0.8955223880597015,
+          "premultiplied_mae": 0.03797597438097,
+          "target_foreground_composite_mae": 0.19468671251489947
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.17857142857142858,
+          "alpha_recall": 0.5372405372405372,
+          "premultiplied_mae": 0.04358851909637451,
+          "target_foreground_composite_mae": 0.2345120744778948
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.15693069306930693,
+          "alpha_recall": 0.698237885462555,
+          "premultiplied_mae": 0.039264287799596786,
+          "target_foreground_composite_mae": 0.2784803393303735
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.24937027707808565,
+          "alpha_recall": 0.8792184724689165,
+          "premultiplied_mae": 0.033296678215265274,
+          "target_foreground_composite_mae": 0.1773366527207297
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.18712273641851107,
+          "alpha_recall": 0.9253731343283582,
+          "premultiplied_mae": 0.03499846160411835,
+          "target_foreground_composite_mae": 0.18763047150316128
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-43",
+      "architecture": "reference_transfer",
+      "seed": 43,
+      "checkpoint_sha256": "3316e1bcb3dd3d4a9b320fe28caf4ba1b3561010cb7c423a5fc9f43397cf3fe9",
+      "condition": "aligned",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.7912087912087912,
+        "alpha_recall": 0.9269662921348315,
+        "premultiplied_mae": 0.003278186544775963,
+        "target_foreground_composite_mae": 0.1246976816698853
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.9592430858806404,
+          "alpha_recall": 0.9909774436090225,
+          "premultiplied_mae": 0.0011991842184215784,
+          "target_foreground_composite_mae": 0.048035780827801924
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.6701208981001727,
+          "alpha_recall": 0.9603960396039604,
+          "premultiplied_mae": 0.0033410564064979553,
+          "target_foreground_composite_mae": 0.11364461565175073
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.8724489795918368,
+          "alpha_recall": 0.911190053285968,
+          "premultiplied_mae": 0.0017977048410102725,
+          "target_foreground_composite_mae": 0.08034224027427009
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.6779026217228464,
+          "alpha_recall": 0.900497512437811,
+          "premultiplied_mae": 0.0038233196828514338,
+          "target_foreground_composite_mae": 0.17322539017963567
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.896969696969697,
+          "alpha_recall": 0.9035409035409036,
+          "premultiplied_mae": 0.0047478629276156425,
+          "target_foreground_composite_mae": 0.1643260417064128
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.6462686567164179,
+          "alpha_recall": 0.9537444933920705,
+          "premultiplied_mae": 0.005590660963207483,
+          "target_foreground_composite_mae": 0.19757277254841227
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.8646362098138748,
+          "alpha_recall": 0.9076376554174067,
+          "premultiplied_mae": 0.0018578852759674191,
+          "target_foreground_composite_mae": 0.08228328652887248
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.6666666666666666,
+          "alpha_recall": 0.8805970149253731,
+          "premultiplied_mae": 0.003867817111313343,
+          "target_foreground_composite_mae": 0.172578270755597
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-43",
+      "architecture": "reference_transfer",
+      "seed": 43,
+      "checkpoint_sha256": "3316e1bcb3dd3d4a9b320fe28caf4ba1b3561010cb7c423a5fc9f43397cf3fe9",
+      "condition": "pair_shift",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.6093949044585987,
+        "alpha_recall": 0.8958333333333334,
+        "premultiplied_mae": 0.005123773589730263,
+        "target_foreground_composite_mae": 0.1333171258704939
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.7322654462242563,
+          "alpha_recall": 0.9624060150375939,
+          "premultiplied_mae": 0.004023693036288023,
+          "target_foreground_composite_mae": 0.07776304163729636
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.41492146596858637,
+          "alpha_recall": 0.7846534653465347,
+          "premultiplied_mae": 0.005659503396600485,
+          "target_foreground_composite_mae": 0.14946936931547158
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.6649076517150396,
+          "alpha_recall": 0.8952042628774423,
+          "premultiplied_mae": 0.003681759350001812,
+          "target_foreground_composite_mae": 0.08515538994273608
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.5306122448979592,
+          "alpha_recall": 0.9054726368159204,
+          "premultiplied_mae": 0.00531063973903656,
+          "target_foreground_composite_mae": 0.16579195595103907
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.752832131822863,
+          "alpha_recall": 0.8925518925518926,
+          "premultiplied_mae": 0.006004583090543747,
+          "target_foreground_composite_mae": 0.15495703343603734
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.4988207547169811,
+          "alpha_recall": 0.9317180616740088,
+          "premultiplied_mae": 0.008262667804956436,
+          "target_foreground_composite_mae": 0.22847025194882295
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.6777777777777778,
+          "alpha_recall": 0.866785079928952,
+          "premultiplied_mae": 0.0030884358566254377,
+          "target_foreground_composite_mae": 0.08747954111680821
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.5462822458270106,
+          "alpha_recall": 0.8955223880597015,
+          "premultiplied_mae": 0.0049589043483138084,
+          "target_foreground_composite_mae": 0.15660586127792028
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-43",
+      "architecture": "reference_transfer",
+      "seed": 43,
+      "checkpoint_sha256": "3316e1bcb3dd3d4a9b320fe28caf4ba1b3561010cb7c423a5fc9f43397cf3fe9",
+      "condition": "item_shift",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.5593017285640938,
+        "alpha_recall": 0.7649812734082397,
+        "premultiplied_mae": 0.004852529149502516,
+        "target_foreground_composite_mae": 0.18263139855697955
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.6153846153846154,
+          "alpha_recall": 0.806015037593985,
+          "premultiplied_mae": 0.00474649528041482,
+          "target_foreground_composite_mae": 0.16756989519697682
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.3969465648854962,
+          "alpha_recall": 0.6435643564356436,
+          "premultiplied_mae": 0.004126318730413914,
+          "target_foreground_composite_mae": 0.174328618317154
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.6050775740479548,
+          "alpha_recall": 0.7619893428063943,
+          "premultiplied_mae": 0.0039155506528913975,
+          "target_foreground_composite_mae": 0.16017135520740822
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.5321739130434783,
+          "alpha_recall": 0.7611940298507462,
+          "premultiplied_mae": 0.005553094204515219,
+          "target_foreground_composite_mae": 0.23811661702878836
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.656701030927835,
+          "alpha_recall": 0.7777777777777778,
+          "premultiplied_mae": 0.005352401174604893,
+          "target_foreground_composite_mae": 0.16008043425035612
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.6043956043956044,
+          "alpha_recall": 0.8480176211453745,
+          "premultiplied_mae": 0.005599277559667826,
+          "target_foreground_composite_mae": 0.24732372939324063
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.5278137128072445,
+          "alpha_recall": 0.7246891651865008,
+          "premultiplied_mae": 0.0040380083955824375,
+          "target_foreground_composite_mae": 0.1604940935025348
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.47013782542113325,
+          "alpha_recall": 0.763681592039801,
+          "premultiplied_mae": 0.00548908393830061,
+          "target_foreground_composite_mae": 0.19574675552089812
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-43",
+      "architecture": "reference_transfer",
+      "seed": 43,
+      "checkpoint_sha256": "3316e1bcb3dd3d4a9b320fe28caf4ba1b3561010cb7c423a5fc9f43397cf3fe9",
+      "condition": "centered_no_body",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.24420841348164254,
+        "alpha_recall": 0.6835205992509363,
+        "premultiplied_mae": 0.015021857805550098,
+        "target_foreground_composite_mae": 0.21950444329841604
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.20141570141570142,
+          "alpha_recall": 0.4706766917293233,
+          "premultiplied_mae": 0.016254158690571785,
+          "target_foreground_composite_mae": 0.2503946022282268
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.11756061719324026,
+          "alpha_recall": 0.39603960396039606,
+          "premultiplied_mae": 0.012346176430583,
+          "target_foreground_composite_mae": 0.25193816836517635
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.3078484438430311,
+          "alpha_recall": 0.8081705150976909,
+          "premultiplied_mae": 0.012981261126697063,
+          "target_foreground_composite_mae": 0.17523771549132253
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.23504273504273504,
+          "alpha_recall": 0.8208955223880597,
+          "premultiplied_mae": 0.015144014731049538,
+          "target_foreground_composite_mae": 0.2181153052284152
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.29245794899620187,
+          "alpha_recall": 0.6581196581196581,
+          "premultiplied_mae": 0.017211388796567917,
+          "target_foreground_composite_mae": 0.19255108769268925
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.24005681818181818,
+          "alpha_recall": 0.7444933920704846,
+          "premultiplied_mae": 0.018297463655471802,
+          "target_foreground_composite_mae": 0.3146987220439267
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.2886334610472541,
+          "alpha_recall": 0.8028419182948491,
+          "premultiplied_mae": 0.013808375224471092,
+          "target_foreground_composite_mae": 0.17479886946556764
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.2479523454951601,
+          "alpha_recall": 0.8283582089552238,
+          "premultiplied_mae": 0.014132028445601463,
+          "target_foreground_composite_mae": 0.20920886645467324
+        }
+      }
+    },
+    {
+      "name": "unet-44",
+      "architecture": "unet",
+      "seed": 44,
+      "checkpoint_sha256": "a4b4f581b7538120d03f0e6a7cc293d2a09e964834d67ec39492738ee2488d29",
+      "condition": "aligned",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.7543893874365978,
+        "alpha_recall": 0.9051966292134831,
+        "premultiplied_mae": 0.00449170358479023,
+        "target_foreground_composite_mae": 0.1570016715708148
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.9136490250696379,
+          "alpha_recall": 0.9864661654135338,
+          "premultiplied_mae": 0.0027414874639362097,
+          "target_foreground_composite_mae": 0.10390486561863643
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.5430016863406408,
+          "alpha_recall": 0.7970297029702971,
+          "premultiplied_mae": 0.0060822246596217155,
+          "target_foreground_composite_mae": 0.1947582987668884
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.8486842105263158,
+          "alpha_recall": 0.91651865008881,
+          "premultiplied_mae": 0.003278596792370081,
+          "target_foreground_composite_mae": 0.14479156186977316
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.64568345323741,
+          "alpha_recall": 0.8930348258706468,
+          "premultiplied_mae": 0.004831066355109215,
+          "target_foreground_composite_mae": 0.1725555217483546
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.8994011976047904,
+          "alpha_recall": 0.9169719169719169,
+          "premultiplied_mae": 0.00401407340541482,
+          "target_foreground_composite_mae": 0.13581524586163257
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.6050670640834576,
+          "alpha_recall": 0.8942731277533039,
+          "premultiplied_mae": 0.006920372601598501,
+          "target_foreground_composite_mae": 0.2423656312379543
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.8530884808013356,
+          "alpha_recall": 0.9076376554174067,
+          "premultiplied_mae": 0.0031229029409587383,
+          "target_foreground_composite_mae": 0.1397276585309586
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.6336996336996337,
+          "alpha_recall": 0.8606965174129353,
+          "premultiplied_mae": 0.004942901898175478,
+          "target_foreground_composite_mae": 0.1793873851769797
+        }
+      }
+    },
+    {
+      "name": "unet-44",
+      "architecture": "unet",
+      "seed": 44,
+      "checkpoint_sha256": "a4b4f581b7538120d03f0e6a7cc293d2a09e964834d67ec39492738ee2488d29",
+      "condition": "pair_shift",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.7062228654124457,
+        "alpha_recall": 0.9138576779026217,
+        "premultiplied_mae": 0.005297971423715353,
+        "target_foreground_composite_mae": 0.16930095086829938
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.8781793842034806,
+          "alpha_recall": 0.9864661654135338,
+          "premultiplied_mae": 0.003767972579225898,
+          "target_foreground_composite_mae": 0.1328832028802475
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.49310872894333846,
+          "alpha_recall": 0.7970297029702971,
+          "premultiplied_mae": 0.0071526141837239265,
+          "target_foreground_composite_mae": 0.20325827519885778
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.7197802197802198,
+          "alpha_recall": 0.9307282415630551,
+          "premultiplied_mae": 0.004906337708234787,
+          "target_foreground_composite_mae": 0.15859020497405085
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.5887096774193549,
+          "alpha_recall": 0.9079601990049752,
+          "premultiplied_mae": 0.0054638260044157505,
+          "target_foreground_composite_mae": 0.16786980826660966
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.8790697674418605,
+          "alpha_recall": 0.9230769230769231,
+          "premultiplied_mae": 0.005299835000187159,
+          "target_foreground_composite_mae": 0.17307414084757836
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.5600558659217877,
+          "alpha_recall": 0.8832599118942731,
+          "premultiplied_mae": 0.007717260159552097,
+          "target_foreground_composite_mae": 0.2410641976915267
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.8154574132492114,
+          "alpha_recall": 0.9182948490230906,
+          "premultiplied_mae": 0.00333348847925663,
+          "target_foreground_composite_mae": 0.13495397934764006
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.6368421052631579,
+          "alpha_recall": 0.9029850746268657,
+          "premultiplied_mae": 0.004742437042295933,
+          "target_foreground_composite_mae": 0.17121907450864168
+        }
+      }
+    },
+    {
+      "name": "unet-44",
+      "architecture": "unet",
+      "seed": 44,
+      "checkpoint_sha256": "a4b4f581b7538120d03f0e6a7cc293d2a09e964834d67ec39492738ee2488d29",
+      "condition": "item_shift",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.4883189882311611,
+        "alpha_recall": 0.650749063670412,
+        "premultiplied_mae": 0.006422027014195919,
+        "target_foreground_composite_mae": 0.22049399767624453
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.4715447154471545,
+          "alpha_recall": 0.6105263157894737,
+          "premultiplied_mae": 0.0066408077254891396,
+          "target_foreground_composite_mae": 0.19078872412966008
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.3764705882352941,
+          "alpha_recall": 0.4752475247524752,
+          "premultiplied_mae": 0.004805034026503563,
+          "target_foreground_composite_mae": 0.22764511863784034
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.6253481894150418,
+          "alpha_recall": 0.7975133214920072,
+          "premultiplied_mae": 0.006261124275624752,
+          "target_foreground_composite_mae": 0.22082217788470435
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.48747913188647746,
+          "alpha_recall": 0.7263681592039801,
+          "premultiplied_mae": 0.006434690207242966,
+          "target_foreground_composite_mae": 0.2266380601063692
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.4666666666666667,
+          "alpha_recall": 0.6068376068376068,
+          "premultiplied_mae": 0.008634782396256924,
+          "target_foreground_composite_mae": 0.2039981852909099
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.3904448105436573,
+          "alpha_recall": 0.5220264317180616,
+          "premultiplied_mae": 0.006698297802358866,
+          "target_foreground_composite_mae": 0.3050128415817731
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.6160583941605839,
+          "alpha_recall": 0.7495559502664298,
+          "premultiplied_mae": 0.005418098531663418,
+          "target_foreground_composite_mae": 0.2019805456492377
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.4398148148148148,
+          "alpha_recall": 0.7089552238805971,
+          "premultiplied_mae": 0.006483381148427725,
+          "target_foreground_composite_mae": 0.21992652095965484
+        }
+      }
+    },
+    {
+      "name": "unet-44",
+      "architecture": "unet",
+      "seed": 44,
+      "checkpoint_sha256": "a4b4f581b7538120d03f0e6a7cc293d2a09e964834d67ec39492738ee2488d29",
+      "condition": "centered_no_body",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.19626910101210557,
+        "alpha_recall": 0.6945224719101124,
+        "premultiplied_mae": 0.02709052711725235,
+        "target_foreground_composite_mae": 0.19435235831919084
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.1827485380116959,
+          "alpha_recall": 0.5639097744360902,
+          "premultiplied_mae": 0.02859003283083439,
+          "target_foreground_composite_mae": 0.17321736041764568
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.16331658291457288,
+          "alpha_recall": 0.6435643564356436,
+          "premultiplied_mae": 0.024162812158465385,
+          "target_foreground_composite_mae": 0.23473758508663367
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.243680485338726,
+          "alpha_recall": 0.8561278863232682,
+          "premultiplied_mae": 0.027209119871258736,
+          "target_foreground_composite_mae": 0.16287630757613603
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.1941638608305275,
+          "alpha_recall": 0.8606965174129353,
+          "premultiplied_mae": 0.0251390989869833,
+          "target_foreground_composite_mae": 0.1874451392127902
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.16645807259073842,
+          "alpha_recall": 0.48717948717948717,
+          "premultiplied_mae": 0.03414832428097725,
+          "target_foreground_composite_mae": 0.20536762589985247
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.1734258271077908,
+          "alpha_recall": 0.7158590308370044,
+          "premultiplied_mae": 0.029249873012304306,
+          "target_foreground_composite_mae": 0.2599349280986142
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.2460011031439603,
+          "alpha_recall": 0.7921847246891652,
+          "premultiplied_mae": 0.024935992434620857,
+          "target_foreground_composite_mae": 0.16528865979083407
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.20503376304481277,
+          "alpha_recall": 0.8308457711442786,
+          "premultiplied_mae": 0.023288965225219727,
+          "target_foreground_composite_mae": 0.18391377969365413
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-44",
+      "architecture": "reference_transfer",
+      "seed": 44,
+      "checkpoint_sha256": "ed8fbd3c1793fca50961f62472b7190380f8ce6dea54d44a2e156c726b0c2f36",
+      "condition": "aligned",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.7698286169788761,
+        "alpha_recall": 0.9042602996254682,
+        "premultiplied_mae": 0.0033609913662075996,
+        "target_foreground_composite_mae": 0.1294644054550952
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.9390934844192634,
+          "alpha_recall": 0.9969924812030075,
+          "premultiplied_mae": 0.0017225248739123344,
+          "target_foreground_composite_mae": 0.06656052056410558
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.6666666666666666,
+          "alpha_recall": 0.9207920792079208,
+          "premultiplied_mae": 0.0031282827258110046,
+          "target_foreground_composite_mae": 0.11901573458127063
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.8549747048903878,
+          "alpha_recall": 0.9005328596802842,
+          "premultiplied_mae": 0.0020340492483228445,
+          "target_foreground_composite_mae": 0.09253880086913484
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.6093457943925233,
+          "alpha_recall": 0.8109452736318408,
+          "premultiplied_mae": 0.003382772672921419,
+          "target_foreground_composite_mae": 0.16350275801979686
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.8962605548854041,
+          "alpha_recall": 0.9072039072039072,
+          "premultiplied_mae": 0.004398361314088106,
+          "target_foreground_composite_mae": 0.15120147096465456
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.6141141141141141,
+          "alpha_recall": 0.9008810572687225,
+          "premultiplied_mae": 0.006327824201434851,
+          "target_foreground_composite_mae": 0.2318274768263583
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.8578595317725752,
+          "alpha_recall": 0.911190053285968,
+          "premultiplied_mae": 0.0020019987132400274,
+          "target_foreground_composite_mae": 0.08883548643971562
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.6191369606003753,
+          "alpha_recall": 0.8208955223880597,
+          "premultiplied_mae": 0.0038921169470995665,
+          "target_foreground_composite_mae": 0.15870972691879145
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-44",
+      "architecture": "reference_transfer",
+      "seed": 44,
+      "checkpoint_sha256": "ed8fbd3c1793fca50961f62472b7190380f8ce6dea54d44a2e156c726b0c2f36",
+      "condition": "pair_shift",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.7132269099201825,
+        "alpha_recall": 0.8785112359550562,
+        "premultiplied_mae": 0.00394847895950079,
+        "target_foreground_composite_mae": 0.14200509174932702
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.8633193863319386,
+          "alpha_recall": 0.9308270676691729,
+          "premultiplied_mae": 0.0024970273952931166,
+          "target_foreground_composite_mae": 0.09313284125841949
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.5379537953795379,
+          "alpha_recall": 0.806930693069307,
+          "premultiplied_mae": 0.004125817213207483,
+          "target_foreground_composite_mae": 0.15650683110303218
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.7616892911010558,
+          "alpha_recall": 0.8969804618117229,
+          "premultiplied_mae": 0.0027331439778208733,
+          "target_foreground_composite_mae": 0.09375312583837515
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.6013745704467354,
+          "alpha_recall": 0.8706467661691543,
+          "premultiplied_mae": 0.0038436991162598133,
+          "target_foreground_composite_mae": 0.15816668610074627
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.8619447779111644,
+          "alpha_recall": 0.8766788766788767,
+          "premultiplied_mae": 0.004535453859716654,
+          "target_foreground_composite_mae": 0.15422923204905628
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.5716395864106352,
+          "alpha_recall": 0.8524229074889867,
+          "premultiplied_mae": 0.006798735819756985,
+          "target_foreground_composite_mae": 0.2532406441440666
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.8322368421052632,
+          "alpha_recall": 0.8987566607460036,
+          "premultiplied_mae": 0.0024501141160726547,
+          "target_foreground_composite_mae": 0.10050732176144353
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.59375,
+          "alpha_recall": 0.8507462686567164,
+          "premultiplied_mae": 0.004603840876370668,
+          "target_foreground_composite_mae": 0.16728124412928846
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-44",
+      "architecture": "reference_transfer",
+      "seed": 44,
+      "checkpoint_sha256": "ed8fbd3c1793fca50961f62472b7190380f8ce6dea54d44a2e156c726b0c2f36",
+      "condition": "item_shift",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.4650231124807396,
+        "alpha_recall": 0.7064606741573034,
+        "premultiplied_mae": 0.005159476771950722,
+        "target_foreground_composite_mae": 0.19468126999453808
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.5034280117531832,
+          "alpha_recall": 0.7729323308270677,
+          "premultiplied_mae": 0.005238241050392389,
+          "target_foreground_composite_mae": 0.16620178987507833
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.40770465489566615,
+          "alpha_recall": 0.6287128712871287,
+          "premultiplied_mae": 0.004221330862492323,
+          "target_foreground_composite_mae": 0.1990519608601485
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.48288075560802834,
+          "alpha_recall": 0.7264653641207816,
+          "premultiplied_mae": 0.004595725331455469,
+          "target_foreground_composite_mae": 0.17827928270935095
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.4088145896656535,
+          "alpha_recall": 0.6691542288557214,
+          "premultiplied_mae": 0.0062409271486103535,
+          "target_foreground_composite_mae": 0.23828246462997513
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.5109797297297297,
+          "alpha_recall": 0.7387057387057387,
+          "premultiplied_mae": 0.006471162661910057,
+          "target_foreground_composite_mae": 0.1760827492639016
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.44095665171898357,
+          "alpha_recall": 0.6497797356828194,
+          "premultiplied_mae": 0.006158681120723486,
+          "target_foreground_composite_mae": 0.2805447795492612
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.48602673147023084,
+          "alpha_recall": 0.7104795737122558,
+          "premultiplied_mae": 0.004553508013486862,
+          "target_foreground_composite_mae": 0.1829647518178286
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.40902255639097745,
+          "alpha_recall": 0.6766169154228856,
+          "premultiplied_mae": 0.0037962389178574085,
+          "target_foreground_composite_mae": 0.17410010089526326
+        }
+      }
+    },
+    {
+      "name": "reference_transfer-44",
+      "architecture": "reference_transfer",
+      "seed": 44,
+      "checkpoint_sha256": "ed8fbd3c1793fca50961f62472b7190380f8ce6dea54d44a2e156c726b0c2f36",
+      "condition": "centered_no_body",
+      "metrics": {
+        "frames": 56,
+        "alpha_iou": 0.2143174086673569,
+        "alpha_recall": 0.6783707865168539,
+        "premultiplied_mae": 0.017450647428631783,
+        "target_foreground_composite_mae": 0.2291210807962215
+      },
+      "designs": {
+        "plate-boots-north": {
+          "frames": 7,
+          "alpha_iou": 0.20315904139433552,
+          "alpha_recall": 0.5609022556390978,
+          "premultiplied_mae": 0.019809946417808533,
+          "target_foreground_composite_mae": 0.2609032652431861
+        },
+        "ghillies-north": {
+          "frames": 7,
+          "alpha_iou": 0.17484868863483524,
+          "alpha_recall": 0.6435643564356436,
+          "premultiplied_mae": 0.013298849575221539,
+          "target_foreground_composite_mae": 0.23452728573638615
+        },
+        "plate-boots-west": {
+          "frames": 7,
+          "alpha_iou": 0.2396129766647695,
+          "alpha_recall": 0.7477797513321492,
+          "premultiplied_mae": 0.015966296195983887,
+          "target_foreground_composite_mae": 0.18526567602524607
+        },
+        "ghillies-west": {
+          "frames": 7,
+          "alpha_iou": 0.20838794233289645,
+          "alpha_recall": 0.7910447761194029,
+          "premultiplied_mae": 0.01626250147819519,
+          "target_foreground_composite_mae": 0.2159919295935686
+        },
+        "plate-boots-south": {
+          "frames": 7,
+          "alpha_iou": 0.20079964460239894,
+          "alpha_recall": 0.5518925518925519,
+          "premultiplied_mae": 0.022511497139930725,
+          "target_foreground_composite_mae": 0.21490259911890772
+        },
+        "ghillies-south": {
+          "frames": 7,
+          "alpha_iou": 0.19310754604872252,
+          "alpha_recall": 0.7158590308370044,
+          "premultiplied_mae": 0.022242557257413864,
+          "target_foreground_composite_mae": 0.3229766039071104
+        },
+        "plate-boots-east": {
+          "frames": 7,
+          "alpha_iou": 0.2643253234750462,
+          "alpha_recall": 0.7619893428063943,
+          "premultiplied_mae": 0.014709939248859882,
+          "target_foreground_composite_mae": 0.18620138580521017
+        },
+        "ghillies-east": {
+          "frames": 7,
+          "alpha_iou": 0.235467255334805,
+          "alpha_recall": 0.7960199004975125,
+          "premultiplied_mae": 0.014803585596382618,
+          "target_foreground_composite_mae": 0.22874192574724037
+        }
+      }
+    }
+  ],
+  "scope": "Registration stress on existing development designs. Transformed same-frame references are not independent illustrations. No training or test-set scoring."
+}

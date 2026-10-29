@@ -376,3 +376,62 @@ Keep it experimental. Slippers/tabi are now a consumed test set and must not be
 claimed as untouched evidence for any future changes informed by these results.
 Next define a new benchmark with independently prepared references and broader
 attachment/occlusion cases before tuning or extending the model toward the product.
+
+
+## Reference registration stress (Iris job 6257989)
+
+Protocol and implementation committed as `fc53f7a` before evaluation. All six
+expanded-footwear checkpoints remained frozen. This experiment used only the
+eight existing development validation samples (56 scored frames); no consumed
+test families were rescored. Iris completed all 24 candidate/condition evaluations
+in 29 seconds, exit code 0. Full [protocol](REFERENCE_STRESS.md) and
+[per-seed/design evidence](benchmarks/reference-stress-6257989/reference-stress.json)
+are versioned.
+
+| Condition | U-Net IoU ↑ | Transfer IoU ↑ | U-Net foreground MAE ↓ | Transfer foreground MAE ↓ |
+| --- | ---: | ---: | ---: | ---: |
+| Aligned control | 0.7404 | 0.7795 | 0.16564 | 0.12925 |
+| Body and item shifted together | 0.6602 | 0.6855 | 0.17593 | 0.13853 |
+| Item shifted, original body | 0.5203 | 0.4646 | 0.23293 | 0.19860 |
+| Centered item, transparent body | 0.1744 | 0.1931 | 0.21162 | 0.22646 |
+
+Means include all three seeds. The aligned condition matches every previous
+expanded-development metric within 1e-6, validating the control path. All 32
+transformed reference pairs preserve equipment pixels without clipping/rescaling.
+Each transformed reference and its body input are saved as separate PNGs with
+source hash and explicit `independently_drawn: false` provenance.
+
+The pair-shift result exposes sensitivity to absolute reference coordinates even
+when mutual body/equipment alignment is preserved. Shifting only the item causes
+larger failures; centering it and removing the reference body is catastrophic.
+The last two conditions deliberately violate the trained aligned-input contract.
+They establish the current contract's limitation, not the performance of a model
+trained for independent references. The centered condition changes two factors at
+once and cannot isolate their individual causal effects.
+
+Foreground error alone understates the spurious overlay problem: transfer's
+whole-frame premultiplied MAE rises from 0.003331 (aligned) to 0.020821 (centered
+without body); U-Net rises from 0.004807 to 0.032959. Transfer seed-42 south plate
+boot contact sheets show right-shifted fragments with item-only translation and
+large unwanted torso overlays when the reference is centered without a body.
+Source body pixels are not regenerated, but false opaque equipment still hides
+them in the composite. Thus preserving source pixels is not sufficient to ensure
+usable visual output.
+
+No new drawings or independently prepared designs were evaluated. This is a
+registration stress test derived exclusively from the original reference frames,
+not independent-reference capability. Transformed inputs, predictions, previews,
+reports and logs are retained on Iris and locally under
+`runs/reference-stress-6257989/` and `logs/reference-stress-6257989.*`.
+
+Validation: 34 tests pass; transform checks cover visible-color preservation,
+source immutability, centered placement, and clipping/empty-reference rejection.
+All actual development reference transforms also passed the no-clipping check.
+The Slurm entry point passed ShellCheck and completed successfully on GPU.
+
+Decision: do not expose the current fitting model as accepting arbitrary standalone
+art. Next define a training input contract with canonical item references and
+explicit attachment information, then test registration augmentation and removal
+of the reference-body dependency separately on development data. Independently
+authored paired references and new held-out families are still required afterward;
+broader equipment and occlusion remain separate research gates.
