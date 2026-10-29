@@ -32,6 +32,7 @@ def cluster(tmp_path):
   printf 'module:%s\\n' "$*" >> "$TEST_LOG"
   if [[ "$1" == "--force" ]]; then export LOADEDMODULES=""; fi
   if [[ "$1" == "load" ]]; then
+    if [[ "$2" == "env/release/2023b" && -z "${ULHPC_CLUSTER:-}" ]]; then return 1; fi
     if [[ "${TEST_MODULE_FAIL:-0}" == "1" ]]; then return 1; fi
     export LOADEDMODULES="${LOADEDMODULES:+$LOADEDMODULES:}$2"
   fi
@@ -72,7 +73,7 @@ else:
         p.chmod(0o755)
     env = os.environ.copy()
     for name in list(env):
-        if name.startswith(("EQUIPMENT_", "SLURM_")):
+        if name.startswith(("EQUIPMENT_", "SLURM_")) or name == "ULHPC_CLUSTER":
             del env[name]
     env.update(PATH=str(binaries) + os.pathsep + env["PATH"], BASH_ENV=str(init),
                TEST_LOG=str(log), SLURM_JOB_ID="12345", SLURM_CPUS_PER_TASK="7")

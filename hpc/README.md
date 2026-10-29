@@ -52,7 +52,8 @@ bash hpc/run.sh --check
 The checks require Python 3.11+, NumPy, Pillow, and GPU-compatible PyTorch. If a
 module is unavailable, inspect `module spider ai/PyTorch` on the compute node and
 set `EQUIPMENT_MODULES` to the available software-set and GPU PyTorch module names.
-`EQUIPMENT_RESIF_ARCH` defaults to `gpu`. To use a different managed environment
+`EQUIPMENT_RESIF_ARCH` defaults to `gpu`. For noninteractive SSH submissions,
+the Iris launcher supplies `ULHPC_CLUSTER=iris` when the site variable is unset. To use a different managed environment
 location, set `EQUIPMENT_VENV`. The launcher refuses to reuse an environment made
 with a different Python/module stack; choose a new path in that case.
 

@@ -44,6 +44,8 @@ equipment_setup_environment() {
         return
     fi
 
+    # Noninteractive SSH submissions may not inherit the site login environment.
+    export ULHPC_CLUSTER="${ULHPC_CLUSTER:-iris}"
     equipment_init_modules
     local module_names="${EQUIPMENT_MODULES:-env/release/2023b ai/PyTorch/2.3.0-foss-2023b-CUDA-12.6.0}"
     local -a modules
