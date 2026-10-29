@@ -127,3 +127,29 @@ project, and no HPC credentials are required for preparing the local pipeline.
 
 Launcher tests simulate Slurm/modules to check setup, reuse, overrides, and failure
 handling. They do not replace running `--check` on Iris.
+
+## Workspace SSH access
+
+`hpc/ssh.config` uses your existing `iris-cluster` entry in `~/.ssh/config`.
+It shares an authenticated connection for 30 minutes after the last session ends,
+without forwarding your SSH agent. From the local project root, authenticate in
+**your own terminal** (enter your key passphrase there, never in chat):
+
+```sh
+ssh -F hpc/ssh.config iris-cluster true
+```
+
+Subsequent workspace commands can reuse that connection:
+
+```sh
+ssh -F hpc/ssh.config -o BatchMode=yes iris-cluster 'hostname; pwd'
+```
+
+To close the shared connection explicitly:
+
+```sh
+ssh -F hpc/ssh.config -O exit iris-cluster
+```
+
+The profile requires an already trusted host key and an existing account/key
+configuration. It does not copy keys or store credentials in the repository.
