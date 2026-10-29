@@ -46,8 +46,11 @@ on experimental evidence; public website deployment is not part of the first ses
 - Step 5: initial GPU benchmark completed; metrics, learning curves, memory,
   throughput, and visual failures are in [RESULTS.md](RESULTS.md). Broader data
   auditing and generalization remain outstanding.
-- Steps 6–9: not implemented. The final architecture has not been selected; use the
-  literature review's representation and reference-conditioning experiments first.
+- Step 6: export-aware metrics, reference-color sensitivity, and a nonlearned
+  palette ablation are implemented and measured on Iris. Appearance and missing
+  geometry remain unresolved; no stronger trained model is selected yet.
+- Steps 7–9: not implemented. Use the literature review's representation and
+  reference-conditioning experiments before choosing the final architecture.
 
 ## Data strategy
 

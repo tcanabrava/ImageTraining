@@ -126,3 +126,54 @@ increasing model size or training duration. Preserve these runs as the baseline.
 The RGBA reconstruction gate from the literature review still applies before
 selecting any latent generative model. Independent illustrations, unseen bodies,
 other animation families, and flexible equipment remain untested.
+
+
+## Export-aware appearance ablation (Iris job 6257139)
+
+Revision `855ab11`, completed on V100 with exit code 0 in 8 seconds. Reused the
+footwear checkpoint from job `6257117`; no retraining or new model selection.
+The diagnostic excludes reference frames. Full per-design scores and checkpoint
+SHA-256 are in [the report](benchmarks/appearance-6257139/appearance.json).
+The matching local CPU diagnostic agreed to displayed precision.
+
+| Output, held-out frames | Binary-alpha IoU ↑ | Export premultiplied MAE ↓ | Target-foreground composite MAE ↓ |
+| --- | ---: | ---: | ---: |
+| Copy reference | 0.5934 | 0.006544 | 0.22632 |
+| Existing model, PNG-equivalent export | 0.7020 | 0.005479 | 0.22202 |
+| Model + nearest reference palette | 0.7020 | 0.005189 | 0.20948 |
+
+**Metric clarification:** the earlier 0.00989 model premultiplied error measures
+soft alpha before export. With binary alpha and 8-bit rounding, the actual export
+beats copy-reference on this metric. This does not remove its visible design and
+missing-pixel failures. Future comparisons must state which output they score.
+Foreground composite error explicitly penalizes equipment that disappears.
+
+Palette projection improves pooled foreground composite MAE by 5.65%, without
+changing geometry. Plate-boots error improves from 0.19044 to 0.17247; ghillies
+only from 0.27900 to 0.27625. Ghillies recall is 0.5969: about 40.3% of true
+foreground pixels remain missing. Even projected plate-boots foreground error is
+worse than copy-reference (0.16797), despite better silhouette overlap.
+
+An oracle using true target geometry and assigning each target color its nearest
+reference palette color has zero error on these held-out frames. Thus this small
+subset's reference palette contains all necessary target colors. This is a
+representation diagnostic using ground truth, not inference performance or proof
+that other equipment/animation palettes will be sufficient.
+
+Inverting reference RGB while holding reference alpha, bodies, and coordinates
+fixed changes output RGB by 0.1724 for plate boots and 0.0817 for ghillies, averaged
+on target-visible pixels. Therefore the network does respond to reference color.
+It does not reliably reproduce that transformation: inversion-equivariance errors
+are 0.4181 and 0.3778. Inverted references are outside the training distribution;
+this probe alone cannot establish whether a particular internal path is ignored.
+
+Decision: keep palette projection as a diagnostic, not the production solution.
+Next compare explicit reference-feature transfer against the concatenation
+baseline, with the same split, export-aware per-design metrics, and controlled
+color augmentation. Evaluate appearance and alpha recall separately. Do not add a
+temporal model or select a latent representation based on this palette test.
+The trainable RGBA representation gate remains outstanding.
+
+Validation: 24 tests passed, including hidden-RGB exclusion from palettes and
+export metric checks; ShellCheck passed for the new Slurm entry point. The GPU
+report records the preserved remote chmod/untracked launcher changes as dirty.
