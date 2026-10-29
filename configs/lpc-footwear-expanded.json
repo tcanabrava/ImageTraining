@@ -1,0 +1,228 @@
+{
+  "revision": "86160e7507d6841259cff624a51a63c1d4847ee3",
+  "description": "Expanded four-view footwear benchmark. Aligned reference per view; shared bodies and walk animation. Development excludes reserved slippers and tabi socks. Family grouping is conservative, not proof of independent artist ancestry.",
+  "category": "footwear",
+  "animation": "walk",
+  "frame_size": [
+    64,
+    64
+  ],
+  "duration_ms": 100,
+  "reference_frame": 0,
+  "base_layers": [
+    "spritesheets/body/bodies/male/walk.png",
+    "spritesheets/head/heads/human/male/walk.png"
+  ],
+  "equipment": [
+    {
+      "id": "basic-boots",
+      "design_id": "lpc-basic-boots",
+      "split": "train",
+      "path": "spritesheets/feet/boots/basic/male/walk.png"
+    },
+    {
+      "id": "fold-boots",
+      "design_id": "lpc-fold-boots",
+      "split": "train",
+      "path": "spritesheets/feet/boots/fold/male/walk.png"
+    },
+    {
+      "id": "basic-shoes",
+      "design_id": "lpc-basic-shoes",
+      "split": "train",
+      "path": "spritesheets/feet/shoes/basic/male/walk.png"
+    },
+    {
+      "id": "plate-boots",
+      "design_id": "lpc-plate-boots",
+      "split": "val",
+      "path": "spritesheets/feet/armour/plate/male/walk.png"
+    },
+    {
+      "id": "ghillies",
+      "design_id": "lpc-ghillies",
+      "split": "val",
+      "path": "spritesheets/feet/shoes/ghillies/male/walk.png"
+    },
+    {
+      "id": "sandals",
+      "design_id": "lpc-sandals",
+      "split": "train",
+      "path": "spritesheets/feet/sandals/male/walk.png"
+    },
+    {
+      "id": "revised-shoes",
+      "design_id": "lpc-revised-footwear",
+      "split": "train",
+      "path": "spritesheets/feet/shoes/revised/male/walk.png"
+    },
+    {
+      "id": "revised-boots",
+      "design_id": "lpc-revised-footwear",
+      "split": "train",
+      "path": "spritesheets/feet/boots/revised/male/walk.png"
+    },
+    {
+      "id": "slippers",
+      "design_id": "lpc-slippers",
+      "split": "test",
+      "path": "spritesheets/feet/slippers/male/walk.png"
+    },
+    {
+      "id": "tabi-socks",
+      "design_id": "lpc-kimono-footwear",
+      "split": "test",
+      "path": "spritesheets/feet/socks/tabi/male/walk.png"
+    }
+  ],
+  "views": [
+    {
+      "name": "north",
+      "source_frames": [
+        [
+          64,
+          0
+        ],
+        [
+          128,
+          0
+        ],
+        [
+          192,
+          0
+        ],
+        [
+          256,
+          0
+        ],
+        [
+          320,
+          0
+        ],
+        [
+          384,
+          0
+        ],
+        [
+          448,
+          0
+        ],
+        [
+          512,
+          0
+        ]
+      ]
+    },
+    {
+      "name": "west",
+      "source_frames": [
+        [
+          64,
+          64
+        ],
+        [
+          128,
+          64
+        ],
+        [
+          192,
+          64
+        ],
+        [
+          256,
+          64
+        ],
+        [
+          320,
+          64
+        ],
+        [
+          384,
+          64
+        ],
+        [
+          448,
+          64
+        ],
+        [
+          512,
+          64
+        ]
+      ]
+    },
+    {
+      "name": "south",
+      "source_frames": [
+        [
+          64,
+          128
+        ],
+        [
+          128,
+          128
+        ],
+        [
+          192,
+          128
+        ],
+        [
+          256,
+          128
+        ],
+        [
+          320,
+          128
+        ],
+        [
+          384,
+          128
+        ],
+        [
+          448,
+          128
+        ],
+        [
+          512,
+          128
+        ]
+      ]
+    },
+    {
+      "name": "east",
+      "source_frames": [
+        [
+          64,
+          192
+        ],
+        [
+          128,
+          192
+        ],
+        [
+          192,
+          192
+        ],
+        [
+          256,
+          192
+        ],
+        [
+          320,
+          192
+        ],
+        [
+          384,
+          192
+        ],
+        [
+          448,
+          192
+        ],
+        [
+          512,
+          192
+        ]
+      ]
+    }
+  ]
+}

@@ -18,4 +18,4 @@ export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
 export PYTHONNOUSERSITE=1
 srun "$EQUIPMENT_PYTHON" -m equipment_fitter.compare \
     --manifest "${1:-data/lpc-footwear/dataset.json}" \
-    --output "runs/compare-${SLURM_JOB_ID}" --device cuda
+    --output "runs/compare-${SLURM_JOB_ID}" --device cuda --steps "${2:-200}"

@@ -1,0 +1,644 @@
+{
+  "reports": {
+    "dataset": {
+      "samples": 40,
+      "designs": 9,
+      "target_frames": {
+        "train": 168,
+        "val": 56,
+        "test": 56
+      },
+      "fingerprint": "65021916b6d2be881fdf3897273cdd0ff87a41b1b42865c5af2535d6001ad4fa"
+    },
+    "development": {
+      "samples": 32,
+      "designs": 7,
+      "target_frames": {
+        "train": 168,
+        "val": 56,
+        "test": 0
+      },
+      "fingerprint": "2daacc0965ecb1236368b1cc988a08e73f79ebfc866ef9bfff1336b76aa1f75e"
+    },
+    "reserved-test": {
+      "samples": 8,
+      "designs": 2,
+      "target_frames": {
+        "train": 0,
+        "val": 0,
+        "test": 56
+      },
+      "fingerprint": "e811e0089e65b5db46fb7f8ee3fb68091357a3383779eabbcc003a37634e63f4"
+    }
+  },
+  "exact_equipment_duplicates_across_splits": false,
+  "samples": [
+    {
+      "id": "basic-boots-north",
+      "split": "train",
+      "design_id": "lpc-basic-boots",
+      "visible_pixels_per_frame": [
+        151,
+        142,
+        141,
+        142,
+        150,
+        144,
+        143,
+        144
+      ]
+    },
+    {
+      "id": "fold-boots-north",
+      "split": "train",
+      "design_id": "lpc-fold-boots",
+      "visible_pixels_per_frame": [
+        174,
+        156,
+        157,
+        157,
+        174,
+        156,
+        157,
+        157
+      ]
+    },
+    {
+      "id": "basic-shoes-north",
+      "split": "train",
+      "design_id": "lpc-basic-shoes",
+      "visible_pixels_per_frame": [
+        103,
+        104,
+        107,
+        107,
+        100,
+        93,
+        97,
+        103
+      ]
+    },
+    {
+      "id": "plate-boots-north",
+      "split": "val",
+      "design_id": "lpc-plate-boots",
+      "visible_pixels_per_frame": [
+        98,
+        94,
+        95,
+        95,
+        98,
+        93,
+        95,
+        95
+      ]
+    },
+    {
+      "id": "ghillies-north",
+      "split": "val",
+      "design_id": "lpc-ghillies",
+      "visible_pixels_per_frame": [
+        62,
+        60,
+        55,
+        56,
+        62,
+        60,
+        55,
+        56
+      ]
+    },
+    {
+      "id": "sandals-north",
+      "split": "train",
+      "design_id": "lpc-sandals",
+      "visible_pixels_per_frame": [
+        54,
+        54,
+        54,
+        54,
+        54,
+        54,
+        54,
+        54
+      ]
+    },
+    {
+      "id": "revised-shoes-north",
+      "split": "train",
+      "design_id": "lpc-revised-footwear",
+      "visible_pixels_per_frame": [
+        84,
+        74,
+        83,
+        82,
+        84,
+        74,
+        83,
+        82
+      ]
+    },
+    {
+      "id": "revised-boots-north",
+      "split": "train",
+      "design_id": "lpc-revised-footwear",
+      "visible_pixels_per_frame": [
+        132,
+        115,
+        135,
+        137,
+        132,
+        115,
+        135,
+        137
+      ]
+    },
+    {
+      "id": "slippers-north",
+      "split": "test",
+      "design_id": "lpc-slippers",
+      "visible_pixels_per_frame": [
+        34,
+        34,
+        33,
+        33,
+        34,
+        34,
+        33,
+        33
+      ]
+    },
+    {
+      "id": "tabi-socks-north",
+      "split": "test",
+      "design_id": "lpc-kimono-footwear",
+      "visible_pixels_per_frame": [
+        104,
+        113,
+        115,
+        115,
+        104,
+        113,
+        113,
+        115
+      ]
+    },
+    {
+      "id": "basic-boots-west",
+      "split": "train",
+      "design_id": "lpc-basic-boots",
+      "visible_pixels_per_frame": [
+        168,
+        149,
+        117,
+        149,
+        152,
+        130,
+        133,
+        148
+      ]
+    },
+    {
+      "id": "fold-boots-west",
+      "split": "train",
+      "design_id": "lpc-fold-boots",
+      "visible_pixels_per_frame": [
+        175,
+        162,
+        121,
+        151,
+        160,
+        141,
+        109,
+        144
+      ]
+    },
+    {
+      "id": "basic-shoes-west",
+      "split": "train",
+      "design_id": "lpc-basic-shoes",
+      "visible_pixels_per_frame": [
+        100,
+        96,
+        70,
+        98,
+        93,
+        86,
+        73,
+        79
+      ]
+    },
+    {
+      "id": "plate-boots-west",
+      "split": "val",
+      "design_id": "lpc-plate-boots",
+      "visible_pixels_per_frame": [
+        96,
+        83,
+        63,
+        84,
+        90,
+        88,
+        72,
+        83
+      ]
+    },
+    {
+      "id": "ghillies-west",
+      "split": "val",
+      "design_id": "lpc-ghillies",
+      "visible_pixels_per_frame": [
+        72,
+        66,
+        53,
+        58,
+        67,
+        59,
+        51,
+        48
+      ]
+    },
+    {
+      "id": "sandals-west",
+      "split": "train",
+      "design_id": "lpc-sandals",
+      "visible_pixels_per_frame": [
+        62,
+        53,
+        37,
+        62,
+        58,
+        55,
+        41,
+        46
+      ]
+    },
+    {
+      "id": "revised-shoes-west",
+      "split": "train",
+      "design_id": "lpc-revised-footwear",
+      "visible_pixels_per_frame": [
+        81,
+        77,
+        45,
+        73,
+        81,
+        61,
+        65,
+        78
+      ]
+    },
+    {
+      "id": "revised-boots-west",
+      "split": "train",
+      "design_id": "lpc-revised-footwear",
+      "visible_pixels_per_frame": [
+        129,
+        111,
+        79,
+        103,
+        109,
+        99,
+        87,
+        108
+      ]
+    },
+    {
+      "id": "slippers-west",
+      "split": "test",
+      "design_id": "lpc-slippers",
+      "visible_pixels_per_frame": [
+        65,
+        61,
+        45,
+        54,
+        60,
+        70,
+        42,
+        58
+      ]
+    },
+    {
+      "id": "tabi-socks-west",
+      "split": "test",
+      "design_id": "lpc-kimono-footwear",
+      "visible_pixels_per_frame": [
+        99,
+        94,
+        67,
+        95,
+        91,
+        84,
+        60,
+        100
+      ]
+    },
+    {
+      "id": "basic-boots-south",
+      "split": "train",
+      "design_id": "lpc-basic-boots",
+      "visible_pixels_per_frame": [
+        185,
+        166,
+        168,
+        183,
+        184,
+        166,
+        168,
+        183
+      ]
+    },
+    {
+      "id": "fold-boots-south",
+      "split": "train",
+      "design_id": "lpc-fold-boots",
+      "visible_pixels_per_frame": [
+        184,
+        185,
+        179,
+        188,
+        184,
+        185,
+        173,
+        186
+      ]
+    },
+    {
+      "id": "basic-shoes-south",
+      "split": "train",
+      "design_id": "lpc-basic-shoes",
+      "visible_pixels_per_frame": [
+        126,
+        116,
+        111,
+        130,
+        124,
+        123,
+        117,
+        126
+      ]
+    },
+    {
+      "id": "plate-boots-south",
+      "split": "val",
+      "design_id": "lpc-plate-boots",
+      "visible_pixels_per_frame": [
+        122,
+        119,
+        109,
+        121,
+        122,
+        119,
+        109,
+        120
+      ]
+    },
+    {
+      "id": "ghillies-south",
+      "split": "val",
+      "design_id": "lpc-ghillies",
+      "visible_pixels_per_frame": [
+        64,
+        69,
+        63,
+        63,
+        64,
+        69,
+        63,
+        63
+      ]
+    },
+    {
+      "id": "sandals-south",
+      "split": "train",
+      "design_id": "lpc-sandals",
+      "visible_pixels_per_frame": [
+        77,
+        80,
+        80,
+        77,
+        77,
+        80,
+        80,
+        77
+      ]
+    },
+    {
+      "id": "revised-shoes-south",
+      "split": "train",
+      "design_id": "lpc-revised-footwear",
+      "visible_pixels_per_frame": [
+        113,
+        108,
+        98,
+        107,
+        113,
+        108,
+        98,
+        107
+      ]
+    },
+    {
+      "id": "revised-boots-south",
+      "split": "train",
+      "design_id": "lpc-revised-footwear",
+      "visible_pixels_per_frame": [
+        146,
+        141,
+        139,
+        139,
+        146,
+        141,
+        139,
+        139
+      ]
+    },
+    {
+      "id": "slippers-south",
+      "split": "test",
+      "design_id": "lpc-slippers",
+      "visible_pixels_per_frame": [
+        70,
+        75,
+        61,
+        70,
+        70,
+        75,
+        61,
+        70
+      ]
+    },
+    {
+      "id": "tabi-socks-south",
+      "split": "test",
+      "design_id": "lpc-kimono-footwear",
+      "visible_pixels_per_frame": [
+        113,
+        106,
+        109,
+        118,
+        113,
+        106,
+        109,
+        118
+      ]
+    },
+    {
+      "id": "basic-boots-east",
+      "split": "train",
+      "design_id": "lpc-basic-boots",
+      "visible_pixels_per_frame": [
+        168,
+        149,
+        117,
+        149,
+        152,
+        130,
+        133,
+        148
+      ]
+    },
+    {
+      "id": "fold-boots-east",
+      "split": "train",
+      "design_id": "lpc-fold-boots",
+      "visible_pixels_per_frame": [
+        175,
+        162,
+        121,
+        151,
+        160,
+        141,
+        109,
+        144
+      ]
+    },
+    {
+      "id": "basic-shoes-east",
+      "split": "train",
+      "design_id": "lpc-basic-shoes",
+      "visible_pixels_per_frame": [
+        103,
+        98,
+        70,
+        100,
+        96,
+        90,
+        75,
+        84
+      ]
+    },
+    {
+      "id": "plate-boots-east",
+      "split": "val",
+      "design_id": "lpc-plate-boots",
+      "visible_pixels_per_frame": [
+        96,
+        83,
+        63,
+        84,
+        90,
+        88,
+        72,
+        83
+      ]
+    },
+    {
+      "id": "ghillies-east",
+      "split": "val",
+      "design_id": "lpc-ghillies",
+      "visible_pixels_per_frame": [
+        72,
+        66,
+        53,
+        58,
+        67,
+        59,
+        51,
+        48
+      ]
+    },
+    {
+      "id": "sandals-east",
+      "split": "train",
+      "design_id": "lpc-sandals",
+      "visible_pixels_per_frame": [
+        62,
+        53,
+        37,
+        62,
+        58,
+        55,
+        41,
+        46
+      ]
+    },
+    {
+      "id": "revised-shoes-east",
+      "split": "train",
+      "design_id": "lpc-revised-footwear",
+      "visible_pixels_per_frame": [
+        81,
+        77,
+        45,
+        73,
+        81,
+        61,
+        65,
+        78
+      ]
+    },
+    {
+      "id": "revised-boots-east",
+      "split": "train",
+      "design_id": "lpc-revised-footwear",
+      "visible_pixels_per_frame": [
+        129,
+        111,
+        79,
+        103,
+        109,
+        99,
+        87,
+        108
+      ]
+    },
+    {
+      "id": "slippers-east",
+      "split": "test",
+      "design_id": "lpc-slippers",
+      "visible_pixels_per_frame": [
+        65,
+        61,
+        45,
+        54,
+        60,
+        70,
+        42,
+        58
+      ]
+    },
+    {
+      "id": "tabi-socks-east",
+      "split": "test",
+      "design_id": "lpc-kimono-footwear",
+      "visible_pixels_per_frame": [
+        99,
+        94,
+        67,
+        95,
+        91,
+        84,
+        60,
+        100
+      ]
+    }
+  ],
+  "visual_review": [
+    "sandals-south",
+    "sandals-west",
+    "revised-boots-east",
+    "tabi-socks-south"
+  ],
+  "limitations": "Selected contact sheets inspected, not exhaustive occlusion review. Same body and walk, aligned reference for each view. No test model scores."
+}

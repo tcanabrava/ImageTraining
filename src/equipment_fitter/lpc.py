@@ -36,6 +36,8 @@ def fetch_asset(revision: str, name: str, cache: Path) -> bytes:
 
 def import_lpc(selection: Path, output: Path, cache: Path) -> Path:
     config = json.loads(selection.read_text())
+    if "views" in config:
+        return import_views(config, output, cache)
     revision = config["revision"]
     if not re.fullmatch(r"[0-9a-f]{40}", revision):
         raise ValueError("LPC revision must be a full commit SHA")
@@ -104,5 +106,51 @@ def import_lpc(selection: Path, output: Path, cache: Path) -> Path:
             writer.writeheader()
             writer.writerows(used_credits)
         load_dataset(staging / "dataset.json")
+        staging.rename(output)
+    return output / "dataset.json"
+
+
+def import_views(config: dict, output: Path, cache: Path) -> Path:
+    """Import independent per-view references, keeping families in one split.
+
+    The development manifest excludes reserved test assets from all model loops.
+    The full manifest is for data auditing, not routine model comparison.
+    """
+    views = config["views"]
+    names = [v["name"] for v in views]
+    if not names or len(names) != len(set(names)) or any(not re.fullmatch(r"[a-zA-Z0-9_-]+", n) for n in names):
+        raise ValueError("Views require unique safe names")
+    if output.exists():
+        raise ValueError(f"Output already exists: {output}")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix=".lpc-views-", dir=output.parent) as directory:
+        staging = Path(directory) / "dataset"
+        staging.mkdir()
+        samples, provenance = [], []
+        for view in views:
+            selection = {k: v for k, v in config.items() if k != "views"}
+            selection.update(view=view["name"], source_frames=view["source_frames"])
+            selection_path = Path(directory) / "selection.json"
+            save_json(selection_path, selection)
+            child = import_lpc(selection_path, staging / view["name"], cache)
+            document, _ = load_dataset(child)
+            for sample in document["samples"]:
+                samples.append({**sample, "id": sample["id"] + "-" + view["name"], "view": view["name"],
+                                "base": view["name"] + "/" + sample["base"],
+                                "equipment": view["name"] + "/" + sample["equipment"]})
+            provenance.append({"view": view["name"], "source": view["name"] + "/provenance.json"})
+        document = {"schema_version": 1, "frame_size": config["frame_size"],
+                    "description": config["description"], "animation": config["animation"],
+                    "source_revision": config["revision"], "samples": samples}
+        save_json(staging / "dataset.json", document)
+        load_dataset(staging / "dataset.json")  # Includes cross-view family leakage checks.
+        for label, splits in (("development", {"train", "val"}), ("reserved-test", {"test"})):
+            subset = [s for s in samples if s["split"] in splits]
+            if subset:
+                save_json(staging / f"{label}.json", {**document, "samples": subset})
+                load_dataset(staging / f"{label}.json")
+        (staging / "CREDITS.csv").write_bytes((staging / names[0] / "CREDITS.csv").read_bytes())
+        save_json(staging / "selection.json", config)
+        save_json(staging / "provenance.json", {"revision": config["revision"], "views": provenance})
         staging.rename(output)
     return output / "dataset.json"

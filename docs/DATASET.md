@@ -72,3 +72,37 @@ Source artwork uses mixed licenses; retain the generated `CREDITS.csv` and revie
 the listed terms before distributing source or modified artwork. The importer does
 not relicense assets or decide licensing questions about trained models. It preserves
 source alpha and does not automatically repair occlusion. Visually review targets.
+
+## Expanded four-view footwear benchmark
+
+`configs/lpc-footwear-expanded.json` pins the same upstream revision and imports
+north/west/south/east walks, with a separate aligned reference per view. It has
+40 samples, 10 named designs grouped into 9 families: revised boots/shoes share
+one family. Training has 168 non-reference frames, validation 56, reserved test 56.
+
+Training adds sandals (thin strap detail) and revised shoes/boots to the previous
+three designs. Plate boots and ghillies remain development validation, not fresh
+test designs. Slippers and tabi socks are reserved for a later frozen-model test.
+Rimmed boots are excluded from training because their credits share the kimono
+source with tabi socks. Shared upstream artists and ancestry across the entire
+collection remain a limitation; these are family splits, not artist splits.
+
+```sh
+PYTHONPATH=src python -m equipment_fitter fetch-lpc \
+  --selection configs/lpc-footwear-expanded.json --output data/lpc-footwear-expanded
+sbatch hpc/compare.sbatch data/lpc-footwear-expanded/development.json 1600
+```
+
+`dataset.json` includes all splits for data audit. `development.json` includes
+only train/validation; `reserved-test.json` only test. The comparison runner rejects
+manifests containing test samples. Do not use the full manifest for routine
+training/diagnostics. Data inspection is allowed for integrity, but reserved-test
+model scores must wait until the model/protocol are frozen. Preserve all nested
+per-view selections, source hashes, and credit files when transferring data.
+
+The planned expanded comparison uses the same three seeds and batch size, with
+1,600 steps fixed before evaluation: eight times the 200-step pilot budget for
+eight times its training-frame count. This approximately matches sampling exposure,
+not elapsed time. Metrics across different datasets are not directly comparable.
+All four views occur in training and validation: this is not unseen-view testing.
+A reference is supplied for each view; this does not demonstrate cross-view synthesis.
