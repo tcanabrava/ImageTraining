@@ -46,9 +46,10 @@ on experimental evidence; public website deployment is not part of the first ses
 - Step 5: initial GPU benchmark completed; metrics, learning curves, memory,
   throughput, and visual failures are in [RESULTS.md](RESULTS.md). Broader data
   auditing and generalization remain outstanding.
-- Step 6: export-aware metrics, reference-color sensitivity, and a nonlearned
-  palette ablation are implemented and measured on Iris. Appearance and missing
-  geometry remain unresolved; no stronger trained model is selected yet.
+- Step 6: export-aware diagnostics and a learned reference-transfer variant are
+  implemented. A three-seed Iris comparison improves mean foreground error by
+  22.1%, with mixed silhouette results and unresolved thin details. The variant
+  remains experimental; the final architecture and RGBA representation are not selected.
 - Steps 7–9: not implemented. Use the literature review's representation and
   reference-conditioning experiments before choosing the final architecture.
 

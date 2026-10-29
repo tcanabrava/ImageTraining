@@ -1,0 +1,402 @@
+{
+  "steps": 200,
+  "results": [
+    {
+      "architecture": "unet",
+      "seed": 42,
+      "metrics": {
+        "train": {
+          "model": {
+            "frames": 21,
+            "alpha_iou": 0.9717201166180758,
+            "alpha_recall": 0.9964125560538116,
+            "premultiplied_mae": 0.0029967068694531918,
+            "target_foreground_composite_mae": 0.07034399377569132
+          },
+          "reference_palette": {
+            "frames": 21,
+            "alpha_iou": 0.9717201166180758,
+            "alpha_recall": 0.9964125560538116,
+            "premultiplied_mae": 0.0022739802952855825,
+            "target_foreground_composite_mae": 0.05203513167779958
+          },
+          "copy_reference": {
+            "frames": 21,
+            "alpha_iou": 0.7542503863987635,
+            "alpha_recall": 0.8753363228699551,
+            "premultiplied_mae": 0.009105556644499302,
+            "target_foreground_composite_mae": 0.19151519486484803
+          },
+          "palette_oracle": {
+            "frames": 21,
+            "alpha_iou": 1.0,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0,
+            "target_foreground_composite_mae": 0.0
+          }
+        },
+        "val": {
+          "model": {
+            "frames": 14,
+            "alpha_iou": 0.701972242512783,
+            "alpha_recall": 0.7549096622152396,
+            "premultiplied_mae": 0.005479441490024328,
+            "target_foreground_composite_mae": 0.22202198940535808
+          },
+          "reference_palette": {
+            "frames": 14,
+            "alpha_iou": 0.701972242512783,
+            "alpha_recall": 0.7549096622152396,
+            "premultiplied_mae": 0.00518916267901659,
+            "target_foreground_composite_mae": 0.20948200570441378
+          },
+          "copy_reference": {
+            "frames": 14,
+            "alpha_iou": 0.593440594059406,
+            "alpha_recall": 0.753338570306363,
+            "premultiplied_mae": 0.0065435850992798805,
+            "target_foreground_composite_mae": 0.22631939820326819
+          },
+          "palette_oracle": {
+            "frames": 14,
+            "alpha_iou": 1.0,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0,
+            "target_foreground_composite_mae": 0.0
+          }
+        }
+      }
+    },
+    {
+      "architecture": "reference_transfer",
+      "seed": 42,
+      "metrics": {
+        "train": {
+          "model": {
+            "frames": 21,
+            "alpha_iou": 0.9162712810493999,
+            "alpha_recall": 0.9814648729446935,
+            "premultiplied_mae": 0.0038880594074726105,
+            "target_foreground_composite_mae": 0.08697012239388702
+          },
+          "reference_palette": {
+            "frames": 21,
+            "alpha_iou": 0.9162712810493999,
+            "alpha_recall": 0.9814648729446935,
+            "premultiplied_mae": 0.003448606003075838,
+            "target_foreground_composite_mae": 0.07627265751510338
+          },
+          "copy_reference": {
+            "frames": 21,
+            "alpha_iou": 0.7542503863987635,
+            "alpha_recall": 0.8753363228699551,
+            "premultiplied_mae": 0.009105556644499302,
+            "target_foreground_composite_mae": 0.19151519486484803
+          },
+          "palette_oracle": {
+            "frames": 21,
+            "alpha_iou": 1.0,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0,
+            "target_foreground_composite_mae": 0.0
+          }
+        },
+        "val": {
+          "model": {
+            "frames": 14,
+            "alpha_iou": 0.7831978319783198,
+            "alpha_recall": 0.9080911233307148,
+            "premultiplied_mae": 0.004683853127062321,
+            "target_foreground_composite_mae": 0.16605722607664802
+          },
+          "reference_palette": {
+            "frames": 14,
+            "alpha_iou": 0.7831978319783198,
+            "alpha_recall": 0.9080911233307148,
+            "premultiplied_mae": 0.004568005912005901,
+            "target_foreground_composite_mae": 0.1560535815474437
+          },
+          "copy_reference": {
+            "frames": 14,
+            "alpha_iou": 0.593440594059406,
+            "alpha_recall": 0.753338570306363,
+            "premultiplied_mae": 0.0065435850992798805,
+            "target_foreground_composite_mae": 0.22631939820326819
+          },
+          "palette_oracle": {
+            "frames": 14,
+            "alpha_iou": 1.0,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0,
+            "target_foreground_composite_mae": 0.0
+          }
+        }
+      }
+    },
+    {
+      "architecture": "unet",
+      "seed": 43,
+      "metrics": {
+        "train": {
+          "model": {
+            "frames": 21,
+            "alpha_iou": 0.9485795454545455,
+            "alpha_recall": 0.9982062780269059,
+            "premultiplied_mae": 0.003437192877754569,
+            "target_foreground_composite_mae": 0.07441679950252242
+          },
+          "reference_palette": {
+            "frames": 21,
+            "alpha_iou": 0.9485795454545455,
+            "alpha_recall": 0.9982062780269059,
+            "premultiplied_mae": 0.0026645141188055277,
+            "target_foreground_composite_mae": 0.054286857570767934
+          },
+          "copy_reference": {
+            "frames": 21,
+            "alpha_iou": 0.7542503863987635,
+            "alpha_recall": 0.8753363228699551,
+            "premultiplied_mae": 0.009105556644499302,
+            "target_foreground_composite_mae": 0.19151519486484803
+          },
+          "palette_oracle": {
+            "frames": 21,
+            "alpha_iou": 1.0,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0,
+            "target_foreground_composite_mae": 0.0
+          }
+        },
+        "val": {
+          "model": {
+            "frames": 14,
+            "alpha_iou": 0.8029790115098172,
+            "alpha_recall": 0.9316575019638649,
+            "premultiplied_mae": 0.005405902862548828,
+            "target_foreground_composite_mae": 0.1939764709552566
+          },
+          "reference_palette": {
+            "frames": 14,
+            "alpha_iou": 0.8029790115098172,
+            "alpha_recall": 0.9316575019638649,
+            "premultiplied_mae": 0.005052229389548302,
+            "target_foreground_composite_mae": 0.1798890007200838
+          },
+          "copy_reference": {
+            "frames": 14,
+            "alpha_iou": 0.593440594059406,
+            "alpha_recall": 0.753338570306363,
+            "premultiplied_mae": 0.0065435850992798805,
+            "target_foreground_composite_mae": 0.22631939820326819
+          },
+          "palette_oracle": {
+            "frames": 14,
+            "alpha_iou": 1.0,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0,
+            "target_foreground_composite_mae": 0.0
+          }
+        }
+      }
+    },
+    {
+      "architecture": "reference_transfer",
+      "seed": 43,
+      "metrics": {
+        "train": {
+          "model": {
+            "frames": 21,
+            "alpha_iou": 0.94781622234827,
+            "alpha_recall": 0.9991031390134529,
+            "premultiplied_mae": 0.0026267189532518387,
+            "target_foreground_composite_mae": 0.056375239153198184
+          },
+          "reference_palette": {
+            "frames": 21,
+            "alpha_iou": 0.94781622234827,
+            "alpha_recall": 0.9991031390134529,
+            "premultiplied_mae": 0.002266321098431945,
+            "target_foreground_composite_mae": 0.04721592103419282
+          },
+          "copy_reference": {
+            "frames": 21,
+            "alpha_iou": 0.7542503863987635,
+            "alpha_recall": 0.8753363228699551,
+            "premultiplied_mae": 0.009105556644499302,
+            "target_foreground_composite_mae": 0.19151519486484803
+          },
+          "palette_oracle": {
+            "frames": 21,
+            "alpha_iou": 1.0,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0,
+            "target_foreground_composite_mae": 0.0
+          }
+        },
+        "val": {
+          "model": {
+            "frames": 14,
+            "alpha_iou": 0.772490221642764,
+            "alpha_recall": 0.9308719560094265,
+            "premultiplied_mae": 0.004457355942577124,
+            "target_foreground_composite_mae": 0.15644277456263092
+          },
+          "reference_palette": {
+            "frames": 14,
+            "alpha_iou": 0.772490221642764,
+            "alpha_recall": 0.9308719560094265,
+            "premultiplied_mae": 0.004234825726598501,
+            "target_foreground_composite_mae": 0.15258691572462524
+          },
+          "copy_reference": {
+            "frames": 14,
+            "alpha_iou": 0.593440594059406,
+            "alpha_recall": 0.753338570306363,
+            "premultiplied_mae": 0.0065435850992798805,
+            "target_foreground_composite_mae": 0.22631939820326819
+          },
+          "palette_oracle": {
+            "frames": 14,
+            "alpha_iou": 1.0,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0,
+            "target_foreground_composite_mae": 0.0
+          }
+        }
+      }
+    },
+    {
+      "architecture": "unet",
+      "seed": 44,
+      "metrics": {
+        "train": {
+          "model": {
+            "frames": 21,
+            "alpha_iou": 0.9687228496959166,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0026175095699727535,
+            "target_foreground_composite_mae": 0.06010062802651657
+          },
+          "reference_palette": {
+            "frames": 21,
+            "alpha_iou": 0.9687228496959166,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0017420075600966811,
+            "target_foreground_composite_mae": 0.03745010140290234
+          },
+          "copy_reference": {
+            "frames": 21,
+            "alpha_iou": 0.7542503863987635,
+            "alpha_recall": 0.8753363228699551,
+            "premultiplied_mae": 0.009105556644499302,
+            "target_foreground_composite_mae": 0.19151519486484803
+          },
+          "palette_oracle": {
+            "frames": 21,
+            "alpha_iou": 1.0,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0,
+            "target_foreground_composite_mae": 0.0
+          }
+        },
+        "val": {
+          "model": {
+            "frames": 14,
+            "alpha_iou": 0.815913688469319,
+            "alpha_recall": 0.950510604870385,
+            "premultiplied_mae": 0.0056783100590109825,
+            "target_foreground_composite_mae": 0.20525239243748364
+          },
+          "reference_palette": {
+            "frames": 14,
+            "alpha_iou": 0.815913688469319,
+            "alpha_recall": 0.950510604870385,
+            "premultiplied_mae": 0.005276584066450596,
+            "target_foreground_composite_mae": 0.18945317294592007
+          },
+          "copy_reference": {
+            "frames": 14,
+            "alpha_iou": 0.593440594059406,
+            "alpha_recall": 0.753338570306363,
+            "premultiplied_mae": 0.0065435850992798805,
+            "target_foreground_composite_mae": 0.22631939820326819
+          },
+          "palette_oracle": {
+            "frames": 14,
+            "alpha_iou": 1.0,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0,
+            "target_foreground_composite_mae": 0.0
+          }
+        }
+      }
+    },
+    {
+      "architecture": "reference_transfer",
+      "seed": 44,
+      "metrics": {
+        "train": {
+          "model": {
+            "frames": 21,
+            "alpha_iou": 0.8991097922848664,
+            "alpha_recall": 0.9964125560538116,
+            "premultiplied_mae": 0.004220981616526842,
+            "target_foreground_composite_mae": 0.0845609032935507
+          },
+          "reference_palette": {
+            "frames": 21,
+            "alpha_iou": 0.8991097922848664,
+            "alpha_recall": 0.9964125560538116,
+            "premultiplied_mae": 0.003787773661315441,
+            "target_foreground_composite_mae": 0.07417880800985613
+          },
+          "copy_reference": {
+            "frames": 21,
+            "alpha_iou": 0.7542503863987635,
+            "alpha_recall": 0.8753363228699551,
+            "premultiplied_mae": 0.009105556644499302,
+            "target_foreground_composite_mae": 0.19151519486484803
+          },
+          "palette_oracle": {
+            "frames": 21,
+            "alpha_iou": 1.0,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0,
+            "target_foreground_composite_mae": 0.0
+          }
+        },
+        "val": {
+          "model": {
+            "frames": 14,
+            "alpha_iou": 0.7789072426937739,
+            "alpha_recall": 0.9630793401413983,
+            "premultiplied_mae": 0.00475194351747632,
+            "target_foreground_composite_mae": 0.1614815551406209
+          },
+          "reference_palette": {
+            "frames": 14,
+            "alpha_iou": 0.7789072426937739,
+            "alpha_recall": 0.9630793401413983,
+            "premultiplied_mae": 0.0040798611007630825,
+            "target_foreground_composite_mae": 0.13442591217432573
+          },
+          "copy_reference": {
+            "frames": 14,
+            "alpha_iou": 0.593440594059406,
+            "alpha_recall": 0.753338570306363,
+            "premultiplied_mae": 0.0065435850992798805,
+            "target_foreground_composite_mae": 0.22631939820326819
+          },
+          "palette_oracle": {
+            "frames": 14,
+            "alpha_iou": 1.0,
+            "alpha_recall": 1.0,
+            "premultiplied_mae": 0.0,
+            "target_foreground_composite_mae": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "scope": "Three fixed seeds, final checkpoint; same tiny split, no independent-reference test."
+}

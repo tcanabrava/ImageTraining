@@ -1,0 +1,362 @@
+{
+  "environment": {
+    "python": "3.11.5",
+    "python_executable": "/mnt/aiongpfs/users/tcanabrava/ImageTraining/.venv-iris/bin/python",
+    "loaded_modules": [
+      "env/release/2023b",
+      "compiler/GCCcore/13.2.0",
+      "lib/zlib/1.2.13-GCCcore-13.2.0",
+      "tools/binutils/2.40-GCCcore-13.2.0",
+      "compiler/GCC/13.2.0",
+      "tools/numactl/2.0.16-GCCcore-13.2.0",
+      "tools/XZ/5.4.4-GCCcore-13.2.0",
+      "lib/libxml2/2.11.5-GCCcore-13.2.0",
+      "system/libpciaccess/0.17-GCCcore-13.2.0",
+      "system/hwloc/2.9.2-GCCcore-13.2.0",
+      "system/OpenSSL/1.1",
+      "lib/libevent/2.1.12-GCCcore-13.2.0",
+      "lib/UCX/1.15.0-GCCcore-13.2.0",
+      "lib/libfabric/1.19.0-GCCcore-13.2.0",
+      "lib/PMIx/4.2.6-GCCcore-13.2.0",
+      "lib/UCC/1.2.0-GCCcore-13.2.0",
+      "mpi/OpenMPI/4.1.6-GCC-13.2.0",
+      "numlib/OpenBLAS/0.3.24-GCC-13.2.0",
+      "lib/FlexiBLAS/3.3.1-GCC-13.2.0",
+      "numlib/FFTW/3.3.10-GCC-13.2.0",
+      "toolchain/gompi/2023b",
+      "numlib/FFTW.MPI/3.3.10-gompi-2023b",
+      "numlib/ScaLAPACK/2.2.0-gompi-2023b-fb",
+      "toolchain/foss/2023b",
+      "system/CUDA/12.6.0",
+      "numlib/cuDNN/9.5.0.50-CUDA-12.6.0",
+      "lib/GDRCopy/2.4-GCCcore-13.2.0",
+      "lib/UCX-CUDA/1.15.0-GCCcore-13.2.0-CUDA-12.6.0",
+      "math/magma/2.7.2-foss-2023b-CUDA-12.6.0",
+      "lib/NCCL/2.20.5-GCCcore-13.2.0-CUDA-12.6.0",
+      "tools/Ninja/1.11.1-GCCcore-13.2.0",
+      "tools/bzip2/1.0.8-GCCcore-13.2.0",
+      "devel/ncurses/6.4-GCCcore-13.2.0",
+      "lib/libreadline/8.2-GCCcore-13.2.0",
+      "lang/Tcl/8.6.13-GCCcore-13.2.0",
+      "devel/SQLite/3.43.1-GCCcore-13.2.0",
+      "lib/libffi/3.4.4-GCCcore-13.2.0",
+      "lang/Python/3.11.5-GCCcore-13.2.0",
+      "tools/cffi/1.15.1-GCCcore-13.2.0",
+      "tools/cryptography/41.0.5-GCCcore-13.2.0",
+      "tools/virtualenv/20.24.6-GCCcore-13.2.0",
+      "lang/Python-bundle-PyPI/2023.10-GCCcore-13.2.0",
+      "lib/Abseil/20240116.1-GCCcore-13.2.0",
+      "devel/protobuf/25.3-GCCcore-13.2.0",
+      "devel/protobuf-python/4.25.3-GCCcore-13.2.0",
+      "lib/pybind11/2.11.1-GCCcore-13.2.0",
+      "toolchain/gfbf/2023b",
+      "lang/SciPy-bundle/2023.11-gfbf-2023b",
+      "lib/libyaml/0.2.5-GCCcore-13.2.0",
+      "lib/PyYAML/6.0.1-GCCcore-13.2.0",
+      "math/GMP/6.3.0-GCCcore-13.2.0",
+      "math/MPFR/4.2.1-GCCcore-13.2.0",
+      "lang/NASM/2.16.01-GCCcore-13.2.0",
+      "vis/x264/20231019-GCCcore-13.2.0",
+      "data/LAME/3.100-GCCcore-13.2.0",
+      "vis/x265/3.5-GCCcore-13.2.0",
+      "tools/expat/2.5.0-GCCcore-13.2.0",
+      "lib/libpng/1.6.40-GCCcore-13.2.0",
+      "lib/Brotli/1.1.0-GCCcore-13.2.0",
+      "vis/freetype/2.13.2-GCCcore-13.2.0",
+      "tools/util-linux/2.39-GCCcore-13.2.0",
+      "vis/fontconfig/2.14.2-GCCcore-13.2.0",
+      "devel/xorg-macros/1.20.0-GCCcore-13.2.0",
+      "vis/X11/20231019-GCCcore-13.2.0",
+      "lang/FriBidi/1.0.13-GCCcore-13.2.0",
+      "lib/SDL2/2.28.5-GCCcore-13.2.0",
+      "vis/FFmpeg/6.0-GCCcore-13.2.0",
+      "lib/libjpeg-turbo/3.0.1-GCCcore-13.2.0",
+      "vis/jbigkit/2.1-GCCcore-13.2.0",
+      "tools/gzip/1.13-GCCcore-13.2.0",
+      "lib/lz4/1.9.4-GCCcore-13.2.0",
+      "lib/zstd/1.5.5-GCCcore-13.2.0",
+      "system/libdeflate/1.19-GCCcore-13.2.0",
+      "lib/LibTIFF/4.6.0-GCCcore-13.2.0",
+      "lib/giflib/5.2.1-GCCcore-13.2.0",
+      "lib/libwebp/1.3.2-GCCcore-13.2.0",
+      "lib/OpenJPEG/2.5.0-GCCcore-13.2.0",
+      "vis/LittleCMS/2.15-GCCcore-13.2.0",
+      "vis/Pillow/10.2.0-GCCcore-13.2.0",
+      "tools/expecttest/0.2.1-GCCcore-13.2.0",
+      "tools/networkx/3.2.1-gfbf-2023b",
+      "math/MPC/1.3.1-GCCcore-13.2.0",
+      "math/gmpy2/2.1.5-GCC-13.2.0",
+      "math/sympy/1.12-gfbf-2023b",
+      "tools/Z3/4.13.0-GCCcore-13.2.0",
+      "ai/PyTorch/2.3.0-foss-2023b-CUDA-12.6.0"
+    ],
+    "torch": "2.3.0",
+    "numpy": "1.26.2",
+    "pillow": "10.2.0",
+    "platform": "Linux-4.18.0-553.170.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "cuda_build": "12.6",
+    "device": "cuda",
+    "git_revision": "37ab92ee598090775c9c53e394f068b3a0872fab",
+    "git_dirty": true,
+    "gpu": "Tesla V100-SXM2-16GB",
+    "capability": [
+      7,
+      0
+    ],
+    "supported_architectures": [
+      "sm_70"
+    ]
+  },
+  "dataset": {
+    "samples": 5,
+    "designs": 5,
+    "target_frames": {
+      "train": 21,
+      "val": 14,
+      "test": 0
+    },
+    "fingerprint": "c5325d57aa8f3f0686df1082724c341a803a91f74f93121361dbf95edbf995ea"
+  },
+  "checkpoint_sha256": "3e64735384572331139d5f5e32b428be02a1533a3042017695aa811adf4747c1",
+  "checkpoint_step": 200,
+  "designs": {
+    "basic-boots": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.8905435591958303,
+          "alpha_recall": 0.9819376026272578,
+          "premultiplied_mae": 0.0035634960513561964,
+          "target_foreground_composite_mae": 0.07035963771508963
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.8905435591958303,
+          "alpha_recall": 0.9819376026272578,
+          "premultiplied_mae": 0.0029186545871198177,
+          "target_foreground_composite_mae": 0.0558270818233229
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.7975679542203148,
+          "alpha_recall": 0.9154351395730707,
+          "premultiplied_mae": 0.007757060695439577,
+          "target_foreground_composite_mae": 0.15434498152709358
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.4866074011181342,
+      "inversion_equivariance_rgb_mae": 5.716125715487737e-08
+    },
+    "fold-boots": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9296407185628742,
+          "alpha_recall": 0.9703125,
+          "premultiplied_mae": 0.006378703750669956,
+          "target_foreground_composite_mae": 0.12748672167460123
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9296407185628742,
+          "alpha_recall": 0.9703125,
+          "premultiplied_mae": 0.005983793176710606,
+          "target_foreground_composite_mae": 0.11945568720499675
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.7457511896668932,
+          "alpha_recall": 0.85703125,
+          "premultiplied_mae": 0.012564877979457378,
+          "target_foreground_composite_mae": 0.22583230336507162
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.42629384631766004,
+      "inversion_equivariance_rgb_mae": 5.623475815425554e-08
+    },
+    "basic-shoes": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9347345132743363,
+          "alpha_recall": 0.9976387249114522,
+          "premultiplied_mae": 0.0017219778383150697,
+          "target_foreground_composite_mae": 0.04962690249056105
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9347345132743363,
+          "alpha_recall": 0.9976387249114522,
+          "premultiplied_mae": 0.001443370245397091,
+          "target_foreground_composite_mae": 0.04041484245771688
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.7068114511352419,
+          "alpha_recall": 0.8453364817001181,
+          "premultiplied_mae": 0.006994732189923525,
+          "target_foreground_composite_mae": 0.19310601064418537
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.599754475512629,
+      "inversion_equivariance_rgb_mae": 1.0475116084787336e-07
+    },
+    "plate-boots": {
+      "split": "val",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.8786848072562359,
+          "alpha_recall": 0.9462759462759462,
+          "premultiplied_mae": 0.003663248848170042,
+          "target_foreground_composite_mae": 0.12006670991045991
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.8786848072562359,
+          "alpha_recall": 0.9462759462759462,
+          "premultiplied_mae": 0.003341376082971692,
+          "target_foreground_composite_mae": 0.10913356708034443
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.686491935483871,
+          "alpha_recall": 0.8315018315018315,
+          "premultiplied_mae": 0.005889784544706345,
+          "target_foreground_composite_mae": 0.16796508590331832
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.46312418620314133,
+      "inversion_equivariance_rgb_mae": 1.1672038289126694e-07
+    },
+    "ghillies": {
+      "split": "val",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.6414141414141414,
+          "alpha_recall": 0.8392070484581498,
+          "premultiplied_mae": 0.005704456940293312,
+          "target_foreground_composite_mae": 0.24902249642930893
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.6414141414141414,
+          "alpha_recall": 0.8392070484581498,
+          "premultiplied_mae": 0.005794635973870754,
+          "target_foreground_composite_mae": 0.24069565648374402
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.44551282051282054,
+          "alpha_recall": 0.6123348017621145,
+          "premultiplied_mae": 0.0071973842568695545,
+          "target_foreground_composite_mae": 0.33158854345918226
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.2641925973134387,
+      "inversion_equivariance_rgb_mae": 9.823645853440759e-08
+    }
+  },
+  "splits": {
+    "train": {
+      "model": {
+        "frames": 21,
+        "alpha_iou": 0.9162712810493999,
+        "alpha_recall": 0.9814648729446935,
+        "premultiplied_mae": 0.0038880594074726105,
+        "target_foreground_composite_mae": 0.08697012239388702
+      },
+      "reference_palette": {
+        "frames": 21,
+        "alpha_iou": 0.9162712810493999,
+        "alpha_recall": 0.9814648729446935,
+        "premultiplied_mae": 0.003448606003075838,
+        "target_foreground_composite_mae": 0.07627265751510338
+      },
+      "copy_reference": {
+        "frames": 21,
+        "alpha_iou": 0.7542503863987635,
+        "alpha_recall": 0.8753363228699551,
+        "premultiplied_mae": 0.009105556644499302,
+        "target_foreground_composite_mae": 0.19151519486484803
+      },
+      "palette_oracle": {
+        "frames": 21,
+        "alpha_iou": 1.0,
+        "alpha_recall": 1.0,
+        "premultiplied_mae": 0.0,
+        "target_foreground_composite_mae": 0.0
+      }
+    },
+    "val": {
+      "model": {
+        "frames": 14,
+        "alpha_iou": 0.7831978319783198,
+        "alpha_recall": 0.9080911233307148,
+        "premultiplied_mae": 0.004683853127062321,
+        "target_foreground_composite_mae": 0.16605722607664802
+      },
+      "reference_palette": {
+        "frames": 14,
+        "alpha_iou": 0.7831978319783198,
+        "alpha_recall": 0.9080911233307148,
+        "premultiplied_mae": 0.004568005912005901,
+        "target_foreground_composite_mae": 0.1560535815474437
+      },
+      "copy_reference": {
+        "frames": 14,
+        "alpha_iou": 0.593440594059406,
+        "alpha_recall": 0.753338570306363,
+        "premultiplied_mae": 0.0065435850992798805,
+        "target_foreground_composite_mae": 0.22631939820326819
+      },
+      "palette_oracle": {
+        "frames": 14,
+        "alpha_iou": 1.0,
+        "alpha_recall": 1.0,
+        "premultiplied_mae": 0.0,
+        "target_foreground_composite_mae": 0.0
+      }
+    }
+  },
+  "scope": "Same animation and aligned reference. Palette oracle uses targets only to measure a representation bound; never used for predictions."
+}

@@ -128,7 +128,7 @@ their original RGB values to produce fitted colors. Equipment RGB cannot affect
 alpha or attention weights; changing it changes only transferred colors.
 
 This is a project-designed spatial attention ablation, not a reproduction of a
-paper. It has a restrictive color basis, cannot synthesize unseen palette colors,
+paper. It has a restrictive color basis, cannot produce colors outside the reference RGB convex hull,
 and does not establish independent-illustration support. It separates appearance
 from correspondence to test the observed failure, without generating body pixels
 or motion. No color augmentation is used in this first comparison: architecture

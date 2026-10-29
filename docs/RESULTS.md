@@ -177,3 +177,67 @@ The trainable RGBA representation gate remains outstanding.
 Validation: 24 tests passed, including hidden-RGB exclusion from palettes and
 export metric checks; ShellCheck passed for the new Slurm entry point. The GPU
 report records the preserved remote chmod/untracked launcher changes as dirty.
+
+
+## Learned reference transfer: three-seed comparison (Iris job 6257150)
+
+Revision `37ab92e`, V100, Slurm exit code 0, 39 seconds for all six runs and their
+exports/diagnostics. Seeds 42, 43, and 44 each trained the original U-Net and the
+new reference-transfer model for 200 updates, with identical data, optimizer,
+batch size, and loss. Architecture changes initialization and parameter count;
+this is not an equal-parameter or equal-runtime comparison. Final checkpoints are
+reported without selecting seeds or early-stopping steps on validation.
+
+The experimental model learns target query features and reference-body keys,
+attends to visible reference locations, and mixes the original equipment colors.
+Alpha and attention weights are independent of reference equipment RGB. Colors
+are limited to the reference RGB convex hull (mixtures can introduce intermediate
+colors). This is an intentionally constrained project experiment, not a paper
+reproduction or a general equipment system.
+
+| Seed | U-Net foreground MAE ↓ | Transfer foreground MAE ↓ | U-Net IoU ↑ | Transfer IoU ↑ |
+| --- | ---: | ---: | ---: | ---: |
+| 42 | 0.22202 | 0.16606 | 0.7020 | 0.7832 |
+| 43 | 0.19398 | 0.15644 | 0.8030 | 0.7725 |
+| 44 | 0.20525 | 0.16148 | 0.8159 | 0.7789 |
+| Mean | 0.20708 | 0.16133 | 0.7736 | 0.7782 |
+
+Scores use PNG-equivalent binary alpha and quantization on the same 14 held-out
+frames. Transfer improves pooled foreground composite MAE in each seed, by 22.1%
+on the mean. Mean whole-frame premultiplied error improves from 0.005521 to
+0.004631, and mean alpha recall from 0.8790 to 0.9340. IoU declines in two seeds,
+so this is not uniform geometry improvement. Higher recall can include excessive
+coverage; per-design IoU and previews remain essential.
+
+Plate-boots foreground MAE improves in every seed: 0.19044→0.12007,
+0.17769→0.11298, 0.19199→0.13297. Ghillies is mixed: 0.27900→0.24902,
+0.22337→0.23484, 0.22918→0.21292. The difficult thin details are not solved.
+Contact sheets inspected for transfer seeds 42 and 44 show darker plate boots
+closer to the reference but softened internal detail. Ghillies become broad,
+filled shoe-like shapes rather than faithful straps. These observations do not
+establish temporal stability.
+
+The U-Net has 120,548 parameters; transfer has 124,033 (+2.9%). Training/evaluation
+loops took 1.995–2.661 seconds for U-Net and 4.186–4.298 seconds for transfer.
+Recorded peak allocated memory was 147.1–157.1 MiB and 158.9 MiB respectively.
+These sequential runs share a process and allocator; they are not isolated serving
+memory benchmarks. Model-loading and preview time are excluded from loop timings.
+
+All runs, checkpoints, and previews are copied locally and retained on Iris in
+`runs/compare-6257150/`. Versioned [comparison evidence](benchmarks/compare-6257150/)
+contains all seeds, per-design diagnostics, learning curves, environment metadata,
+and checkpoint hashes. Remote user chmod/untracked launcher changes remain intact
+and are recorded as dirty; experiment source was committed before running.
+
+Validation: 27 tests passed, including finite transfer gradients, color-inversion
+behavior, architecture-compatible resume, and inference without ground-truth
+sheets for both architectures. The Slurm script passed ShellCheck and the full
+six-run GPU experiment completed successfully.
+
+Decision: retain reference transfer as a promising experimental variant; leave
+U-Net as the default and preserve both baselines. Next expand training and an
+untouched evaluation set with thin/structured equipment and additional animation
+views before tuning correspondence or detail losses. Repeated development on
+these two validation designs is not an unbiased final generalization test.
+Independent item illustrations, behind-torso occlusion, new bodies, and latent
+RGBA representation fidelity remain unvalidated.
