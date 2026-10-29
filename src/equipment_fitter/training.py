@@ -16,12 +16,13 @@ import PIL
 import torch
 
 from .data import save_json
-from .model import EquipmentUNet, fitting_loss
+from .model import build_model, fitting_loss
 from .tensors import FrameDataset
 
 
 @dataclass
 class TrainConfig:
+    architecture: str = "unet"
     steps: int = 200
     batch_size: int = 8
     width: int = 16
@@ -31,6 +32,8 @@ class TrainConfig:
     threads: int = 4
 
     def validate(self):
+        if self.architecture not in ("unet", "reference_transfer"):
+            raise ValueError("Unknown architecture")
         for key in ("steps", "batch_size", "width", "log_every", "threads"):
             if type(getattr(self, key)) is not int or getattr(self, key) < 1:
                 raise ValueError(f"{key} must be a positive integer")
@@ -126,13 +129,15 @@ def train(manifest: Path, config_path: Path, output: Path, requested_device: str
         raise ValueError("Dataset has no training targets")
     if output.exists() and any(output.iterdir()) and resume is None:
         raise ValueError("Run directory is not empty; choose a new output or explicitly resume")
-    model = EquipmentUNet(config.width).to(device)
+    model = build_model(asdict(config)).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=config.learning_rate)
     start_step = 0
     if resume is not None:
         checkpoint = torch.load(resume, map_location="cpu", weights_only=True)
         if checkpoint.get("format_version") != 1 or checkpoint["dataset_fingerprint"] != training.report["fingerprint"]:
             raise ValueError("Resume checkpoint is incompatible with this dataset")
+        if checkpoint["config"].get("architecture", "unet") != config.architecture:
+            raise ValueError("Resume config mismatch: architecture")
         for key in ("width", "batch_size", "learning_rate", "seed"):
             if checkpoint["config"][key] != getattr(config, key):
                 raise ValueError(f"Resume config mismatch: {key}")

@@ -7,7 +7,7 @@ from PIL import Image
 import torch
 
 from .data import asset_path, frame, load_dataset, rgba, save_json
-from .model import EquipmentUNet
+from .model import build_model
 from .tensors import conditioning, image_tensor
 from .training import environment, select_device
 
@@ -48,7 +48,7 @@ def infer(checkpoint_path: Path, base_path: Path, reference_path: Path, referenc
     checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
     if checkpoint.get("format_version") != 1 or checkpoint.get("input_contract") != "aligned-reference-rgba-v1":
         raise ValueError("Unsupported checkpoint")
-    model = EquipmentUNet(checkpoint["config"]["width"]).to(device)
+    model = build_model(checkpoint["config"]).to(device)
     model.load_state_dict(checkpoint["model"])
     model.eval()
     base, reference, reference_base = map(rgba, (base_path, reference_path, reference_base_path))

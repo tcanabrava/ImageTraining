@@ -6,7 +6,7 @@ from pathlib import Path
 import torch
 
 from .data import asset_path, frame, load_dataset, rgba, save_json
-from .model import EquipmentUNet
+from .model import build_model
 from .tensors import conditioning, image_tensor
 from .training import environment, select_device
 
@@ -58,7 +58,7 @@ def analyze(checkpoint_path, manifest, output, requested_device="cpu"):
         raise ValueError("Unsupported checkpoint")
     if checkpoint["dataset_fingerprint"] != dataset["fingerprint"]:
         raise ValueError("This diagnostic requires the checkpoint's original benchmark dataset")
-    model = EquipmentUNet(checkpoint["config"]["width"]).to(device)
+    model = build_model(checkpoint["config"]).to(device)
     model.load_state_dict(checkpoint["model"])
     model.eval()
     report = {"environment": environment(device), "dataset": dataset,

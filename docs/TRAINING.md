@@ -117,3 +117,27 @@ inversion probes output sensitivity while holding bodies and alpha fixed. Becaus
 inverted references are outside this tiny training distribution, weak response is
 evidence of limited color control, not proof the entire reference is ignored.
 These are project diagnostic hypotheses, not reproduced paper methods.
+
+## Reference-transfer experiment
+
+`TrainConfig.architecture` selects `unet` (the default, including old checkpoints)
+or `reference_transfer`. The experimental model predicts alpha and spatial query
+features from bodies, coordinates, and reference alpha. A separate reference-body
+encoder provides keys. Attention over visible reference equipment locations mixes
+their original RGB values to produce fitted colors. Equipment RGB cannot affect
+alpha or attention weights; changing it changes only transferred colors.
+
+This is a project-designed spatial attention ablation, not a reproduction of a
+paper. It has a restrictive color basis, cannot synthesize unseen palette colors,
+and does not establish independent-illustration support. It separates appearance
+from correspondence to test the observed failure, without generating body pixels
+or motion. No color augmentation is used in this first comparison: architecture
+is the intervention, with the existing training recipe held fixed. Parameter
+counts are recorded; this is not a parameter-matched architecture study.
+
+Run `sbatch hpc/compare.sbatch` on Iris. One allocated GPU runs both architectures
+for 200 updates at seeds 42, 43, and 44, exports previews, and evaluates each final
+checkpoint. Outputs go to `runs/compare-JOBID/`, including `comparison.json`.
+All seeds are reported; validation is not used to choose a seed or stopping step.
+A stronger color-transfer constraint may trade off silhouette quality, so compare
+both foreground composite error and alpha recall by design.

@@ -33,10 +33,11 @@ def test_empty_target_and_odd_dimensions_have_finite_gradients():
     assert all(torch.isfinite(p.grad).all() for p in model.parameters())
 
 
-def test_training_resume_and_inference_without_target_sheet(tmp_path):
+@pytest.mark.parametrize("architecture", ["unet", "reference_transfer"])
+def test_training_resume_and_inference_without_target_sheet(tmp_path, architecture):
     manifest = create_fixture(tmp_path / "data")
     config = tmp_path / "config.json"
-    values = {"steps": 2, "batch_size": 2, "width": 4, "learning_rate": 0.001,
+    values = {"architecture": architecture, "steps": 2, "batch_size": 2, "width": 4, "learning_rate": 0.001,
               "seed": 7, "log_every": 1, "threads": 1}
     config.write_text(json.dumps(values))
     result = train(manifest, config, tmp_path / "run", "cpu")

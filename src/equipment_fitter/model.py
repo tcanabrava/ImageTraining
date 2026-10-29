@@ -11,7 +11,7 @@ def block(inputs: int, outputs: int) -> nn.Sequential:
 
 
 class EquipmentUNet(nn.Module):
-    def __init__(self, width: int = 16):
+    def __init__(self, width: int = 16, output_channels: int = 4):
         super().__init__()
         if width < 4 or width % 4:
             raise ValueError("Model width must be a positive multiple of four")
@@ -20,7 +20,7 @@ class EquipmentUNet(nn.Module):
         self.middle = block(width * 2, width * 4)
         self.dec2 = block(width * 6, width * 2)
         self.dec1 = block(width * 3, width)
-        self.output = nn.Conv2d(width, 4, 1)
+        self.output = nn.Conv2d(width, output_channels, 1)
 
     def forward(self, inputs: torch.Tensor) -> torch.Tensor:
         a = self.enc1(inputs)
@@ -48,3 +48,45 @@ def fitting_loss(logits: torch.Tensor, target: torch.Tensor) -> torch.Tensor:
     premult_loss = 0.5 * ((premult_error * alpha).sum(dims) / foreground +
                           (premult_error * (1 - alpha)).sum(dims) / background)
     return (alpha_loss + dice + visible_rgb + premult_loss).mean()
+
+
+class ReferenceTransfer(nn.Module):
+    """Experimental visible-reference color transfer with learned spatial attention.
+
+    Geometry and correspondence see body pixels, coordinates and reference alpha,
+    but not equipment RGB. RGB is a convex combination of visible reference colors.
+    This deliberately restricts appearance to the aligned reference palette.
+    """
+    def __init__(self, width=16):
+        super().__init__()
+        self.geometry = EquipmentUNet(width, width + 1)
+        self.keys = block(6, width)
+        self.width = width
+
+    def forward(self, inputs):
+        geometry_inputs = inputs.clone()
+        geometry_inputs[:, 8:11] = 0
+        spatial = self.geometry(geometry_inputs)
+        keys = self.keys(torch.cat((inputs[:, 4:8], inputs[:, 12:14]), dim=1))
+        outputs = []
+        for i in range(len(inputs)):
+            mask = inputs[i, 11].flatten() > 0
+            if not mask.any():
+                raise ValueError("Equipment reference is empty")
+            query = spatial[i, :self.width].flatten(1).T
+            key = keys[i].flatten(1)[:, mask]
+            weights = (query @ key / self.width ** .5).softmax(dim=-1)
+            alpha = inputs[i, 11].flatten()[mask]
+            colors = inputs[i, 8:11].flatten(1)[:, mask].T / alpha[:, None]
+            rgb = (weights @ colors).T.reshape(3, *inputs.shape[-2:])
+            outputs.append(torch.cat((torch.logit(rgb.clamp(1e-6, 1 - 1e-6)), spatial[i, self.width:]), dim=0))
+        return torch.stack(outputs)
+
+
+def build_model(config):
+    architecture = config.get("architecture", "unet")
+    if architecture == "unet":
+        return EquipmentUNet(config["width"])
+    if architecture == "reference_transfer":
+        return ReferenceTransfer(config["width"])
+    raise ValueError(f"Unknown architecture: {architecture}")
