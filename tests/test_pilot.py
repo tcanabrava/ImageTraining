@@ -1,4 +1,5 @@
 import json
+import pytest
 
 from PIL import Image
 
@@ -7,13 +8,16 @@ from equipment_fitter.pilot import run_pilot
 from equipment_fitter.preview import preview_dataset
 
 
-def test_offline_pilot_produces_reviewable_artifacts(tmp_path):
+@pytest.mark.parametrize("architecture", ["unet", "canonical_transfer"])
+def test_offline_pilot_produces_reviewable_artifacts(tmp_path, architecture):
     manifest = create_fixture(tmp_path / "data")
     config = tmp_path / "config.json"
-    config.write_text(json.dumps({"steps": 1, "batch_size": 1, "width": 4, "threads": 1}))
+    config.write_text(json.dumps({"architecture": architecture, "steps": 1, "batch_size": 1, "width": 4, "threads": 1}))
     output = tmp_path / "run"
     run_pilot(manifest, config, output, "cpu")
     assert (output / "summary.json").is_file()
+    if architecture == "canonical_transfer":
+        assert not (output / "inputs/glove-2/reference-base.png").exists()
     assert (output / "predictions/glove-2/equipment.png").is_file()
     assert (output / "previews/glove-2.gif").is_file()
     assert (output / "ground-truth-previews/glove-2.png").is_file()

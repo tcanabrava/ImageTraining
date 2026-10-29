@@ -23,6 +23,7 @@ from .tensors import FrameDataset
 @dataclass
 class TrainConfig:
     architecture: str = "unet"
+    attachment: str = "none"
     steps: int = 200
     batch_size: int = 8
     width: int = 16
@@ -32,8 +33,10 @@ class TrainConfig:
     threads: int = 4
 
     def validate(self):
-        if self.architecture not in ("unet", "reference_transfer"):
+        if self.architecture not in ("unet", "reference_transfer", "canonical_transfer"):
             raise ValueError("Unknown architecture")
+        if self.attachment not in ("none", "feet") or (self.attachment != "none" and self.architecture != "canonical_transfer"):
+            raise ValueError("Attachment mode requires canonical transfer")
         for key in ("steps", "batch_size", "width", "log_every", "threads"):
             if type(getattr(self, key)) is not int or getattr(self, key) < 1:
                 raise ValueError(f"{key} must be a positive integer")
@@ -123,8 +126,8 @@ def train(manifest: Path, config_path: Path, output: Path, requested_device: str
     torch.backends.cudnn.benchmark = False
     torch.backends.cudnn.deterministic = True
     device = select_device(requested_device)
-    training = FrameDataset(manifest, "train")
-    validation = FrameDataset(manifest, "val")
+    training = FrameDataset(manifest, "train", config.architecture, config.attachment)
+    validation = FrameDataset(manifest, "val", config.architecture, config.attachment)
     if not len(training):
         raise ValueError("Dataset has no training targets")
     if output.exists() and any(output.iterdir()) and resume is None:
@@ -138,6 +141,8 @@ def train(manifest: Path, config_path: Path, output: Path, requested_device: str
             raise ValueError("Resume checkpoint is incompatible with this dataset")
         if checkpoint["config"].get("architecture", "unet") != config.architecture:
             raise ValueError("Resume config mismatch: architecture")
+        if checkpoint["config"].get("attachment", "none") != config.attachment:
+            raise ValueError("Resume config mismatch: attachment")
         for key in ("width", "batch_size", "learning_rate", "seed"):
             if checkpoint["config"][key] != getattr(config, key):
                 raise ValueError(f"Resume config mismatch: {key}")
@@ -191,7 +196,7 @@ def train(manifest: Path, config_path: Path, output: Path, requested_device: str
             checkpoint = {"format_version": 1, "model": model.state_dict(), "optimizer": optimizer.state_dict(),
                           "step": step, "config": asdict(config), "frame_size": list(training.size),
                           "dataset_fingerprint": training.report["fingerprint"],
-                          "input_contract": "aligned-reference-rgba-v1"}
+                          "input_contract": "canonical-footwear-rgba-v1" if config.architecture == "canonical_transfer" else "aligned-reference-rgba-v1"}
             temporary = output / "last.pt.tmp"
             torch.save(checkpoint, temporary)
             temporary.replace(output / "last.pt")

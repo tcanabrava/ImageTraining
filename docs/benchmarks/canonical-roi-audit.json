@@ -1,0 +1,207 @@
+{
+  "dataset": {
+    "samples": 32,
+    "designs": 7,
+    "target_frames": {
+      "train": 168,
+      "val": 56,
+      "test": 0
+    },
+    "fingerprint": "2daacc0965ecb1236368b1cc988a08e73f79ebfc866ef9bfff1336b76aa1f75e"
+  },
+  "samples": {
+    "basic-boots-north": {
+      "split": "train",
+      "visible_pixels": 1006,
+      "covered_pixels": 1006.0,
+      "coverage": 1.0
+    },
+    "fold-boots-north": {
+      "split": "train",
+      "visible_pixels": 1114,
+      "covered_pixels": 1114.0,
+      "coverage": 1.0
+    },
+    "basic-shoes-north": {
+      "split": "train",
+      "visible_pixels": 711,
+      "covered_pixels": 711.0,
+      "coverage": 1.0
+    },
+    "plate-boots-north": {
+      "split": "val",
+      "visible_pixels": 665,
+      "covered_pixels": 665.0,
+      "coverage": 1.0
+    },
+    "ghillies-north": {
+      "split": "val",
+      "visible_pixels": 404,
+      "covered_pixels": 404.0,
+      "coverage": 1.0
+    },
+    "sandals-north": {
+      "split": "train",
+      "visible_pixels": 378,
+      "covered_pixels": 378.0,
+      "coverage": 1.0
+    },
+    "revised-shoes-north": {
+      "split": "train",
+      "visible_pixels": 562,
+      "covered_pixels": 562.0,
+      "coverage": 1.0
+    },
+    "revised-boots-north": {
+      "split": "train",
+      "visible_pixels": 906,
+      "covered_pixels": 906.0,
+      "coverage": 1.0
+    },
+    "basic-boots-west": {
+      "split": "train",
+      "visible_pixels": 978,
+      "covered_pixels": 978.0,
+      "coverage": 1.0
+    },
+    "fold-boots-west": {
+      "split": "train",
+      "visible_pixels": 988,
+      "covered_pixels": 988.0,
+      "coverage": 1.0
+    },
+    "basic-shoes-west": {
+      "split": "train",
+      "visible_pixels": 595,
+      "covered_pixels": 595.0,
+      "coverage": 1.0
+    },
+    "plate-boots-west": {
+      "split": "val",
+      "visible_pixels": 563,
+      "covered_pixels": 563.0,
+      "coverage": 1.0
+    },
+    "ghillies-west": {
+      "split": "val",
+      "visible_pixels": 402,
+      "covered_pixels": 402.0,
+      "coverage": 1.0
+    },
+    "sandals-west": {
+      "split": "train",
+      "visible_pixels": 352,
+      "covered_pixels": 352.0,
+      "coverage": 1.0
+    },
+    "revised-shoes-west": {
+      "split": "train",
+      "visible_pixels": 480,
+      "covered_pixels": 480.0,
+      "coverage": 1.0
+    },
+    "revised-boots-west": {
+      "split": "train",
+      "visible_pixels": 696,
+      "covered_pixels": 696.0,
+      "coverage": 1.0
+    },
+    "basic-boots-south": {
+      "split": "train",
+      "visible_pixels": 1218,
+      "covered_pixels": 1218.0,
+      "coverage": 1.0
+    },
+    "fold-boots-south": {
+      "split": "train",
+      "visible_pixels": 1280,
+      "covered_pixels": 1280.0,
+      "coverage": 1.0
+    },
+    "basic-shoes-south": {
+      "split": "train",
+      "visible_pixels": 847,
+      "covered_pixels": 847.0,
+      "coverage": 1.0
+    },
+    "plate-boots-south": {
+      "split": "val",
+      "visible_pixels": 819,
+      "covered_pixels": 819.0,
+      "coverage": 1.0
+    },
+    "ghillies-south": {
+      "split": "val",
+      "visible_pixels": 454,
+      "covered_pixels": 454.0,
+      "coverage": 1.0
+    },
+    "sandals-south": {
+      "split": "train",
+      "visible_pixels": 551,
+      "covered_pixels": 551.0,
+      "coverage": 1.0
+    },
+    "revised-shoes-south": {
+      "split": "train",
+      "visible_pixels": 739,
+      "covered_pixels": 739.0,
+      "coverage": 1.0
+    },
+    "revised-boots-south": {
+      "split": "train",
+      "visible_pixels": 984,
+      "covered_pixels": 984.0,
+      "coverage": 1.0
+    },
+    "basic-boots-east": {
+      "split": "train",
+      "visible_pixels": 978,
+      "covered_pixels": 978.0,
+      "coverage": 1.0
+    },
+    "fold-boots-east": {
+      "split": "train",
+      "visible_pixels": 988,
+      "covered_pixels": 988.0,
+      "coverage": 1.0
+    },
+    "basic-shoes-east": {
+      "split": "train",
+      "visible_pixels": 613,
+      "covered_pixels": 613.0,
+      "coverage": 1.0
+    },
+    "plate-boots-east": {
+      "split": "val",
+      "visible_pixels": 563,
+      "covered_pixels": 563.0,
+      "coverage": 1.0
+    },
+    "ghillies-east": {
+      "split": "val",
+      "visible_pixels": 402,
+      "covered_pixels": 402.0,
+      "coverage": 1.0
+    },
+    "sandals-east": {
+      "split": "train",
+      "visible_pixels": 352,
+      "covered_pixels": 352.0,
+      "coverage": 1.0
+    },
+    "revised-shoes-east": {
+      "split": "train",
+      "visible_pixels": 480,
+      "covered_pixels": 480.0,
+      "coverage": 1.0
+    },
+    "revised-boots-east": {
+      "split": "train",
+      "visible_pixels": 696,
+      "covered_pixels": 696.0,
+      "coverage": 1.0
+    }
+  },
+  "scope": "Coverage audit only; mask algorithm frozen before measurement and uses only base alpha."
+}

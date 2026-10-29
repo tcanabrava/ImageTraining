@@ -33,7 +33,7 @@ def test_empty_target_and_odd_dimensions_have_finite_gradients():
     assert all(torch.isfinite(p.grad).all() for p in model.parameters())
 
 
-@pytest.mark.parametrize("architecture", ["unet", "reference_transfer"])
+@pytest.mark.parametrize("architecture", ["unet", "reference_transfer", "canonical_transfer"])
 def test_training_resume_and_inference_without_target_sheet(tmp_path, architecture):
     manifest = create_fixture(tmp_path / "data")
     config = tmp_path / "config.json"
@@ -59,7 +59,7 @@ def test_training_resume_and_inference_without_target_sheet(tmp_path, architectu
     # Delete ground-truth equipment: inference must only require the exported reference.
     (manifest.parent / "glove-2.png").unlink()
     infer(tmp_path / "run/last.pt", inputs / "base.png", inputs / "reference.png",
-          inputs / "reference-base.png", inputs / "layout.json", tmp_path / "prediction", "cpu", 1)
+          None if architecture == "canonical_transfer" else inputs / "reference-base.png", inputs / "layout.json", tmp_path / "prediction", "cpu", 1)
     assert (inputs / "base.png").read_bytes() == original
     with Image.open(tmp_path / "prediction/equipment.png") as p, Image.open(inputs / "base.png") as b:
         assert p.mode == "RGBA" and p.size == b.size

@@ -33,8 +33,9 @@ def main() -> None:
     export.add_argument("--sample", required=True)
     export.add_argument("--output", type=Path, required=True)
     infer = commands.add_parser("infer", help="Fit equipment from a base sheet and one aligned reference frame")
-    for name in ("checkpoint", "base", "reference", "reference-base", "layout", "output"):
+    for name in ("checkpoint", "base", "reference", "layout", "output"):
         infer.add_argument("--" + name, type=Path, required=True)
+    infer.add_argument("--reference-base", type=Path, help="Required for aligned checkpoints only")
     infer.add_argument("--device", choices=["auto", "cpu", "cuda"], default="auto")
     infer.add_argument("--threads", type=int, default=4)
     infer.add_argument("--alpha-mode", choices=["binary", "soft"], default="binary")

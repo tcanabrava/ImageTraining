@@ -63,11 +63,14 @@ class ReferenceTransfer(nn.Module):
         self.keys = block(6, width)
         self.width = width
 
+    def reference_keys(self, inputs):
+        return torch.cat((inputs[:, 4:8], inputs[:, 12:14]), dim=1)
+
     def forward(self, inputs):
         geometry_inputs = inputs.clone()
         geometry_inputs[:, 8:11] = 0
         spatial = self.geometry(geometry_inputs)
-        keys = self.keys(torch.cat((inputs[:, 4:8], inputs[:, 12:14]), dim=1))
+        keys = self.keys(self.reference_keys(inputs))
         outputs = []
         for i in range(len(inputs)):
             mask = inputs[i, 11].flatten() > 0
@@ -83,10 +86,22 @@ class ReferenceTransfer(nn.Module):
         return torch.stack(outputs)
 
 
+class CanonicalTransfer(ReferenceTransfer):
+    def reference_keys(self, inputs):
+        return torch.cat((inputs[:, 11:12].expand(-1, 4, -1, -1), inputs[:, 12:14]), dim=1)
+
+    def forward(self, inputs):
+        logits = super().forward(inputs)
+        # Outside the explicit attachment region, force transparent equipment.
+        return torch.cat((logits[:, :3], torch.where(inputs[:, 4:5] > 0, logits[:, 3:4], -20.)), dim=1)
+
+
 def build_model(config):
     architecture = config.get("architecture", "unet")
     if architecture == "unet":
         return EquipmentUNet(config["width"])
     if architecture == "reference_transfer":
         return ReferenceTransfer(config["width"])
+    if architecture == "canonical_transfer":
+        return CanonicalTransfer(config["width"])
     raise ValueError(f"Unknown architecture: {architecture}")

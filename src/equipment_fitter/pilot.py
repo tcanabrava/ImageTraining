@@ -12,12 +12,24 @@ from .training import train
 def run_pilot(manifest: Path, config: Path, output: Path, device: str) -> None:
     document, _ = load_dataset(manifest)
     train(manifest, config, output, device)
-    threads = json.loads(config.read_text()).get("threads", 4)
+    settings = json.loads(config.read_text())
+    threads = settings.get("threads", 4)
     prediction_manifest = {**document, "description": "Model predictions, including the reference frame; metrics exclude reference frames.", "samples": []}
     for sample in document["samples"]:
         inputs = output / "inputs" / sample["id"]
         predictions = output / "predictions" / sample["id"]
         export_input(manifest, sample["id"], inputs)
+        if settings.get("architecture") == "canonical_transfer":
+            from PIL import Image
+            from .canonical import center_reference
+            from .tensors import image_tensor
+            with Image.open(inputs / "reference.png") as source:
+                pixels = (center_reference(image_tensor(source)).permute(1, 2, 0).numpy() * 255).round().astype("uint8")
+            Image.fromarray(pixels).save(inputs / "reference.png")
+            (inputs / "reference-base.png").unlink()
+            layout = json.loads((inputs / "layout.json").read_text())
+            layout["source"] = "Canonical frame-derived item; no reference body; not independent artwork."
+            save_json(inputs / "layout.json", layout)
         infer(output / "last.pt", inputs / "base.png", inputs / "reference.png",
               inputs / "reference-base.png", inputs / "layout.json", predictions, device, threads)
         prediction_manifest["samples"].append({**sample,

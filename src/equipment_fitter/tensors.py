@@ -23,7 +23,7 @@ def conditioning(base: torch.Tensor, reference_base: torch.Tensor, reference: to
 class FrameDataset(Dataset):
     """In-memory tiny-pilot dataset. Reference frames never become target examples."""
 
-    def __init__(self, manifest: Path, split: str):
+    def __init__(self, manifest: Path, split: str, architecture="unet", attachment="none"):
         document, self.report = load_dataset(manifest)
         self.size = tuple(document["frame_size"])
         if min(self.size) < 8:
@@ -42,7 +42,12 @@ class FrameDataset(Dataset):
                     continue
                 target_base = image_tensor(frame(base, sample, i, self.size))
                 target = image_tensor(frame(equipment, sample, i, self.size))
-                self.items.append((conditioning(target_base, ref_base, reference), target, reference.clone()))
+                if architecture == "canonical_transfer":
+                    from .canonical import canonical_conditioning
+                    inputs = canonical_conditioning(target_base, reference, attachment)
+                else:
+                    inputs = conditioning(target_base, ref_base, reference)
+                self.items.append((inputs, target, reference.clone()))
 
     def __len__(self):
         return len(self.items)

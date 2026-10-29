@@ -54,7 +54,7 @@ def analyze(checkpoint_path, manifest, output, requested_device="cpu"):
     device = select_device(requested_device)
     checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
     document, dataset = load_dataset(manifest)
-    if checkpoint.get("format_version") != 1 or checkpoint.get("input_contract") != "aligned-reference-rgba-v1":
+    if checkpoint.get("format_version") != 1 or checkpoint.get("input_contract") not in ("aligned-reference-rgba-v1", "canonical-footwear-rgba-v1"):
         raise ValueError("Unsupported checkpoint")
     if checkpoint["dataset_fingerprint"] != dataset["fingerprint"]:
         raise ValueError("This diagnostic requires the checkpoint's original benchmark dataset")
@@ -64,7 +64,8 @@ def analyze(checkpoint_path, manifest, output, requested_device="cpu"):
     report = {"environment": environment(device), "dataset": dataset,
               "checkpoint_sha256": hashlib.sha256(checkpoint_path.read_bytes()).hexdigest(),
               "checkpoint_step": checkpoint["step"], "designs": {}, "splits": {},
-              "scope": "Same animation and aligned reference. Palette oracle uses targets only to measure a representation bound; never used for predictions."}
+              "input_contract": checkpoint["input_contract"],
+              "scope": "Same animation and frame-derived reference. Palette oracle uses targets only to measure a representation bound; never used for predictions."}
     pooled = {}
     for sample in document["samples"]:
         size = document["frame_size"]
@@ -78,7 +79,12 @@ def analyze(checkpoint_path, manifest, output, requested_device="cpu"):
         for i in range(len(sample["frames"])):
             if i == ref_index:
                 continue
-            inputs = conditioning(image_tensor(frame(base, sample, i, size)), ref_base, ref.cpu()).to(device)
+            target_base = image_tensor(frame(base, sample, i, size))
+            if checkpoint["input_contract"] == "canonical-footwear-rgba-v1":
+                from .canonical import canonical_conditioning
+                inputs = canonical_conditioning(target_base, ref.cpu(), checkpoint["config"]["attachment"]).to(device)
+            else:
+                inputs = conditioning(target_base, ref_base, ref.cpu()).to(device)
             pred = model(inputs[None]).sigmoid()[0]
             altered = inputs.clone()
             # Invert only reference equipment RGB. Body, alpha, and layout stay fixed.

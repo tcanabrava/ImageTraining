@@ -34,7 +34,7 @@ def export_input(manifest: Path, sample_id: str, output: Path) -> None:
 
 
 @torch.no_grad()
-def infer(checkpoint_path: Path, base_path: Path, reference_path: Path, reference_base_path: Path,
+def infer(checkpoint_path: Path, base_path: Path, reference_path: Path, reference_base_path: Path | None,
           layout_path: Path, output: Path, requested_device: str = "auto", threads: int = 4,
           alpha_mode: str = "binary") -> dict:
     if output.exists() and any(output.iterdir()):
@@ -46,12 +46,16 @@ def infer(checkpoint_path: Path, base_path: Path, reference_path: Path, referenc
     torch.set_num_threads(threads)
     device = select_device(requested_device)
     checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
-    if checkpoint.get("format_version") != 1 or checkpoint.get("input_contract") != "aligned-reference-rgba-v1":
+    if checkpoint.get("format_version") != 1 or checkpoint.get("input_contract") not in ("aligned-reference-rgba-v1", "canonical-footwear-rgba-v1"):
         raise ValueError("Unsupported checkpoint")
     model = build_model(checkpoint["config"]).to(device)
     model.load_state_dict(checkpoint["model"])
     model.eval()
-    base, reference, reference_base = map(rgba, (base_path, reference_path, reference_base_path))
+    canonical = checkpoint["input_contract"] == "canonical-footwear-rgba-v1"
+    base, reference = map(rgba, (base_path, reference_path))
+    if not canonical and reference_base_path is None:
+        raise ValueError("Aligned checkpoints require a reference body")
+    reference_base = Image.new("RGBA", reference.size) if canonical else rgba(reference_base_path)
     layout = json.loads(layout_path.read_text())
     size = tuple(layout["frame_size"])
     if list(size) != checkpoint["frame_size"] or reference.size != size or reference_base.size != size:
@@ -77,7 +81,12 @@ def infer(checkpoint_path: Path, base_path: Path, reference_path: Path, referenc
     started = time.perf_counter()
     for i, f in enumerate(layout["frames"]):
         b = image_tensor(frame(base, layout, i, size))
-        prediction = model(conditioning(b, ref_base, ref).unsqueeze(0).to(device)).sigmoid()[0]
+        if canonical:
+            from .canonical import canonical_conditioning
+            inputs = canonical_conditioning(b, ref, checkpoint["config"]["attachment"])
+        else:
+            inputs = conditioning(b, ref_base, ref)
+        prediction = model(inputs.unsqueeze(0).to(device)).sigmoid()[0]
         if alpha_mode == "binary":
             prediction[3] = (prediction[3] >= 0.5).to(prediction.dtype)
         pixels = (prediction.cpu().permute(1, 2, 0).numpy() * 255).round().clip(0, 255).astype(np.uint8)
