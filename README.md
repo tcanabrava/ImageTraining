@@ -23,6 +23,19 @@ See [dataset preparation](docs/DATASET.md) and [training/inference](docs/TRAININ
 The initial reference is an aligned equipment frame from a known animation.
 Independent generated equipment illustrations are a later research milestone.
 
+The [Iris smoke-test instructions](hpc/README.md) explain data transfer, Python
+environment selection, job submission, and which results to return. After preparing
+the data and environment, submit from the project root:
+
+```sh
+mkdir -p logs
+sbatch hpc/iris-smoke.sbatch
+```
+
+[Initial CPU results](docs/RESULTS.md) document what the baseline learned and where
+held-out equipment still fails. The automated test suite currently contains twelve
+tests. Actual Iris GPU execution remains to be verified.
+
 ## Scope
 
 - Input: approved equipment reference plus an existing base animation.

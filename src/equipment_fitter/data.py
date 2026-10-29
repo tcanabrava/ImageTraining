@@ -32,7 +32,7 @@ def frame(image: Image.Image, sample: dict, index: int, size: tuple[int, int]) -
     return image.crop((x, y, x + width, y + height))
 
 
-def load_dataset(path: str | Path) -> tuple[dict, dict]:
+def load_dataset(path: str | Path, *, require_nonempty_equipment: bool = True) -> tuple[dict, dict]:
     """Validate manifests, files, frame geometry, and group-level split isolation."""
     path = Path(path)
     document = json.loads(path.read_text())
@@ -89,10 +89,10 @@ def load_dataset(path: str | Path) -> tuple[dict, dict]:
             if any(x < b[2] and x + w > b[0] and y < b[3] and y + h > b[1] for b in rectangles):
                 raise ValueError(f"{identifier}: overlapping frames")
             rectangles.append(rect)
-        if frame(equipment, sample, reference, size).getchannel("A").getbbox() is None:
+        if require_nonempty_equipment and frame(equipment, sample, reference, size).getchannel("A").getbbox() is None:
             raise ValueError(f"{identifier}: empty equipment reference")
-        if not any(frame(equipment, sample, i, size).getchannel("A").getbbox()
-                   for i in range(len(frames)) if i != reference):
+        if require_nonempty_equipment and not any(frame(equipment, sample, i, size).getchannel("A").getbbox()
+                                                 for i in range(len(frames)) if i != reference):
             raise ValueError(f"{identifier}: all non-reference targets are empty")
         counts[split] += len(frames) - 1
     digest = hashlib.sha256()

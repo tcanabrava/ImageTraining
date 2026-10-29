@@ -36,6 +36,18 @@ Each completed implementation step receives its own commit, without a co-author
 trailer. The first implementation session targets steps 1–4. Steps 5 onward depend
 on experimental evidence; public website deployment is not part of the first session.
 
+## Current status (2026-10-29)
+
+- Steps 1–3: implemented and committed. Real glove and footwear subsets are prepared
+  locally with pinned sources and credits; contact sheets have been inspected.
+- Step 4: CPU training, checkpoint resume, standalone inference, and the complete
+  pilot pipeline are tested. The Iris launcher is provided; actual GPU execution
+  remains unverified until the user's run. See [HPC instructions](../hpc/README.md).
+- Step 5: preliminary CPU findings are in [RESULTS.md](RESULTS.md). GPU measurements
+  and broader data auditing remain outstanding.
+- Steps 6–9: not implemented. The final architecture has not been selected; use the
+  literature review's representation and reference-conditioning experiments first.
+
 ## Data strategy
 
 Inspect a small subset of Universal LPC body and equipment layers first. Preserve

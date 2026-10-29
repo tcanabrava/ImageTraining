@@ -15,8 +15,8 @@ def checkerboard(size: tuple[int, int]) -> Image.Image:
     return image
 
 
-def preview_dataset(manifest: Path, output: Path) -> None:
-    document, _ = load_dataset(manifest)
+def preview_dataset(manifest: Path, output: Path, *, allow_empty: bool = False) -> None:
+    document, _ = load_dataset(manifest, require_nonempty_equipment=not allow_empty)
     output.mkdir(parents=True, exist_ok=True)
     width, height = document["frame_size"]
     for sample in document["samples"]:
