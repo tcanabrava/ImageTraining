@@ -31,14 +31,16 @@ From the project root, after `salloc` has granted your GPU allocation:
 bash hpc/run.sh
 ```
 
-The launcher automatically loads `env/development/2023b` and
+The launcher automatically loads `env/release/2023b` and
 `ai/PyTorch/2.3.0-foss-2023b-CUDA-12.6.0`, creates `.venv-iris/` with
 `--system-site-packages`, activates it in the job, checks dependencies and a CUDA
 forward/backward pass, and launches the glove pilot. Subsequent runs reuse the
 same environment. It imports the project from `src/`; no pip installation or
 network download happens in the job.
 
-These defaults follow the [ULHPC GPU Python example](https://hpc-docs.uni.lu/services/jupyter/)
+The release module and GPU PyTorch module names were confirmed in the user's
+Iris `module avail 2023b` output on 2026-10-29. The environment setup follows the
+[ULHPC GPU Python example](https://hpc-docs.uni.lu/services/jupyter/)
 and [module environment documentation](https://hpc-docs.uni.lu/environment/modules/).
 Availability on your allocation still needs verification. To check setup without
 training (no dataset required):

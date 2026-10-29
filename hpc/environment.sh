@@ -45,7 +45,7 @@ equipment_setup_environment() {
     fi
 
     equipment_init_modules
-    local module_names="${EQUIPMENT_MODULES:-env/development/2023b ai/PyTorch/2.3.0-foss-2023b-CUDA-12.6.0}"
+    local module_names="${EQUIPMENT_MODULES:-env/release/2023b ai/PyTorch/2.3.0-foss-2023b-CUDA-12.6.0}"
     local -a modules
     read -r -a modules <<< "$module_names"
     # Interactive allocations can otherwise inherit CPU-oriented module paths.

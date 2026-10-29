@@ -99,7 +99,7 @@ def test_bootstraps_activates_checks_and_launches_then_reuses(cluster):
     result = launch(cluster)
     assert result.returncode == 0, result.stderr
     text = log.read_text()
-    assert "module:load env/development/2023b" in text
+    assert "module:load env/release/2023b" in text
     assert "module:load ai/PyTorch/2.3.0-foss-2023b-CUDA-12.6.0" in text
     events = python_events(cluster)
     check, run = events[-2:]
