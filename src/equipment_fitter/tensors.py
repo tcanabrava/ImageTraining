@@ -5,7 +5,7 @@ import torch
 from PIL import Image
 from torch.utils.data import Dataset
 
-from .data import asset_path, frame, load_dataset, rgba
+from .data import asset_path, frame, load_dataset, rgba, reference_pair
 
 
 def image_tensor(image: Image.Image) -> torch.Tensor:
@@ -35,8 +35,10 @@ class FrameDataset(Dataset):
             base = rgba(asset_path(manifest.parent, sample["base"]))
             equipment = rgba(asset_path(manifest.parent, sample["equipment"]))
             ref_index = sample["reference_frame"]
-            ref_base = image_tensor(frame(base, sample, ref_index, self.size))
-            reference = image_tensor(frame(equipment, sample, ref_index, self.size))
+            if "reference" in sample and architecture != "canonical_transfer":
+                raise ValueError("Separately authored references require canonical_transfer")
+            ref_image, body_image = reference_pair(manifest.parent, sample, self.size)
+            ref_base, reference = image_tensor(body_image), image_tensor(ref_image)
             for i in range(len(sample["frames"])):
                 if i == ref_index:
                     continue

@@ -67,7 +67,7 @@ def evaluate_protocol(protocol_path, output, device='cpu'):
                   inputs / 'reference-base.png', inputs / 'layout.json', predictions, device, 4, 'binary')
             predicted = rgba(predictions / 'equipment.png')
             target = rgba(asset_path(test_path.parent, sample['equipment']))
-            reference = exported(image_tensor(frame(target, sample, sample['reference_frame'], test['frame_size'])))
+            reference = exported(image_tensor(rgba(inputs / 'reference.png')))
             values = {name: [] for name in pooled}
             for i in range(len(sample['frames'])):
                 if i == sample['reference_frame']:
@@ -80,7 +80,7 @@ def evaluate_protocol(protocol_path, output, device='cpu'):
             designs[sample['id']] = {name: metrics(v, values['target']) for name, v in values.items() if name != 'target'}
             for name in pooled:
                 pooled[name].extend(values[name])
-            samples.append({**sample, 'base': (inputs / 'base.png').relative_to(run).as_posix(),
+            samples.append({**{k: v for k, v in sample.items() if k != 'reference'}, 'base': (inputs / 'base.png').relative_to(run).as_posix(),
                             'equipment': (predictions / 'equipment.png').relative_to(run).as_posix()})
         save_json(run / 'prediction-dataset.json', {**test, 'samples': samples})
         preview_dataset(run / 'prediction-dataset.json', run / 'previews', allow_empty=True)

@@ -89,7 +89,11 @@ def load_dataset(path: str | Path, *, require_nonempty_equipment: bool = True) -
             if any(x < b[2] and x + w > b[0] and y < b[3] and y + h > b[1] for b in rectangles):
                 raise ValueError(f"{identifier}: overlapping frames")
             rectangles.append(rect)
-        if require_nonempty_equipment and frame(equipment, sample, reference, size).getchannel("A").getbbox() is None:
+        if "reference" in sample:
+            validate_external_reference(path.parent, sample, size, equipment)
+            files.add(asset_path(path.parent, sample["reference"]["image"]))
+            files.add(asset_path(path.parent, sample["reference"]["provenance"]))
+        if "reference" not in sample and require_nonempty_equipment and frame(equipment, sample, reference, size).getchannel("A").getbbox() is None:
             raise ValueError(f"{identifier}: empty equipment reference")
         if require_nonempty_equipment and not any(frame(equipment, sample, i, size).getchannel("A").getbbox()
                                                  for i in range(len(frames)) if i != reference):
@@ -107,3 +111,47 @@ def load_dataset(path: str | Path, *, require_nonempty_equipment: bool = True) -
 def save_json(path: Path, value: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(value, indent=2) + "\n")
+
+
+def visible_signature(image):
+    """Translation-invariant visible pixels; ignore arbitrary hidden RGB."""
+    box = image.getchannel("A").getbbox()
+    if box is None:
+        return None
+    crop = image.crop(box)
+    background = Image.new("RGBA", crop.size)
+    background.alpha_composite(crop)
+    return crop.size, background.tobytes()
+
+
+def validate_external_reference(root, sample, size, equipment):
+    spec = sample["reference"]
+    if spec.get("kind") != "separately_authored":
+        raise ValueError("External references require separately_authored provenance")
+    image_path = asset_path(root, spec["image"])
+    image = rgba(image_path)
+    if image.size != tuple(size) or visible_signature(image) is None:
+        raise ValueError("External reference must be nonempty RGBA at frame size")
+    provenance = json.loads(asset_path(root, spec["provenance"]).read_text())
+    if provenance.get("image_sha256") != hashlib.sha256(image_path.read_bytes()).hexdigest():
+        raise ValueError("External reference hash mismatch")
+    for key in ("creator", "source", "rights", "design_description"):
+        if not isinstance(provenance.get(key), str) or not provenance[key].strip():
+            raise ValueError(f"External reference requires {key}")
+    if provenance.get("method") not in ("human_drawn", "text_to_image"):
+        raise ValueError("Reference method must declare human_drawn or text_to_image")
+    review = provenance.get("pairing_review", {})
+    if review.get("status") != "accepted" or not review.get("reviewer") or not review.get("notes"):
+        raise ValueError("External reference requires an accepted pairing review")
+    signature = visible_signature(image)
+    if any(signature == visible_signature(frame(equipment, sample, i, size)) for i in range(len(sample["frames"]))):
+        raise ValueError("External reference duplicates a target frame (possibly translated)")
+    return image
+
+
+def reference_pair(root, sample, size):
+    """External artwork never borrows a reference body from the target animation."""
+    if "reference" in sample:
+        return rgba(asset_path(root, sample["reference"]["image"])), Image.new("RGBA", tuple(size))
+    return (frame(rgba(asset_path(root, sample["equipment"])), sample, sample["reference_frame"], size),
+            frame(rgba(asset_path(root, sample["base"])), sample, sample["reference_frame"], size))

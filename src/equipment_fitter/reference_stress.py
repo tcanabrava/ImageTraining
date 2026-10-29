@@ -56,6 +56,8 @@ def run(protocol_path, output, requested_device='cpu'):
     if any(s['split'] == 'test' for s in document['samples']):
         raise ValueError('Reserved test samples are forbidden')
     samples = [s for s in document['samples'] if s['split'] == 'val']
+    if any('reference' in s for s in samples):
+        raise ValueError('Registration stress requires frame-derived references')
     if not samples:
         raise ValueError('No validation samples')
     if output.exists():

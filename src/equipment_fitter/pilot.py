@@ -26,13 +26,13 @@ def run_pilot(manifest: Path, config: Path, output: Path, device: str) -> None:
             with Image.open(inputs / "reference.png") as source:
                 pixels = (center_reference(image_tensor(source)).permute(1, 2, 0).numpy() * 255).round().astype("uint8")
             Image.fromarray(pixels).save(inputs / "reference.png")
-            (inputs / "reference-base.png").unlink()
+            (inputs / "reference-base.png").unlink(missing_ok=True)
             layout = json.loads((inputs / "layout.json").read_text())
-            layout["source"] = "Canonical frame-derived item; no reference body; not independent artwork."
+            layout["source"] = "Canonicalized separately authored item; see reference-provenance.json." if "reference" in sample else "Canonical frame-derived item; no reference body; not independent artwork."
             save_json(inputs / "layout.json", layout)
         infer(output / "last.pt", inputs / "base.png", inputs / "reference.png",
               inputs / "reference-base.png", inputs / "layout.json", predictions, device, threads)
-        prediction_manifest["samples"].append({**sample,
+        prediction_manifest["samples"].append({**{k: v for k, v in sample.items() if k != "reference"},
             "base": (inputs / "base.png").relative_to(output).as_posix(),
             "equipment": (predictions / "equipment.png").relative_to(output).as_posix()})
     path = output / "prediction-dataset.json"

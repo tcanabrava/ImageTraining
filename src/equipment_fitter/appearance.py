@@ -5,7 +5,7 @@ from pathlib import Path
 
 import torch
 
-from .data import asset_path, frame, load_dataset, rgba, save_json
+from .data import asset_path, frame, load_dataset, rgba, save_json, reference_pair
 from .model import build_model
 from .tensors import conditioning, image_tensor
 from .training import environment, select_device
@@ -65,15 +65,18 @@ def analyze(checkpoint_path, manifest, output, requested_device="cpu"):
               "checkpoint_sha256": hashlib.sha256(checkpoint_path.read_bytes()).hexdigest(),
               "checkpoint_step": checkpoint["step"], "designs": {}, "splits": {},
               "input_contract": checkpoint["input_contract"],
-              "scope": "Same animation and frame-derived reference. Palette oracle uses targets only to measure a representation bound; never used for predictions."}
+              "reference_sources": {s["id"]: s.get("reference", {}).get("kind", "frame_derived") for s in document["samples"]},
+              "scope": "Dataset-declared reference provenance; no independent verification of authorship. Palette oracle uses targets only to measure a representation bound; never used for predictions."}
     pooled = {}
     for sample in document["samples"]:
         size = document["frame_size"]
         base = rgba(asset_path(manifest.parent, sample["base"]))
         item = rgba(asset_path(manifest.parent, sample["equipment"]))
         ref_index = sample["reference_frame"]
-        ref = image_tensor(frame(item, sample, ref_index, size)).to(device)
-        ref_base = image_tensor(frame(base, sample, ref_index, size))
+        if "reference" in sample and checkpoint["input_contract"] != "canonical-footwear-rgba-v1":
+            raise ValueError("Separately authored references require canonical checkpoints")
+        ref_image, body_image = reference_pair(manifest.parent, sample, size)
+        ref, ref_base = image_tensor(ref_image).to(device), image_tensor(body_image)
         variants = {name: [] for name in ("model", "reference_palette", "copy_reference", "palette_oracle")}
         targets, sensitivity, inversion_errors = [], [], []
         for i in range(len(sample["frames"])):

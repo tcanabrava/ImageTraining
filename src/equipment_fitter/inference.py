@@ -6,7 +6,7 @@ import numpy as np
 from PIL import Image
 import torch
 
-from .data import asset_path, frame, load_dataset, rgba, save_json
+from .data import asset_path, frame, load_dataset, rgba, save_json, reference_pair
 from .model import build_model
 from .tensors import conditioning, image_tensor
 from .training import environment, select_device
@@ -24,11 +24,15 @@ def export_input(manifest: Path, sample_id: str, output: Path) -> None:
     equipment = rgba(asset_path(manifest.parent, sample["equipment"]))
     base.save(output / "base.png")
     size = document["frame_size"]
-    frame(base, sample, sample["reference_frame"], size).save(output / "reference-base.png")
-    frame(equipment, sample, sample["reference_frame"], size).save(output / "reference.png")
+    ref, ref_body = reference_pair(manifest.parent, sample, size)
+    if "reference" not in sample:
+        ref_body.save(output / "reference-base.png")
+    else:
+        (output / "reference-provenance.json").write_bytes(asset_path(manifest.parent, sample["reference"]["provenance"]).read_bytes())
+    ref.save(output / "reference.png")
     save_json(output / "layout.json", {"frame_size": size, "frames": sample["frames"],
               "reference_frame": sample["reference_frame"], "sample_id": sample_id,
-              "source": "Aligned frame reference; not an independent item illustration."})
+              "source": "Separately authored reference with declared provenance." if "reference" in sample else "Aligned frame reference; not an independent item illustration."})
     if (manifest.parent / "CREDITS.csv").is_file():
         (output / "CREDITS.csv").write_bytes((manifest.parent / "CREDITS.csv").read_bytes())
 
