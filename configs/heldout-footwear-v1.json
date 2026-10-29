@@ -1,0 +1,56 @@
+{
+  "development_manifest": "data/lpc-footwear-expanded/development.json",
+  "test_manifest": "data/lpc-footwear-expanded/reserved-test.json",
+  "development_fingerprint": "2daacc0965ecb1236368b1cc988a08e73f79ebfc866ef9bfff1336b76aa1f75e",
+  "test_fingerprint": "e811e0089e65b5db46fb7f8ee3fb68091357a3383779eabbcc003a37634e63f4",
+  "checkpoints": [
+    {
+      "name": "unet-42",
+      "architecture": "unet",
+      "seed": 42,
+      "step": 1600,
+      "path": "runs/compare-6257841/unet-42/last.pt",
+      "sha256": "5959872e125884f74d24856c6643bd88393a3f83373bb6ac062d01b6598af6a3"
+    },
+    {
+      "name": "reference_transfer-42",
+      "architecture": "reference_transfer",
+      "seed": 42,
+      "step": 1600,
+      "path": "runs/compare-6257841/reference_transfer-42/last.pt",
+      "sha256": "61028584d9945b855436c7d7bfb2f391da550799efbea92fb6f8f8ba7b298bed"
+    },
+    {
+      "name": "unet-43",
+      "architecture": "unet",
+      "seed": 43,
+      "step": 1600,
+      "path": "runs/compare-6257841/unet-43/last.pt",
+      "sha256": "2d0dacebf33c6dc7184fec20dafdb22ef1ac8e45b466f1e5ef98f6aba4fa02ed"
+    },
+    {
+      "name": "reference_transfer-43",
+      "architecture": "reference_transfer",
+      "seed": 43,
+      "step": 1600,
+      "path": "runs/compare-6257841/reference_transfer-43/last.pt",
+      "sha256": "3316e1bcb3dd3d4a9b320fe28caf4ba1b3561010cb7c423a5fc9f43397cf3fe9"
+    },
+    {
+      "name": "unet-44",
+      "architecture": "unet",
+      "seed": 44,
+      "step": 1600,
+      "path": "runs/compare-6257841/unet-44/last.pt",
+      "sha256": "a4b4f581b7538120d03f0e6a7cc293d2a09e964834d67ec39492738ee2488d29"
+    },
+    {
+      "name": "reference_transfer-44",
+      "architecture": "reference_transfer",
+      "seed": 44,
+      "step": 1600,
+      "path": "runs/compare-6257841/reference_transfer-44/last.pt",
+      "sha256": "ed8fbd3c1793fca50961f62472b7190380f8ce6dea54d44a2e156c726b0c2f36"
+    }
+  ]
+}
