@@ -41,10 +41,11 @@ on experimental evidence; public website deployment is not part of the first ses
 - Steps 1–3: implemented and committed. Real glove and footwear subsets are prepared
   locally with pinned sources and credits; contact sheets have been inspected.
 - Step 4: CPU training, checkpoint resume, standalone inference, and the complete
-  pilot pipeline are tested. The Iris launcher is provided; actual GPU execution
-  remains unverified until the user's run. See [HPC instructions](../hpc/README.md).
-- Step 5: preliminary CPU findings are in [RESULTS.md](RESULTS.md). GPU measurements
-  and broader data auditing remain outstanding.
+  pilot pipeline are tested. The Iris launcher and V100 execution are verified with completed glove and
+  held-out footwear pilots. See [HPC instructions](../hpc/README.md).
+- Step 5: initial GPU benchmark completed; metrics, learning curves, memory,
+  throughput, and visual failures are in [RESULTS.md](RESULTS.md). Broader data
+  auditing and generalization remain outstanding.
 - Steps 6–9: not implemented. The final architecture has not been selected; use the
   literature review's representation and reference-conditioning experiments first.
 

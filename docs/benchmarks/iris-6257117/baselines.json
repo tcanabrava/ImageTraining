@@ -1,0 +1,30 @@
+{
+  "empty": {
+    "train": {
+      "alpha_iou": 0.0,
+      "visible_rgb_mae": 0.518920229392439,
+      "premultiplied_mae": 0.020179828954121425,
+      "frames": 21
+    },
+    "val": {
+      "alpha_iou": 0.0,
+      "visible_rgb_mae": 0.3273180222192901,
+      "premultiplied_mae": 0.007266250039849963,
+      "frames": 14
+    }
+  },
+  "copy_reference": {
+    "train": {
+      "alpha_iou": 0.7542503863987635,
+      "visible_rgb_mae": 0.1915151918237341,
+      "premultiplied_mae": 0.009105555949703095,
+      "frames": 21
+    },
+    "val": {
+      "alpha_iou": 0.593440594059406,
+      "visible_rgb_mae": 0.2263193902122815,
+      "premultiplied_mae": 0.006543584167957306,
+      "frames": 14
+    }
+  }
+}

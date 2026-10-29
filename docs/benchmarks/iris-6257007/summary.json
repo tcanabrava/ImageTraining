@@ -1,0 +1,17 @@
+{
+  "step": 200,
+  "loss": 0.3547080159187317,
+  "train": {
+    "alpha_iou": 0.9871428571428571,
+    "visible_rgb_mae": 0.02173884088614685,
+    "premultiplied_mae": 0.006124275071280343,
+    "frames": 7
+  },
+  "val": null,
+  "elapsed_seconds": 2.2636163181159645,
+  "optimization_seconds": 2.058593339752406,
+  "training_examples_per_second": 777.2297564085375,
+  "peak_cuda_allocated_bytes": 154249728,
+  "peak_cuda_reserved_bytes": 211812352,
+  "scope": "Framewise supervised pilot; no temporal model or arbitrary-illustration support."
+}

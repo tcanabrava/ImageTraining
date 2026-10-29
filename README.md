@@ -33,9 +33,8 @@ mkdir -p logs
 sbatch hpc/iris-smoke.sbatch
 ```
 
-[Initial CPU results](docs/RESULTS.md) document what the baseline learned and where
-held-out equipment still fails. Automated tests cover the pipeline and HPC launcher orchestration. Actual Iris
-GPU execution remains to be verified.
+[CPU and Iris GPU results](docs/RESULTS.md) document what the baseline learned and where
+held-out equipment still fails. Automated tests cover the pipeline and HPC launcher orchestration. The glove and held-out footwear pilots have also completed on an Iris V100.
 
 ## Scope
 

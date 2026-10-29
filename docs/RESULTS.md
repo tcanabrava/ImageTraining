@@ -73,3 +73,56 @@ representations and independent-reference conditioning as described in the
 [literature review](LITERATURE_REVIEW.md). No independently generated equipment
 illustrations, new bodies, behind-torso occlusions, or flexible equipment have yet
 been demonstrated.
+
+
+## Iris GPU benchmark (2026-10-29)
+
+Both pilots now ran successfully on a Tesla V100-SXM2-16GB (compute capability
+7.0), Python 3.11.5, PyTorch 2.3.0/CUDA 12.6, NumPy 1.26.2, Pillow 10.2.0.
+The 200-step configuration, seed, and dataset fingerprints match the CPU tests.
+CPU/GPU results are not numerically identical; package versions also differ.
+
+| Run | Evaluated split | Alpha IoU ↑ | Visible RGB MAE ↓ | Premultiplied MAE ↓ |
+| --- | --- | ---: | ---: | ---: |
+| Glove `6257007` | Training, 7 frames | 0.9871 | 0.02174 | 0.00612 |
+| Footwear `6257117` | Training, 21 frames | 0.9717 | 0.06965 | 0.00844 |
+| Footwear `6257117` | Held-out, 14 frames | 0.7020 | 0.19979 | 0.00989 |
+| Copy reference | Held-out, 14 frames | 0.5934 | 0.22632 | 0.00654 |
+| Empty overlay | Held-out, 14 frames | 0.0000 | 0.32732 | 0.00727 |
+
+Glove train/evaluation time was 2.264 s, with 2.059 s in optimization and 777
+training examples/s. Footwear train/evaluation time was 2.631 s, with 2.324 s in
+optimization and 688 training examples/s. Each run peaked at 147.1 MiB allocated
+and 202 MiB reserved CUDA memory. These timings exclude module setup, GPU
+preflight, exports, and queueing; the footwear Slurm job completed in 15 seconds,
+exit code 0. Tiny workloads and different software versions make these unsuitable
+for a general CPU-versus-GPU speedup claim.
+
+Contact sheets inspected locally against ground truth: glove placement follows the
+provided hand positions closely, with fine shading differences. Held-out plate
+boots become pale and lose metallic detail. Ghillies lose substantial equipment
+pixels, including nearly disappearing feet in some frames. This confirms the
+appearance-preservation problem observed on CPU. The raw soft-alpha metrics above
+and thresholded preview exports measure different outputs, as explained earlier.
+No temporal-quality claim follows from contact-sheet inspection alone.
+
+The glove run used revision `7770fcf`; footwear used `51830bd`. Both record
+`git_dirty: true`: inspection found a chmod-only change to `hpc/run.sh` and an
+untracked user `run_salloc.sh`, which were preserved. Training source was unchanged.
+The first automated batch attempt, `6257111`, failed before training because
+`ULHPC_CLUSTER` was absent in the noninteractive submission environment. Revision
+`51830bd` supplies the Iris default; retry `6257117` completed successfully.
+
+Full checkpoints and previews are retained on Iris and copied locally under
+`runs/iris-6257007/` and `runs/iris-6257117/`. Batch logs are copied under
+`logs/iris-benchmark/`. These large artifacts remain Git-ignored. Compact run
+metadata, baseline scores, summaries, and learning curves are versioned in
+[benchmarks/](benchmarks/). Ten launcher regression tests and ShellCheck passed
+for the batch-environment fix, followed by actual successful Slurm execution.
+
+**Next experiment:** measure exported binary-alpha/color errors explicitly and
+compare reference-appearance conditioning under the same held-out split before
+increasing model size or training duration. Preserve these runs as the baseline.
+The RGBA reconstruction gate from the literature review still applies before
+selecting any latent generative model. Independent illustrations, unseen bodies,
+other animation families, and flexible equipment remain untested.

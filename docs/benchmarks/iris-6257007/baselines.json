@@ -1,0 +1,20 @@
+{
+  "empty": {
+    "train": {
+      "alpha_iou": 0.0,
+      "visible_rgb_mae": 0.48455678053771706,
+      "premultiplied_mae": 0.011677899530955724,
+      "frames": 7
+    },
+    "val": null
+  },
+  "copy_reference": {
+    "train": {
+      "alpha_iou": 0.625,
+      "visible_rgb_mae": 0.24593705482317293,
+      "premultiplied_mae": 0.007614679989360627,
+      "frames": 7
+    },
+    "val": null
+  }
+}

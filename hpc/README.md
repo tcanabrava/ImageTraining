@@ -3,7 +3,8 @@
 This tests the **data/training/inference pipeline**, not the final research model.
 It uses a small supervised U-Net and one supplied animation, with no network calls
 during the job. It produces model weights, numeric diagnostics, and visual previews.
-The repository has been tested on CPU; an actual Iris/CUDA run remains to be done.
+The glove and held-out footwear pilots have completed on an Iris V100; see
+[measured results](../docs/RESULTS.md).
 
 ## 1. Prepare data before submitting
 
@@ -123,8 +124,8 @@ Validation is only on different footwear designs on the same body and animation;
 it is not a test of new bodies, animation families, or independently generated art.
 
 Current cluster guidance: [Iris GPU hardware](https://hpc-docs.uni.lu/systems/iris/compute/)
-and [ULHPC Slurm](https://hpc-docs.uni.lu/slurm/). No job has been submitted by this
-project, and no HPC credentials are required for preparing the local pipeline.
+and [ULHPC Slurm](https://hpc-docs.uni.lu/slurm/). Jobs and measured outcomes are recorded in [the results](../docs/RESULTS.md).
+No HPC credentials are required for preparing the local pipeline.
 
 Launcher tests simulate Slurm/modules to check setup, reuse, overrides, and failure
 handling. They do not replace running `--check` on Iris.
