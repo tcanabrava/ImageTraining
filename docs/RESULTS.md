@@ -241,3 +241,73 @@ views before tuning correspondence or detail losses. Repeated development on
 these two validation designs is not an unbiased final generalization test.
 Independent item illustrations, behind-torso occlusion, new bodies, and latent
 RGBA representation fidelity remain unvalidated.
+
+
+## Expanded four-view development benchmark (Iris job 6257841)
+
+Dataset/config and split safeguards were committed as `e74ea59` before execution.
+The earlier commit attempt was delayed by an approval-service usage limit; the
+retry succeeded without changing the approval mechanism. All six GPU runs then
+completed successfully on Iris in 4 minutes 20 seconds, Slurm exit code 0.
+
+The expanded data has 168 training targets and 56 validation targets across
+north/west/south/east views. The development fingerprint is
+`2daacc0965ecb1236368b1cc988a08e73f79ebfc866ef9bfff1336b76aa1f75e`.
+Training adds sandals and revised boots/shoes. Each direction has its own aligned
+reference; all directions occur in training. This is neither unseen-view nor
+independent-illustration testing. The 56 reserved slippers/tabi test frames were
+not used for training, model evaluation, or checkpoint selection.
+
+Both architectures trained for a predeclared 1,600 updates, batch size 8, seeds
+42/43/44. This scales updates eightfold with the eightfold training-frame increase.
+It does not isolate the effect of new data versus longer optimization; compare
+architectures within this experiment, not scores against the earlier dataset.
+
+| Seed | U-Net foreground MAE ↓ | Transfer foreground MAE ↓ | U-Net IoU ↑ | Transfer IoU ↑ |
+| --- | ---: | ---: | ---: | ---: |
+| 42 | 0.16850 | 0.13358 | 0.7277 | 0.7775 |
+| 43 | 0.17142 | 0.12470 | 0.7391 | 0.7912 |
+| 44 | 0.15700 | 0.12946 | 0.7544 | 0.7698 |
+| Mean | 0.16564 | 0.12925 | 0.7404 | 0.7795 |
+
+All scores use final-checkpoint, PNG-equivalent outputs. Transfer lowers pooled
+foreground composite error by 22.0% on the mean and improves silhouette IoU in all
+three seeds. Mean alpha recall is 0.8940 versus 0.9179; mean whole-frame
+premultiplied MAE is 0.004807 versus 0.003331. Three seeds and two validation
+families are insufficient for a broad generalization claim.
+
+Direction breakdown below averages foreground MAE equally over the two validation
+designs and three seeds, unlike the pixel-weighted pooled scores above:
+
+| View | U-Net | Transfer |
+| --- | ---: | ---: |
+| North | 0.15880 | 0.08591 |
+| West | 0.16637 | 0.12767 |
+| South | 0.19629 | 0.19117 |
+| East | 0.16783 | 0.12781 |
+
+The small south-view gain is a remaining weakness hidden by the pooled mean.
+Equally averaged across views/seeds, ghillies improve from 0.20333 to 0.16617 and
+plate boots from 0.14132 to 0.10011. Contact sheets inspected for transfer seed 42:
+west ghillies preserve some straps but still misplace/fill pixels; north plate
+boots show extra or misplaced shapes in several frames. Metrics are encouraging,
+not pixel-perfect fidelity or evidence of temporal consistency.
+
+Training/evaluation loops took 17.76–19.40 seconds for U-Net and 39.99–42.13 seconds
+for transfer. Sequential-process allocated CUDA peaks were at most 155.2 MiB and
+157.0 MiB; these are not isolated serving benchmarks. Full artifacts are retained
+on Iris and copied locally under `runs/compare-6257841/`; all six checkpoint
+hashes match the saved diagnostic reports. Compact evidence is versioned in
+[compare-6257841/](benchmarks/compare-6257841/), with all seeds and per-design scores.
+
+Validation: 29 tests passed before submission, including multi-view family split
+checks and refusal to run comparisons on manifests containing reserved tests.
+Source assets retain pinned hashes and credits. Exact equipment-file duplicates
+across splits were checked and none found. Selected data previews were inspected;
+this is not an exhaustive occlusion or ancestry audit. User remote launcher edits
+remain preserved and recorded as dirty in run metadata.
+
+Next: freeze the two candidate models and the evaluation protocol before scoring
+reserved slippers/tabi designs. Report all three seeds without choosing the best
+one, and include per-design/view failures. Do not tune on that test result; new
+model iterations will require a new untouched evaluation set.

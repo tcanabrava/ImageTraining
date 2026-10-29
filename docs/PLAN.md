@@ -50,8 +50,11 @@ on experimental evidence; public website deployment is not part of the first ses
   implemented. A three-seed Iris comparison improves mean foreground error by
   22.1%, with mixed silhouette results and unresolved thin details. The variant
   remains experimental; the final architecture and RGBA representation are not selected.
-- Steps 7–9: not implemented. Use the literature review's representation and
-  reference-conditioning experiments before choosing the final architecture.
+- Step 7: expanded four-view development data and reserved slippers/tabi test
+  families are prepared. The three-seed expanded comparison improves foreground
+  error and silhouette overlap, but reserved-test evaluation has not run.
+- Steps 8–9: not implemented. Representation fidelity, independent references,
+  new bodies, and temporal/detail quality remain research gates.
 
 ## Data strategy
 

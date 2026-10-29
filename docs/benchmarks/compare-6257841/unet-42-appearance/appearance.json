@@ -1,0 +1,1307 @@
+{
+  "environment": {
+    "python": "3.11.5",
+    "python_executable": "/mnt/aiongpfs/users/tcanabrava/ImageTraining/.venv-iris/bin/python",
+    "loaded_modules": [
+      "env/release/2023b",
+      "compiler/GCCcore/13.2.0",
+      "lib/zlib/1.2.13-GCCcore-13.2.0",
+      "tools/binutils/2.40-GCCcore-13.2.0",
+      "compiler/GCC/13.2.0",
+      "tools/numactl/2.0.16-GCCcore-13.2.0",
+      "tools/XZ/5.4.4-GCCcore-13.2.0",
+      "lib/libxml2/2.11.5-GCCcore-13.2.0",
+      "system/libpciaccess/0.17-GCCcore-13.2.0",
+      "system/hwloc/2.9.2-GCCcore-13.2.0",
+      "system/OpenSSL/1.1",
+      "lib/libevent/2.1.12-GCCcore-13.2.0",
+      "lib/UCX/1.15.0-GCCcore-13.2.0",
+      "lib/libfabric/1.19.0-GCCcore-13.2.0",
+      "lib/PMIx/4.2.6-GCCcore-13.2.0",
+      "lib/UCC/1.2.0-GCCcore-13.2.0",
+      "mpi/OpenMPI/4.1.6-GCC-13.2.0",
+      "numlib/OpenBLAS/0.3.24-GCC-13.2.0",
+      "lib/FlexiBLAS/3.3.1-GCC-13.2.0",
+      "numlib/FFTW/3.3.10-GCC-13.2.0",
+      "toolchain/gompi/2023b",
+      "numlib/FFTW.MPI/3.3.10-gompi-2023b",
+      "numlib/ScaLAPACK/2.2.0-gompi-2023b-fb",
+      "toolchain/foss/2023b",
+      "system/CUDA/12.6.0",
+      "numlib/cuDNN/9.5.0.50-CUDA-12.6.0",
+      "lib/GDRCopy/2.4-GCCcore-13.2.0",
+      "lib/UCX-CUDA/1.15.0-GCCcore-13.2.0-CUDA-12.6.0",
+      "math/magma/2.7.2-foss-2023b-CUDA-12.6.0",
+      "lib/NCCL/2.20.5-GCCcore-13.2.0-CUDA-12.6.0",
+      "tools/Ninja/1.11.1-GCCcore-13.2.0",
+      "tools/bzip2/1.0.8-GCCcore-13.2.0",
+      "devel/ncurses/6.4-GCCcore-13.2.0",
+      "lib/libreadline/8.2-GCCcore-13.2.0",
+      "lang/Tcl/8.6.13-GCCcore-13.2.0",
+      "devel/SQLite/3.43.1-GCCcore-13.2.0",
+      "lib/libffi/3.4.4-GCCcore-13.2.0",
+      "lang/Python/3.11.5-GCCcore-13.2.0",
+      "tools/cffi/1.15.1-GCCcore-13.2.0",
+      "tools/cryptography/41.0.5-GCCcore-13.2.0",
+      "tools/virtualenv/20.24.6-GCCcore-13.2.0",
+      "lang/Python-bundle-PyPI/2023.10-GCCcore-13.2.0",
+      "lib/Abseil/20240116.1-GCCcore-13.2.0",
+      "devel/protobuf/25.3-GCCcore-13.2.0",
+      "devel/protobuf-python/4.25.3-GCCcore-13.2.0",
+      "lib/pybind11/2.11.1-GCCcore-13.2.0",
+      "toolchain/gfbf/2023b",
+      "lang/SciPy-bundle/2023.11-gfbf-2023b",
+      "lib/libyaml/0.2.5-GCCcore-13.2.0",
+      "lib/PyYAML/6.0.1-GCCcore-13.2.0",
+      "math/GMP/6.3.0-GCCcore-13.2.0",
+      "math/MPFR/4.2.1-GCCcore-13.2.0",
+      "lang/NASM/2.16.01-GCCcore-13.2.0",
+      "vis/x264/20231019-GCCcore-13.2.0",
+      "data/LAME/3.100-GCCcore-13.2.0",
+      "vis/x265/3.5-GCCcore-13.2.0",
+      "tools/expat/2.5.0-GCCcore-13.2.0",
+      "lib/libpng/1.6.40-GCCcore-13.2.0",
+      "lib/Brotli/1.1.0-GCCcore-13.2.0",
+      "vis/freetype/2.13.2-GCCcore-13.2.0",
+      "tools/util-linux/2.39-GCCcore-13.2.0",
+      "vis/fontconfig/2.14.2-GCCcore-13.2.0",
+      "devel/xorg-macros/1.20.0-GCCcore-13.2.0",
+      "vis/X11/20231019-GCCcore-13.2.0",
+      "lang/FriBidi/1.0.13-GCCcore-13.2.0",
+      "lib/SDL2/2.28.5-GCCcore-13.2.0",
+      "vis/FFmpeg/6.0-GCCcore-13.2.0",
+      "lib/libjpeg-turbo/3.0.1-GCCcore-13.2.0",
+      "vis/jbigkit/2.1-GCCcore-13.2.0",
+      "tools/gzip/1.13-GCCcore-13.2.0",
+      "lib/lz4/1.9.4-GCCcore-13.2.0",
+      "lib/zstd/1.5.5-GCCcore-13.2.0",
+      "system/libdeflate/1.19-GCCcore-13.2.0",
+      "lib/LibTIFF/4.6.0-GCCcore-13.2.0",
+      "lib/giflib/5.2.1-GCCcore-13.2.0",
+      "lib/libwebp/1.3.2-GCCcore-13.2.0",
+      "lib/OpenJPEG/2.5.0-GCCcore-13.2.0",
+      "vis/LittleCMS/2.15-GCCcore-13.2.0",
+      "vis/Pillow/10.2.0-GCCcore-13.2.0",
+      "tools/expecttest/0.2.1-GCCcore-13.2.0",
+      "tools/networkx/3.2.1-gfbf-2023b",
+      "math/MPC/1.3.1-GCCcore-13.2.0",
+      "math/gmpy2/2.1.5-GCC-13.2.0",
+      "math/sympy/1.12-gfbf-2023b",
+      "tools/Z3/4.13.0-GCCcore-13.2.0",
+      "ai/PyTorch/2.3.0-foss-2023b-CUDA-12.6.0"
+    ],
+    "torch": "2.3.0",
+    "numpy": "1.26.2",
+    "pillow": "10.2.0",
+    "platform": "Linux-4.18.0-553.170.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "cuda_build": "12.6",
+    "device": "cuda",
+    "git_revision": "e74ea595fe6bb87501ece96f0e13d6ae2aa14a2c",
+    "git_dirty": true,
+    "gpu": "Tesla V100-SXM2-16GB",
+    "capability": [
+      7,
+      0
+    ],
+    "supported_architectures": [
+      "sm_70"
+    ]
+  },
+  "dataset": {
+    "samples": 32,
+    "designs": 7,
+    "target_frames": {
+      "train": 168,
+      "val": 56,
+      "test": 0
+    },
+    "fingerprint": "2daacc0965ecb1236368b1cc988a08e73f79ebfc866ef9bfff1336b76aa1f75e"
+  },
+  "checkpoint_sha256": "5959872e125884f74d24856c6643bd88393a3f83373bb6ac062d01b6598af6a3",
+  "checkpoint_step": 1600,
+  "designs": {
+    "basic-boots-north": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9814634146341463,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.002204697113484144,
+          "target_foreground_composite_mae": 0.060541333703508116
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9814634146341463,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0016247775638476014,
+          "target_foreground_composite_mae": 0.043937678049541296
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.7846020761245674,
+          "alpha_recall": 0.9015904572564613,
+          "premultiplied_mae": 0.006788705941289663,
+          "target_foreground_composite_mae": 0.1686170715776953
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.16500742804432425,
+      "inversion_equivariance_rgb_mae": 0.3658292352834244
+    },
+    "fold-boots-north": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9493996569468267,
+          "alpha_recall": 0.9937163375224417,
+          "premultiplied_mae": 0.003231592010706663,
+          "target_foreground_composite_mae": 0.06865913578309676
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9493996569468267,
+          "alpha_recall": 0.9937163375224417,
+          "premultiplied_mae": 0.0025450806133449078,
+          "target_foreground_composite_mae": 0.05061663588244782
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.7428998505231689,
+          "alpha_recall": 0.8922800718132855,
+          "premultiplied_mae": 0.009632134810090065,
+          "target_foreground_composite_mae": 0.15749170564734816
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.14389255349362304,
+      "inversion_equivariance_rgb_mae": 0.3437113554040937
+    },
+    "basic-shoes-north": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.986130374479889,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0008103371947072446,
+          "target_foreground_composite_mae": 0.030705165371221945
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.986130374479889,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0002352503506699577,
+          "target_foreground_composite_mae": 0.007721794081919081
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.6926713947990544,
+          "alpha_recall": 0.8241912798874824,
+          "premultiplied_mae": 0.005228211637586355,
+          "target_foreground_composite_mae": 0.16917717741846872
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.16462390781447916,
+      "inversion_equivariance_rgb_mae": 0.4396034453884345
+    },
+    "plate-boots-north": {
+      "split": "val",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9076923076923077,
+          "alpha_recall": 0.9759398496240601,
+          "premultiplied_mae": 0.003047084901481867,
+          "target_foreground_composite_mae": 0.11628875349996085
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9076923076923077,
+          "alpha_recall": 0.9759398496240601,
+          "premultiplied_mae": 0.00269493879750371,
+          "target_foreground_composite_mae": 0.10254263435688832
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.6782608695652174,
+          "alpha_recall": 0.8210526315789474,
+          "premultiplied_mae": 0.0040769437327980995,
+          "target_foreground_composite_mae": 0.1378230121201441
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.1880238346172676,
+      "inversion_equivariance_rgb_mae": 0.443728704005867
+    },
+    "ghillies-north": {
+      "split": "val",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.4672131147540984,
+          "alpha_recall": 0.7054455445544554,
+          "premultiplied_mae": 0.006921558175235987,
+          "target_foreground_composite_mae": 0.21499064731912645
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.4672131147540984,
+          "alpha_recall": 0.7054455445544554,
+          "premultiplied_mae": 0.0068279136903584,
+          "target_foreground_composite_mae": 0.2122177023305358
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.48845470692717585,
+          "alpha_recall": 0.6806930693069307,
+          "premultiplied_mae": 0.004351584706455469,
+          "target_foreground_composite_mae": 0.2171617262434251
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.2239858603740818,
+      "inversion_equivariance_rgb_mae": 0.44509928984480984
+    },
+    "sandals-north": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.7858627858627859,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0020275753922760487,
+          "target_foreground_composite_mae": 0.02300376993007761
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.7858627858627859,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0017523871501907706,
+          "target_foreground_composite_mae": 0.000421897233899098
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.2684563758389262,
+          "alpha_recall": 0.42328042328042326,
+          "premultiplied_mae": 0.006494550965726376,
+          "target_foreground_composite_mae": 0.2771034308001268
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.12034273231681272,
+      "inversion_equivariance_rgb_mae": 0.4028126045509621
+    },
+    "revised-shoes-north": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9590443686006825,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0007029243279248476,
+          "target_foreground_composite_mae": 0.02586466788114319
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9590443686006825,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.00032729891245253384,
+          "target_foreground_composite_mae": 0.007245365269526327
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.5972222222222222,
+          "alpha_recall": 0.7651245551601423,
+          "premultiplied_mae": 0.006685031112283468,
+          "target_foreground_composite_mae": 0.2243667548237322
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.17368503903786886,
+      "inversion_equivariance_rgb_mae": 0.4413286278071696
+    },
+    "revised-boots-north": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9475890985324947,
+          "alpha_recall": 0.9977924944812362,
+          "premultiplied_mae": 0.0018503168830648065,
+          "target_foreground_composite_mae": 0.04270296188028882
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9475890985324947,
+          "alpha_recall": 0.9977924944812362,
+          "premultiplied_mae": 0.0012002784060314298,
+          "target_foreground_composite_mae": 0.022581483617786804
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.7428571428571429,
+          "alpha_recall": 0.8609271523178808,
+          "premultiplied_mae": 0.006764815654605627,
+          "target_foreground_composite_mae": 0.15646164692702585
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.21898798841884567,
+      "inversion_equivariance_rgb_mae": 0.38473322021445255
+    },
+    "basic-boots-west": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9858585858585859,
+          "alpha_recall": 0.9979550102249489,
+          "premultiplied_mae": 0.0022392095997929573,
+          "target_foreground_composite_mae": 0.06372615863615425
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9858585858585859,
+          "alpha_recall": 0.9979550102249489,
+          "premultiplied_mae": 0.0015640957280993462,
+          "target_foreground_composite_mae": 0.04411697647729209
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.35984848484848486,
+          "alpha_recall": 0.5828220858895705,
+          "premultiplied_mae": 0.02250402234494686,
+          "target_foreground_composite_mae": 0.39494368456298995
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.15875061095341053,
+      "inversion_equivariance_rgb_mae": 0.40205767627984307
+    },
+    "fold-boots-west": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.988988988988989,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0026012035086750984,
+          "target_foreground_composite_mae": 0.07246963150909877
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.988988988988989,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.001918886206112802,
+          "target_foreground_composite_mae": 0.05213542634498092
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.34365513054037644,
+          "alpha_recall": 0.5728744939271255,
+          "premultiplied_mae": 0.026485908776521683,
+          "target_foreground_composite_mae": 0.3983924855426577
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.12545673023923912,
+      "inversion_equivariance_rgb_mae": 0.3760808111109612
+    },
+    "basic-shoes-west": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9786184210526315,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0007379383314400911,
+          "target_foreground_composite_mae": 0.032572086451768206
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9786184210526315,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.00031991308787837625,
+          "target_foreground_composite_mae": 0.012674245113084296
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.22632575757575757,
+          "alpha_recall": 0.4016806722689076,
+          "premultiplied_mae": 0.014242494478821754,
+          "target_foreground_composite_mae": 0.37750315946691176
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.10567281599012657,
+      "inversion_equivariance_rgb_mae": 0.5343956533322624
+    },
+    "plate-boots-west": {
+      "split": "val",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.8597662771285476,
+          "alpha_recall": 0.9147424511545293,
+          "premultiplied_mae": 0.0033169842790812254,
+          "target_foreground_composite_mae": 0.14938414118006216
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.8597662771285476,
+          "alpha_recall": 0.9147424511545293,
+          "premultiplied_mae": 0.0030708834528923035,
+          "target_foreground_composite_mae": 0.1377123148925492
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.23623623623623624,
+          "alpha_recall": 0.4191829484902309,
+          "premultiplied_mae": 0.00922154076397419,
+          "target_foreground_composite_mae": 0.24717957229569087
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.2435943049117655,
+      "inversion_equivariance_rgb_mae": 0.4326496773568814
+    },
+    "ghillies-west": {
+      "split": "val",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.6011029411764706,
+          "alpha_recall": 0.8134328358208955,
+          "premultiplied_mae": 0.0048988149501383305,
+          "target_foreground_composite_mae": 0.18282769805756374
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.6011029411764706,
+          "alpha_recall": 0.8134328358208955,
+          "premultiplied_mae": 0.004777314607053995,
+          "target_foreground_composite_mae": 0.17474069168318562
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.1874180865006553,
+          "alpha_recall": 0.35572139303482586,
+          "premultiplied_mae": 0.008022492751479149,
+          "target_foreground_composite_mae": 0.2767925104296227
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.22912419760476507,
+      "inversion_equivariance_rgb_mae": 0.4030772727967946
+    },
+    "sandals-west": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.7685589519650655,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.002119806595146656,
+          "target_foreground_composite_mae": 0.03804961479071415
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.7685589519650655,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0018435695674270391,
+          "target_foreground_composite_mae": 0.01456847967523517
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.11173974540311174,
+          "alpha_recall": 0.22443181818181818,
+          "premultiplied_mae": 0.008728928864002228,
+          "target_foreground_composite_mae": 0.3345254262288411
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.12312353319322038,
+      "inversion_equivariance_rgb_mae": 0.48013903361147847
+    },
+    "revised-shoes-west": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.98559670781893,
+          "alpha_recall": 0.9979166666666667,
+          "premultiplied_mae": 0.000609280017670244,
+          "target_foreground_composite_mae": 0.032764151361253525
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.98559670781893,
+          "alpha_recall": 0.9979166666666667,
+          "premultiplied_mae": 0.00032593109062872827,
+          "target_foreground_composite_mae": 0.01586056285434299
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.18171557562076748,
+          "alpha_recall": 0.33541666666666664,
+          "premultiplied_mae": 0.016467934474349022,
+          "target_foreground_composite_mae": 0.504733149210612
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.21380684798722333,
+      "inversion_equivariance_rgb_mae": 0.5012505492248652
+    },
+    "revised-boots-west": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.992867332382311,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0009425057214684784,
+          "target_foreground_composite_mae": 0.03792727313279192
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.992867332382311,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0004531304875854403,
+          "target_foreground_composite_mae": 0.017765381327077348
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.26904761904761904,
+          "alpha_recall": 0.4870689655172414,
+          "premultiplied_mae": 0.02194402553141117,
+          "target_foreground_composite_mae": 0.4679344440328664
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 5.397992936195806e-05,
+          "target_foreground_composite_mae": 0.0022237248347636842
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.15588552398947325,
+      "inversion_equivariance_rgb_mae": 0.49046259822299815
+    },
+    "basic-boots-south": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9798873692679002,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0023540991824120283,
+          "target_foreground_composite_mae": 0.05256232735101943
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9798873692679002,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0015458136331290007,
+          "target_foreground_composite_mae": 0.0338130673229466
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.7975679542203148,
+          "alpha_recall": 0.9154351395730707,
+          "premultiplied_mae": 0.007757060695439577,
+          "target_foreground_composite_mae": 0.15434498152709358
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.1791841315916429,
+      "inversion_equivariance_rgb_mae": 0.3667912360951665
+    },
+    "fold-boots-south": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.985373364126251,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0034432716201990843,
+          "target_foreground_composite_mae": 0.07227633794148763
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.985373364126251,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.002729907166212797,
+          "target_foreground_composite_mae": 0.05611724058787028
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.7457511896668932,
+          "alpha_recall": 0.85703125,
+          "premultiplied_mae": 0.012564877979457378,
+          "target_foreground_composite_mae": 0.22583230336507162
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.19186528938127959,
+      "inversion_equivariance_rgb_mae": 0.34239306226338867
+    },
+    "basic-shoes-south": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9883313885647608,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.001232739188708365,
+          "target_foreground_composite_mae": 0.04008611493671752
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9883313885647608,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0006878792191855609,
+          "target_foreground_composite_mae": 0.021575570434906596
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.7068114511352419,
+          "alpha_recall": 0.8453364817001181,
+          "premultiplied_mae": 0.006994732189923525,
+          "target_foreground_composite_mae": 0.19310601064418537
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.1922869945989807,
+      "inversion_equivariance_rgb_mae": 0.42285178584387484
+    },
+    "plate-boots-south": {
+      "split": "val",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.8760529482551144,
+          "alpha_recall": 0.8888888888888888,
+          "premultiplied_mae": 0.00429290859028697,
+          "target_foreground_composite_mae": 0.1470883547604739
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.8760529482551144,
+          "alpha_recall": 0.8888888888888888,
+          "premultiplied_mae": 0.004017675295472145,
+          "target_foreground_composite_mae": 0.13766989981589592
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.686491935483871,
+          "alpha_recall": 0.8315018315018315,
+          "premultiplied_mae": 0.005889784544706345,
+          "target_foreground_composite_mae": 0.16796508590331832
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.2217456794468173,
+      "inversion_equivariance_rgb_mae": 0.3749547259236823
+    },
+    "ghillies-south": {
+      "split": "val",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.5615050651230101,
+          "alpha_recall": 0.8546255506607929,
+          "premultiplied_mae": 0.007791893091052771,
+          "target_foreground_composite_mae": 0.25414474420085353
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.5615050651230101,
+          "alpha_recall": 0.8546255506607929,
+          "premultiplied_mae": 0.007806665264070034,
+          "target_foreground_composite_mae": 0.2575624440735132
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.44551282051282054,
+          "alpha_recall": 0.6123348017621145,
+          "premultiplied_mae": 0.0071973842568695545,
+          "target_foreground_composite_mae": 0.33158854345918226
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.13498812791273118,
+      "inversion_equivariance_rgb_mae": 0.33647247887710774
+    },
+    "sandals-south": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.7973950795947902,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0031822628807276487,
+          "target_foreground_composite_mae": 0.03383035077085224
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.7973950795947902,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0027730362489819527,
+          "target_foreground_composite_mae": 0.011781314035220645
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.32926829268292684,
+          "alpha_recall": 0.4900181488203267,
+          "premultiplied_mae": 0.008342178538441658,
+          "target_foreground_composite_mae": 0.24015753642761267
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.13084796835923534,
+      "inversion_equivariance_rgb_mae": 0.38426664832497937
+    },
+    "revised-shoes-south": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9879679144385026,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0008313088328577578,
+          "target_foreground_composite_mae": 0.02771806695410729
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9879679144385026,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.00038921163650229573,
+          "target_foreground_composite_mae": 0.010922725748037184
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.6776315789473685,
+          "alpha_recall": 0.8362652232746955,
+          "premultiplied_mae": 0.0077283382415771484,
+          "target_foreground_composite_mae": 0.21932836110171403
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.28805730632337007,
+      "inversion_equivariance_rgb_mae": 0.4475831226341426
+    },
+    "revised-boots-south": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9781312127236581,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0013596646022051573,
+          "target_foreground_composite_mae": 0.030685734942676575
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9781312127236581,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.000807738455478102,
+          "target_foreground_composite_mae": 0.015008766153640541
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.7352941176470589,
+          "alpha_recall": 0.8638211382113821,
+          "premultiplied_mae": 0.008706907741725445,
+          "target_foreground_composite_mae": 0.20522874868336086
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.29150599816187356,
+      "inversion_equivariance_rgb_mae": 0.40904955830846995
+    },
+    "basic-boots-east": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9888663967611336,
+          "alpha_recall": 0.9989775051124744,
+          "premultiplied_mae": 0.0020576200913637877,
+          "target_foreground_composite_mae": 0.05872194671110791
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9888663967611336,
+          "alpha_recall": 0.9989775051124744,
+          "premultiplied_mae": 0.0014580050483345985,
+          "target_foreground_composite_mae": 0.04126335149243647
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.35984848484848486,
+          "alpha_recall": 0.5828220858895705,
+          "premultiplied_mae": 0.02250402234494686,
+          "target_foreground_composite_mae": 0.39494368456298995
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.14425888751419783,
+      "inversion_equivariance_rgb_mae": 0.4101073109971668
+    },
+    "fold-boots-east": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9879759519038076,
+          "alpha_recall": 0.9979757085020243,
+          "premultiplied_mae": 0.0026226311456412077,
+          "target_foreground_composite_mae": 0.07271969237951775
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9879759519038076,
+          "alpha_recall": 0.9979757085020243,
+          "premultiplied_mae": 0.0018767599249258637,
+          "target_foreground_composite_mae": 0.051235749814835314
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.34365513054037644,
+          "alpha_recall": 0.5728744939271255,
+          "premultiplied_mae": 0.026485908776521683,
+          "target_foreground_composite_mae": 0.3983925267269737
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.13281863681490877,
+      "inversion_equivariance_rgb_mae": 0.3677579343959628
+    },
+    "basic-shoes-east": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9903069466882067,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0008337710751220584,
+          "target_foreground_composite_mae": 0.0376035556513178
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9903069466882067,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0003782697895076126,
+          "target_foreground_composite_mae": 0.01646461714992969
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.23404255319148937,
+          "alpha_recall": 0.41272430668841764,
+          "premultiplied_mae": 0.014318541623651981,
+          "target_foreground_composite_mae": 0.36958068217059203
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.11530951937593197,
+      "inversion_equivariance_rgb_mae": 0.5284901350042164
+    },
+    "plate-boots-east": {
+      "split": "val",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.8527004909983633,
+          "alpha_recall": 0.9253996447602132,
+          "premultiplied_mae": 0.0035620827693492174,
+          "target_foreground_composite_mae": 0.1553187350537948
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.8527004909983633,
+          "alpha_recall": 0.9253996447602132,
+          "premultiplied_mae": 0.0031852261163294315,
+          "target_foreground_composite_mae": 0.1371086396149025
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.23623623623623624,
+          "alpha_recall": 0.4191829484902309,
+          "premultiplied_mae": 0.00922154076397419,
+          "target_foreground_composite_mae": 0.24717957229569087
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.2190117312653629,
+      "inversion_equivariance_rgb_mae": 0.44763131446457294
+    },
+    "ghillies-east": {
+      "split": "val",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.6120996441281139,
+          "alpha_recall": 0.8557213930348259,
+          "premultiplied_mae": 0.005333344452083111,
+          "target_foreground_composite_mae": 0.18592008271225255
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.6120996441281139,
+          "alpha_recall": 0.8557213930348259,
+          "premultiplied_mae": 0.005188820417970419,
+          "target_foreground_composite_mae": 0.17442200314346237
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.1874180865006553,
+          "alpha_recall": 0.35572139303482586,
+          "premultiplied_mae": 0.008022493682801723,
+          "target_foreground_composite_mae": 0.27679253573441387
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.2079455367847771,
+      "inversion_equivariance_rgb_mae": 0.4022073025773124
+    },
+    "sandals-east": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.7532188841201717,
+          "alpha_recall": 0.9971590909090909,
+          "premultiplied_mae": 0.002252157311886549,
+          "target_foreground_composite_mae": 0.0397318782228412
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.7532188841201717,
+          "alpha_recall": 0.9971590909090909,
+          "premultiplied_mae": 0.0020473164040595293,
+          "target_foreground_composite_mae": 0.02060309142777414
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.11173974540311174,
+          "alpha_recall": 0.22443181818181818,
+          "premultiplied_mae": 0.008728927932679653,
+          "target_foreground_composite_mae": 0.3345254262288411
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.12749572825766345,
+      "inversion_equivariance_rgb_mae": 0.4773544068773829
+    },
+    "revised-shoes-east": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9856262833675564,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0005397991044446826,
+          "target_foreground_composite_mae": 0.02971132066514757
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9856262833675564,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0002436390786897391,
+          "target_foreground_composite_mae": 0.011881807115342882
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.18171557562076748,
+          "alpha_recall": 0.33541666666666664,
+          "premultiplied_mae": 0.016467934474349022,
+          "target_foreground_composite_mae": 0.504733149210612
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 0.0,
+          "target_foreground_composite_mae": 0.0
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.22070966109614412,
+      "inversion_equivariance_rgb_mae": 0.49003319073712925
+    },
+    "revised-boots-east": {
+      "split": "train",
+      "metrics": {
+        "model": {
+          "frames": 7,
+          "alpha_iou": 0.9747191011235955,
+          "alpha_recall": 0.9971264367816092,
+          "premultiplied_mae": 0.0010427606757730246,
+          "target_foreground_composite_mae": 0.03702576589767047
+        },
+        "reference_palette": {
+          "frames": 7,
+          "alpha_iou": 0.9747191011235955,
+          "alpha_recall": 0.9971264367816092,
+          "premultiplied_mae": 0.0006423793965950608,
+          "target_foreground_composite_mae": 0.021115995458259436
+        },
+        "copy_reference": {
+          "frames": 7,
+          "alpha_iou": 0.26904761904761904,
+          "alpha_recall": 0.4870689655172414,
+          "premultiplied_mae": 0.02194402553141117,
+          "target_foreground_composite_mae": 0.4679344440328664
+        },
+        "palette_oracle": {
+          "frames": 7,
+          "alpha_iou": 1.0,
+          "alpha_recall": 1.0,
+          "premultiplied_mae": 5.397992936195806e-05,
+          "target_foreground_composite_mae": 0.0022237248347636842
+        }
+      },
+      "inverted_reference_mean_rgb_change": 0.1516860035878038,
+      "inversion_equivariance_rgb_mae": 0.508923221441307
+    }
+  },
+  "splits": {
+    "train": {
+      "model": {
+        "frames": 168,
+        "alpha_iou": 0.9577479392399814,
+        "alpha_recall": 0.9990266060999351,
+        "premultiplied_mae": 0.0017428945284336805,
+        "target_foreground_composite_mae": 0.048459669637545964
+      },
+      "reference_palette": {
+        "frames": 168,
+        "alpha_iou": 0.9577479392399814,
+        "alpha_recall": 0.9990266060999351,
+        "premultiplied_mae": 0.0012371065095067024,
+        "target_foreground_composite_mae": 0.02960276591665202
+      },
+      "copy_reference": {
+        "frames": 168,
+        "alpha_iou": 0.46469511967439603,
+        "alpha_recall": 0.6729937270170885,
+        "premultiplied_mae": 0.013104592449963093,
+        "target_foreground_composite_mae": 0.2897059370268224
+      },
+      "palette_oracle": {
+        "frames": 168,
+        "alpha_iou": 1.0,
+        "alpha_recall": 1.0,
+        "premultiplied_mae": 4.4983271436649375e-06,
+        "target_foreground_composite_mae": 0.00016739265466099115
+      }
+    },
+    "val": {
+      "model": {
+        "frames": 56,
+        "alpha_iou": 0.7276777067596358,
+        "alpha_recall": 0.8794475655430711,
+        "premultiplied_mae": 0.004895584192126989,
+        "target_foreground_composite_mae": 0.16849711176459115
+      },
+      "reference_palette": {
+        "frames": 56,
+        "alpha_iou": 0.7276777067596358,
+        "alpha_recall": 0.8794475655430711,
+        "premultiplied_mae": 0.004696179646998644,
+        "target_foreground_composite_mae": 0.15887157806891775
+      },
+      "copy_reference": {
+        "frames": 56,
+        "alpha_iou": 0.3899815611555009,
+        "alpha_recall": 0.5941011235955056,
+        "premultiplied_mae": 0.007000470533967018,
+        "target_foreground_composite_mae": 0.22667498832635963
+      },
+      "palette_oracle": {
+        "frames": 56,
+        "alpha_iou": 1.0,
+        "alpha_recall": 1.0,
+        "premultiplied_mae": 0.0,
+        "target_foreground_composite_mae": 0.0
+      }
+    }
+  },
+  "scope": "Same animation and aligned reference. Palette oracle uses targets only to measure a representation bound; never used for predictions."
+}
