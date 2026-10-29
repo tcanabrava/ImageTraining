@@ -1,0 +1,22 @@
+{
+  "step": 1600,
+  "loss": 0.1627834588289261,
+  "train": {
+    "alpha_iou": 0.8955976690661573,
+    "visible_rgb_mae": 0.05925267885375774,
+    "premultiplied_mae": 0.002686181866992561,
+    "frames": 168
+  },
+  "val": {
+    "alpha_iou": 0.768203198494826,
+    "visible_rgb_mae": 0.11606425024596939,
+    "premultiplied_mae": 0.0037920591421425343,
+    "frames": 56
+  },
+  "elapsed_seconds": 40.59017951809801,
+  "optimization_seconds": 27.625339683610946,
+  "training_examples_per_second": 463.3427189166383,
+  "peak_cuda_allocated_bytes": 165720576,
+  "peak_cuda_reserved_bytes": 241172480,
+  "scope": "Framewise supervised pilot; no temporal model or arbitrary-illustration support."
+}

@@ -57,8 +57,10 @@ on experimental evidence; public website deployment is not part of the first ses
   development. Independent-reference and broader-category testing remain outstanding.
 - Reference-domain gate: a frozen development registration stress test now shows
   severe failure on shifted/centered standalone presentations. Separate reference
-  artifacts and provenance are implemented for this diagnostic; independent art
-  support is not. Canonical-reference/attachment conditioning is the next experiment.
+  artifacts and provenance are implemented. Canonical-reference training now
+  works without a reference body (~0.76 development IoU); a body-derived foot ROI
+  shows no consistent primary-score benefit. Independent art, scale/shape changes,
+  broader equipment, and new evaluation families remain outstanding.
 - Steps 8–9: not implemented. Representation fidelity, independent references,
   new bodies, and temporal/detail quality remain research gates.
 

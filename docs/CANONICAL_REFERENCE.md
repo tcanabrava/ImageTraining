@@ -37,3 +37,19 @@ selection. Inspect seed 42 without selecting a best seed. Use
 Canonical checkpoints accept `infer` without `--reference-base`. Existing aligned
 checkpoints still require it. Resume checks architecture and attachment settings.
 This prototype does not imply that arbitrary standalone artwork is supported.
+
+
+Completed experiment: Iris job `6258458`; see [results](RESULTS.md). To run a
+canonical checkpoint without a reference body (paths shown for the recorded run):
+
+```sh
+PYTHONPATH=src python -m equipment_fitter infer \
+  --checkpoint runs/canonical-6258458/canonical-none-42/last.pt \
+  --base runs/canonical-6258458/canonical-none-42/inputs/plate-boots-south/base.png \
+  --reference runs/canonical-6258458/canonical-none-42/inputs/plate-boots-south/reference.png \
+  --layout runs/canonical-6258458/canonical-none-42/inputs/plate-boots-south/layout.json \
+  --output runs/canonical-example --device cpu
+```
+
+Use a new output directory. The reference must still be RGBA at the trained frame
+size; automatic centering does not resize or generate missing equipment parts.

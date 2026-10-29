@@ -435,3 +435,70 @@ explicit attachment information, then test registration augmentation and removal
 of the reference-body dependency separately on development data. Independently
 authored paired references and new held-out families are still required afterward;
 broader equipment and occlusion remain separate research gates.
+
+
+## Canonical references and attachment regions (Iris job 6258458)
+
+Implementation and [protocol](CANONICAL_REFERENCE.md) committed as `e89b2f0` before
+training. Six new models were trained on the expanded development set only:
+canonical reference transfer, with `none` or `feet` attachment regions, seeds
+42/43/44, 1,600 updates, batch 8. No consumed test-set evaluation occurred.
+Iris completed the job in 5 minutes 33 seconds, exit code 0.
+
+Canonical input centers the visible item bounding box and supplies no reference
+body. The reference still contains paired equipment from one original pose/view;
+this is not an independently drawn item. The optional foot region is a broad
+rectangle computed from the lower third of target-body alpha bounds. It is both
+an input and an output alpha restriction. A pretraining coverage audit found all
+development target pixels inside the fixed region; the rule was not tuned on
+those targets. That coverage does not establish suitability for new equipment.
+
+| Seed | No-region foreground MAE ↓ | Foot-region foreground MAE ↓ | No-region IoU ↑ | Foot-region IoU ↑ |
+| --- | ---: | ---: | ---: | ---: |
+| 42 | 0.12369 | 0.12835 | 0.7560 | 0.7664 |
+| 43 | 0.12806 | 0.12407 | 0.7624 | 0.7565 |
+| 44 | 0.12116 | 0.12365 | 0.7682 | 0.7554 |
+| Mean | 0.12430 | 0.12535 | 0.7622 | 0.7595 |
+
+Scores use final PNG-equivalent outputs on the same 56 validation targets. Mean
+recall is 0.9476 (none) versus 0.9418 (feet); whole-frame premultiplied error is
+0.003761 versus 0.003529. The region reduces whole-frame error but does not improve
+the primary foreground score or IoU consistently. There is no evidence here to
+prefer it as the default on quality grounds.
+
+For context, frozen aligned-reference transfer scored foreground MAE 0.12925,
+IoU 0.7795 on this development set. Canonical training therefore reaches similar
+foreground error without a reference body, with lower silhouette overlap. The old
+aligned model's centered/no-body stress score was IoU 0.1931. Recovery to ~0.76
+requires the new training contract; it is not evidence that the old model became
+robust. Canonicalization, key features, and training inputs change together, so the
+comparison does not isolate one causal architectural improvement.
+
+Seed-42 plate-boots-south and ghillies-west contact sheets were inspected for both
+variants. There are no large torso overlays in those examples, but boot detail is
+smoothed and ghillies remain overly filled/dark with missing strap structure.
+Independent art, single-shoe references, scale/rotation changes, other equipment
+categories, occlusion, and new bodies remain untested.
+
+Standalone CPU inference with each seed-42 variant succeeded with the reference
+body file absent. Shifting the item eight pixels produced byte-identical equipment
+PNGs after centering. This translation invariance is built into preprocessing and
+is not a learned generalization claim. Outputs are in
+`runs/canonical-standalone-check/`. Canonical checkpoints use the explicit
+`canonical-footwear-rgba-v1` contract; old checkpoints retain their aligned contract.
+
+Training/evaluation loops took 40.59–43.41 seconds; peak allocated CUDA memory was
+158.0 MiB in the shared sequential process. Six checkpoint hashes were verified
+against their diagnostic reports after copying locally. All artifacts are retained
+on Iris and locally in `runs/canonical-6258458/`, with Slurm logs in `logs/`.
+Versioned [evidence](benchmarks/canonical-6258458/) retains all seeds and metrics.
+
+Validation: 37 tests passed, including canonical centering, attachment gating,
+resume/inference for the new architecture, and complete pilot export without a
+reference-body file. The Slurm script passed ShellCheck and all GPU runs completed.
+
+Decision: retain canonical/no-region as a viable experimental input contract;
+retain the region variant as a measured ablation, not a demonstrated quality gain.
+Next test shape/scale and independently prepared references under this contract,
+with new evaluation families before making further generalization claims. Do not
+reuse the consumed slippers/tabi test set to validate these new models.
