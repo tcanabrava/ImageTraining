@@ -23,27 +23,50 @@ fetching when the directories exist. Transfer the repository and the prepared
 accessible from Iris compute nodes. Git intentionally excludes data, so a Git clone
 alone does not transfer it. Keep the credit/provenance files with each dataset.
 
-## 2. Select the Python environment
+## 2. Run inside your interactive allocation
 
-Use Python 3.11+ with NumPy, Pillow, and a **V100-compatible PyTorch build**. A
-cluster-provided PyTorch stack is suitable if it meets those requirements. Do not
-assume the latest downloadable CUDA wheel supports V100. The job explicitly requests
-CUDA and executes GPU operations; it will fail rather than fall back to CPU.
-
-The launcher imports directly from `src/`, so installing the package itself is not
-required. It does not guess module names or change your environment. If needed,
-set an absolute interpreter path before submitting:
+From the project root, after `salloc` has granted your GPU allocation:
 
 ```sh
-export EQUIPMENT_PYTHON=/absolute/path/to/your/environment/bin/python
+bash hpc/run.sh
 ```
 
-If module loading or environment activation must happen on the compute node, put
-the appropriate commands in your own shell file and set `EQUIPMENT_ENV_SCRIPT` to
-its absolute path. The job sources that file before starting Python. Run compute
-checks and training on allocated compute nodes, not login nodes.
+The launcher automatically loads `env/development/2023b` and
+`ai/PyTorch/2.3.0-foss-2023b-CUDA-12.6.0`, creates `.venv-iris/` with
+`--system-site-packages`, activates it in the job, checks dependencies and a CUDA
+forward/backward pass, and launches the glove pilot. Subsequent runs reuse the
+same environment. It imports the project from `src/`; no pip installation or
+network download happens in the job.
 
-## 3. Submit the glove smoke test
+These defaults follow the [ULHPC GPU Python example](https://hpc-docs.uni.lu/services/jupyter/)
+and [module environment documentation](https://hpc-docs.uni.lu/environment/modules/).
+Availability on your allocation still needs verification. To check setup without
+training (no dataset required):
+
+```sh
+bash hpc/run.sh --check
+```
+
+The checks require Python 3.11+, NumPy, Pillow, and GPU-compatible PyTorch. If a
+module is unavailable, inspect `module spider ai/PyTorch` on the compute node and
+set `EQUIPMENT_MODULES` to the available software-set and GPU PyTorch module names.
+`EQUIPMENT_RESIF_ARCH` defaults to `gpu`. To use a different managed environment
+location, set `EQUIPMENT_VENV`. The launcher refuses to reuse an environment made
+with a different Python/module stack; choose a new path in that case.
+
+Existing custom setups remain supported: set `EQUIPMENT_PYTHON` to an already
+prepared interpreter, or `EQUIPMENT_ENV_SCRIPT` to an absolute shell script that
+loads your modules and activates your environment. These overrides bypass the
+automatic module/venv setup, but still run the GPU checks. Module loading and
+activation happen in a child process and do not change your interactive shell.
+
+For the footwear pilot inside the same allocation:
+
+```sh
+bash hpc/run.sh data/lpc-footwear/dataset.json configs/train-smoke.json
+```
+
+## 3. Submit without an interactive allocation
 
 From the project root on Iris:
 
@@ -52,7 +75,7 @@ mkdir -p logs
 sbatch hpc/iris-smoke.sbatch
 ```
 
-The script requests one GPU, four CPU cores, 16 GB host RAM, and twenty minutes.
+The batch script uses the same automatic environment setup. It requests one GPU, seven CPU cores, 16 GB host RAM, and twenty minutes.
 These are initial request limits, not a measured Iris runtime. Pass your Slurm
 account/QoS flags if your allocation requires them. The tiny model does not require
 a 32 GB GPU specifically. GPU memory and timing are measured in the run output.
@@ -75,7 +98,9 @@ sbatch hpc/iris-smoke.sbatch data/lpc-glove/dataset.json configs/train-overfit.j
 
 ## 4. Inspect and return results
 
-Each job writes `runs/iris-JOBID/` and logs in `logs/`. Return these artifacts for
+Each run writes `runs/iris-JOBID/`; repeated interactive runs append a timestamp
+and process ID to preserve earlier results. Batch logs go in `logs/`; interactive
+logs appear in your terminal. The launcher prints the output path. Return these artifacts for
 the next engineering/research decision:
 
 - `run.json`, `summary.json`, `baselines.json`, and `metrics.jsonl`.
@@ -97,3 +122,6 @@ it is not a test of new bodies, animation families, or independently generated a
 Current cluster guidance: [Iris GPU hardware](https://hpc-docs.uni.lu/systems/iris/compute/)
 and [ULHPC Slurm](https://hpc-docs.uni.lu/slurm/). No job has been submitted by this
 project, and no HPC credentials are required for preparing the local pipeline.
+
+Launcher tests simulate Slurm/modules to check setup, reuse, overrides, and failure
+handling. They do not replace running `--check` on Iris.

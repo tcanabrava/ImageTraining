@@ -3,9 +3,11 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 import json
 import math
+import os
 import platform
 import random
 import subprocess
+import sys
 import time
 from pathlib import Path
 
@@ -63,7 +65,9 @@ def environment(device: torch.device) -> dict:
         except (OSError, subprocess.CalledProcessError):
             return None
     status = git("status", "--porcelain")
-    result = {"python": platform.python_version(), "torch": str(torch.__version__),
+    result = {"python": platform.python_version(), "python_executable": sys.executable,
+              "loaded_modules": [name for name in os.environ.get("LOADEDMODULES", "").split(":") if name],
+              "torch": str(torch.__version__),
               "numpy": np.__version__, "pillow": PIL.__version__, "platform": platform.platform(),
               "cuda_build": torch.version.cuda, "device": str(device), "git_revision": git("rev-parse", "HEAD"),
               "git_dirty": None if status is None else bool(status)}

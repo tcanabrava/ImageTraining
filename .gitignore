@@ -3,6 +3,8 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .venv/
+.venv-iris/
+.venv-iris.lock
 *.egg-info/
 build/
 dist/
